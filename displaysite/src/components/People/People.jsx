@@ -1,9 +1,10 @@
 import React from 'react'
 import Person from '../Person/Person';
+import './People.css';
 
 function People() {
     return (
-        <div>
+        <div className='main'>
             <h2>Faculty</h2>
                 <div>
                     <Person 

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Event.css';
 
 
 // Either link to the corresponding event or put all content on this website (not viable)
@@ -7,7 +8,8 @@ function Event({title, link, datetime}) {
   return (
     <div>
       <a href={link}>{title}</a>
-      <h4>{datetime}</h4>
+      <small>{datetime}</small>
+      <br />
     </div>
   )
 }
