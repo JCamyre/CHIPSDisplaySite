@@ -1,0 +1,11 @@
+{
+    "Students": [
+        {
+            "name": "Joseph Camyre",
+            "primary_area":"Software Systems",
+            "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/97.png",
+            "email":"jcamyre127@g.ucla.edu",
+            "linkedin":"https://www.linkedin.com/in/josephscamyre/"
+        }
+    ]
+}

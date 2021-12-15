@@ -1,6 +1,7 @@
 import React from 'react'
 import Person from '../Person/Person';
 import './People.css';
+// import dict from './People.json';
 
 // To feature different people every so often:
 // Array of Objects of information (json?) and show different ones every so often (time.sleep())
@@ -8,6 +9,8 @@ import './People.css';
 // Then fill in properties with name={arr[i%3].name}
 
 function People() {
+    // console.log(JSON.stringify(dict));
+
     return (
         <div className='main'>
             <h2>Faculty</h2>
