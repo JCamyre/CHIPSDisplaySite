@@ -2,6 +2,10 @@ import React from 'react'
 import Person from '../Person/Person';
 import './People.css';
 
+// Pass in JSON objects with name, title, etc for each person, store in an array
+// Every so often (time.sleep()), arr[i%3], arr[(i+1)%3], arr[(i+2])%3], i+=3
+// Pass into properties: name=arr[i%3]['name']
+
 function People() {
     return (
         <div className='main'>
@@ -12,7 +16,8 @@ function People() {
                         title='Distinguished Professor and Charles P. Reames Endowed Chair'
                         primary_area='Electrical and Computer Engineering'
                         img='https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/4.png'
-                        email='s.s.iyer@ucla.edu' />
+                        email='s.s.iyer@ucla.edu' 
+                    />
                 </div>
             <h2>Students</h2>
                 <div>
