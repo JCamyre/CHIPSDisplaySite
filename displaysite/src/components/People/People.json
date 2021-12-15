@@ -1,11 +1,34 @@
-{
-    "Students": [
+[
         {
             "name": "Joseph Camyre",
+            "major": "Computer Science",
             "primary_area":"Software Systems",
             "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/97.png",
             "email":"jcamyre127@g.ucla.edu",
             "linkedin":"https://www.linkedin.com/in/josephscamyre/"
+        },
+        {
+            "name": "Steven Moran",
+            "major": "Electrical & Computer Engineering",
+            "primary_area": "Primary Area: Circuits & Embedded Systems (CES)",
+            "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/32.png",
+            "email":"steven.moran@engineering.ucla.edu",
+            "linkedin":"https://www.linkedin.com/in/smoran1"
+        },
+        {
+            "name": "Fred Chu",
+            "major": "Electrical and Computer Engineering",
+            "primary_area": "FPGAs, Computer Architecture",
+            "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/66.png",
+            "email":"freddychu@g.ucla.edu",
+            "linkedin":"https://www.linkedin.com/in/freddychu/"
+        },
+        {
+            "name": "Jerry Ding",
+            "primary_area":"Undecided",
+            "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/90.png",
+            "email": "jerry.ding@ucla.edu",
+            "linkedin":"https://www.linkedin.com/in/jerry-ding-a911351ab/"
         }
-    ]
-}
+]
+

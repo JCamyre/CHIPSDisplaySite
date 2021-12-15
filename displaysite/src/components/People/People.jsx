@@ -1,14 +1,17 @@
 import React from 'react'
 import Person from '../Person/Person';
-import './People.css';
+// import './People.css';
 
 // Pass in JSON objects with name, title, etc for each person, store in an array
 // Every so often (time.sleep()), arr[i%3], arr[(i+1)%3], arr[(i+2])%3], i+=3
 // Pass into properties: name=arr[i%3]['name']
 
+// Could do the slide show automatic scroll thing
+
 function People() {
     return (
         <div className='main'>
+            <h2>yo</h2>
             <h2>Faculty</h2>
                 <div>
                     <Person 
