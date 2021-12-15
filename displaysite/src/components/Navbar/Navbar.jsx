@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <div>
             <header>
-                <img src={logo} alt='CHIPS logo' />
+                <img id='CHIPS-logo' src={logo} alt='CHIPS logo' />
             </header>
         </div>
     )

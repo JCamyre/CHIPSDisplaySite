@@ -7,7 +7,7 @@ function Event({title, link, datetime}) {
   return (
     <div>
       <a href={link}>{title}</a>
-      <h4>{datetime}</h4>
+      <small>{datetime}</small>
     </div>
   )
 }
