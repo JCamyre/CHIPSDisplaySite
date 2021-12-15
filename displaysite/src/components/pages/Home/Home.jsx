@@ -10,9 +10,15 @@ function Home() {
         <div>
             <Navbar />
             <div className='content'>
-                <People />
-                <Events />
-                <Publications />
+                <div className='row'>
+                    <div className='column'>
+                        <People />
+                    </div>
+                    <div className='column'>
+                        <Events />
+                        <Publications />
+                    </div>
+                </div>
             </div>
         </div>
     )
