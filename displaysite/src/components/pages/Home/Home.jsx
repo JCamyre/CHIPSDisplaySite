@@ -1,5 +1,5 @@
 import React from 'react';
-import People from '../../People/People';
+import TestPeople from '../../People/TestPeople';
 import Navbar from '../../Navbar/Navbar';
 import Events from '../../Events/Events';
 import Publications from '../../Publications/Publications';
@@ -14,7 +14,7 @@ function Home() {
             <div className='content'>
                 <div className='row'>
                     <div className='column'>
-                        {/* <People /> */}
+                        <TestPeople />
                     </div>
                     <div className='column'>
                         <Events />

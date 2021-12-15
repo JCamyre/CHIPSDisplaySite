@@ -13,14 +13,12 @@ function Testing() {
     console.log(Students[0], Students[1], Students[2], Students[3]);
 
     setInterval(function(){
-        console.log(Students[i%4]);
         setStudent1(Students[i%4]);
-        console.log(Students[(i+1)%4]);
         setStudent2(Students[(i+1)%4]);
-        console.log(i, i%4);
+        // console.log(i, i%4);
         console.log('********************');
         i+=2;
-    }, 3000);
+    }, 30000);
 
     return (
         <div>

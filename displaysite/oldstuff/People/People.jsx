@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Person from '../Person/Person';
 // import './People.css';
 
