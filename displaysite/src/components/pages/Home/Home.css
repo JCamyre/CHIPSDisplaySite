@@ -1,12 +1,4 @@
 .content {
-    width: 650px;
+    width: 500px;
     margin: auto;
-}
-
-.row {
-    display: flex;
-}
-
-.column {
-    flex: 50%;
 }
