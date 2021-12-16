@@ -4,17 +4,18 @@ import Navbar from '../../Navbar/Navbar';
 import Events from '../../Events/Events';
 import Publications from '../../Publications/Publications';
 import Testing from '../../People/Testing';
+import Students from '../../pages/Students/Students';
 import './Home.css';
 
 function Home() {
     return (
         <div>
-            <Testing />
-            <Navbar />
+            {/* <Testing /> */}
             <div className='content'>
                 <div className='row'>
                     <div className='column'>
-                        <TestPeople />
+                        {/* <TestPeople /> */}
+                        <Students />
                     </div>
                     <div className='column'>
                         <Events />
