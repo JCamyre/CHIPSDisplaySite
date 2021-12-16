@@ -8,8 +8,9 @@ import Person from '../../Person/Person';
 function Students() {
     return (
         <div>
-            {StudentsData.map((student)=>(
+            {StudentsData.map((student, idx)=>(
                 <Person
+                    key={idx}
                     name={student.name}
                     major={student.major}
                     primary_area={student.primary_area}
@@ -18,7 +19,6 @@ function Students() {
                     linkedin={student.linked}
                 />
             ))}
-            <Link to='/students'>Students</Link>
         </div>
     )
 }

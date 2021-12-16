@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Students from './People.json';
 import Person from '../Person/Person';
+import { CarouselProvider, Slider, Slide, Image } from 'pure-react-carousel';
 
 // https://stackoverflow.com/questions/5978519/how-to-use-setinterval-and-clearinterval
 
@@ -22,8 +23,30 @@ function Testing() {
 
     return (
         <div>
+            <h1>Testing</h1>
             <h2>Students</h2>
-                <div>
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={125}
+                    totalSlides={4}
+                    interval={3000}
+                >
+                    <Slider>
+                        <Slide index={0}>
+                            Slide 0
+                        </Slide>
+                        <Slide index={1}>
+                            Slide 1
+                        </Slide>
+                        <Slide index={2}>
+                            Slide 2
+                        </Slide>
+                        <Slide index={3}>
+                            Slide 3
+                        </Slide>
+                    </Slider>
+                </CarouselProvider>
+                {/* <div>
                     <Person 
                         name={student1.name}
                         major={student1.major} 
@@ -40,7 +63,7 @@ function Testing() {
                         email={student2.email}
                         linkedin={student2.linkedin}
                     />
-                </div>
+                </div> */}
         </div>
     )
 }

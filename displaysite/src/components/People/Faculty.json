@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Subramanian S. Iyer",
+        "title": "Distinguished Professor and Charles P. Reames Endowed Chair",
+        "major":"Electrical and Computer Engineering",
+        "primary_area": "Physical and Wave Electronics",
+        "secondary_area": "Circuits and Systems",
+        "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/4.png",
+        "email": "s.s.iyer@ucla.edu" 
+    },
+    {
+        "name": "Timothy Fisher",
+        "title": "Department Chair, Professor",
+        "major": "Mechanical and Aerospace Engineering",
+        "primary_area": "Transport processes by electrons, phonons, photons, and fluids",
+        "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/49.png",
+        "email": "tsfisher@ucla.edu",
+        "research_lab": "Nano Transport Group"
+    }
+]

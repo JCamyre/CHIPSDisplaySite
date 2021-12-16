@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Person from '../Person/Person';
 // import './People.css';
 
@@ -34,7 +35,9 @@ function People() {
                         email='jcamyre127@g.ucla.edu'
                         linkedin='https://www.linkedin.com/in/josephscamyre/' 
                     />
+                <Link to='/students'>Students</Link>
                 </div>
+                
         </div>
 
     )
