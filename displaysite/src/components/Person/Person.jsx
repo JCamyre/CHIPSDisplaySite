@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Person({name, title, major, primary_area, email, img, linkedin}) {
+function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
         <div>
             <div>
@@ -15,7 +15,13 @@ function Person({name, title, major, primary_area, email, img, linkedin}) {
                     <i>{major}</i>
                 )}
                 <h4>Primary area: {primary_area}</h4>
+                {(secondary_area) && (
+                    <h4>Secondary Area: {secondary_area}</h4>
+                )}
                 <h4>Email: {email}</h4>
+                {(research_lab) && (
+                    <a href={research_lab_url}>{research_lab}</a>
+                )}
                 {(linkedin) && (
                     <a href={linkedin}>LinkedIn Profile</a>
                 )}

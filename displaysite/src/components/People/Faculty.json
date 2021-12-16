@@ -6,15 +6,19 @@
         "primary_area": "Physical and Wave Electronics",
         "secondary_area": "Circuits and Systems",
         "img":"https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/4.png",
-        "email": "s.s.iyer@ucla.edu" 
+        "email": "s.s.iyer@ucla.edu",
+        "research_lab": null,
+        "research_lab_url": null 
     },
     {
         "name": "Timothy Fisher",
         "title": "Department Chair, Professor",
         "major": "Mechanical and Aerospace Engineering",
         "primary_area": "Transport processes by electrons, phonons, photons, and fluids",
+        "secondary_area": null,
         "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/49.png",
         "email": "tsfisher@ucla.edu",
-        "research_lab": "Nano Transport Group"
+        "research_lab": "Nano Transport Group",
+        "research_lab_url": "http://www.nanotransportgroup.com/"
     }
 ]
