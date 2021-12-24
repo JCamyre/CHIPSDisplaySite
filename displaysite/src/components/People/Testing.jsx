@@ -19,7 +19,7 @@ function Testing() {
         <div>
             <h1>Testing</h1>
             <h2>Students</h2>
-        <Carousel interval={4000} controls={false} indicators={false}>
+        <Carousel interval={1000} controls={false} indicators={false}>
         {Students.map((student, index) => (
             ((index%2===0) && (
                 <Carousel.Item key={index}>
@@ -44,24 +44,6 @@ function Testing() {
             ))
         ))}
       </Carousel>
-                {/* <div>
-                    <Person 
-                        name={student1.name}
-                        major={student1.major} 
-                        primary_area={student1.primary_area}
-                        img={student1.img}
-                        email={student1.email}
-                        linkedin={student1.linkedin}
-                    />
-                    <Person 
-                        name={student2.name}
-                        major={student2.major} 
-                        primary_area={student2.primary_area}
-                        img={student2.img}
-                        email={student2.email}
-                        linkedin={student2.linkedin}
-                    />
-                </div> */}
         </div>
     )
 }

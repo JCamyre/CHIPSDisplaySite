@@ -4,6 +4,7 @@ import Navbar from '../../Navbar/Navbar';
 import Events from '../../Events/Events';
 import Publications from '../../Publications/Publications';
 import Testing from '../../People/Testing';
+import Students from '../../Students/Students';
 import './Home.css';
 
 
@@ -14,7 +15,7 @@ function Home() {
             <div className='content'>
             <div className='row'>
                     <div className='column'>
-                        <TestPeople />
+                        <Students />
                     </div>
                     <div className='column'>
                         <Events />
