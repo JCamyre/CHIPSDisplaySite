@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Carousel from "react-bootstrap/Carousel";
 import StudentsData from '../People/People.json';
 import Person from '../Person/Person';
@@ -6,7 +7,8 @@ import Person from '../Person/Person';
 function Students() {
     return (
         <div>
-            <Carousel interval={1000} controls={false} indicators={false}>
+            <Link to='/students'><h2>Students</h2></Link>
+            <Carousel controls={false} indicators={false}>
         {StudentsData.map((student, index) => (
             ((index%2===0) && (
                 <Carousel.Item key={index}>

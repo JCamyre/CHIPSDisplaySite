@@ -22,8 +22,6 @@ function Home() {
                         <Publications />
                     </div>
                 </div>
-                <Testing />
-
             </div>      
         </div>
     )
