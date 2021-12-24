@@ -10,3 +10,7 @@
 .column {
     flex: 50%;
 }
+
+img {
+    height: 100px;
+}

@@ -6,11 +6,13 @@ import Publications from '../../Publications/Publications';
 import Testing from '../../People/Testing';
 import './Home.css';
 
+
+
 function Home() {
     return (
         <div>
             <div className='content'>
-                <div className='row'>
+            <div className='row'>
                     <div className='column'>
                         <TestPeople />
                     </div>
