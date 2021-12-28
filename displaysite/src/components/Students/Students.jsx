@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import Carousel from "react-bootstrap/Carousel";
 import StudentsData from '../People/People.json';
 import Person from '../Person/Person';
+import './Students.css';
+
+// sort by name
 
 function Students() {
     return (
         <div>
-            <Link to='/students'><h2>Students</h2></Link>
+            <h2>Students</h2>
             <Carousel controls={false} indicators={false}>
         {StudentsData.map((student, index) => (
             ((index%2===0) && (
@@ -32,6 +35,9 @@ function Students() {
             ))
         ))}
       </Carousel>
+      <Link to='/students'>
+          <button>See all students</button>
+        </Link>
         </div>
     )
 }

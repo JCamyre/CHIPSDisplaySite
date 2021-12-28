@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Person.css';
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
@@ -11,9 +12,9 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                 {(title) && 
                     (<i>{title}</i>)
                 }
-                {(major) && (
+                <h4>{(major) && (
                     <i>{major}</i>
-                )}
+                )}</h4>
                 <h4>Primary area: {primary_area}</h4>
                 {(secondary_area) && (
                     <h4>Secondary Area: {secondary_area}</h4>
