@@ -1,6 +1,8 @@
 import React from 'react';
 import './Person.css';
 
+// Custom QR code for each person, send them an email/a page to have all their info
+
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
         <div>
@@ -23,9 +25,9 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                 {(research_lab) && (
                     <a href={research_lab_url}>{research_lab}</a>
                 )}
-                {(linkedin) && (
-                    <a href={linkedin}>LinkedIn Profile</a>
-                )}
+                {/* {(linkedin) && (
+                    <h4><a href={linkedin}><img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png'  alt='Linkedin Logo' />LinkedIn Profile</a></h4>
+                )} */}
             </div>
         </div>
     )

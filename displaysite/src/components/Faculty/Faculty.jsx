@@ -7,7 +7,7 @@ import Person from '../Person/Person';
 function Faculty() {
     return (
         <div>
-            <Link to='/students'><h2>Students</h2></Link>
+            <h2>Faculty</h2>
             <Carousel controls={false} indicators={false}>
         {FacultyData.map((student, index) => (
             ((index%2===0) && (
@@ -32,6 +32,9 @@ function Faculty() {
             ))
         ))}
       </Carousel>
+      <Link to='/faculty'>
+          <button>See all faculty</button>
+        </Link>
         </div>
     )
 }

@@ -11,7 +11,7 @@ function Students() {
     return (
         <div>
             <h2>Students</h2>
-            <Carousel controls={false} indicators={false}>
+            <Carousel interval={25000} controls={false} indicators={false}>
         {StudentsData.map((student, index) => (
             ((index%2===0) && (
                 <Carousel.Item key={index}>

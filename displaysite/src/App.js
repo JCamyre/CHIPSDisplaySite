@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Students from "./components/pages/Students/StudentsPage";
-import Faculty from "./components/pages/Faculty/Faculty";
-// If we have multiple paths I'll add routes
+import Faculty from "./components/pages/Faculty/FacultyPage";
 
 function App() {
   return (

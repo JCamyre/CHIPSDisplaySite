@@ -1,6 +1,8 @@
 .content {
-    width: 650px;
+    width: 900px;
     margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .row {
@@ -12,5 +14,9 @@
 }
 
 img {
-    height: 100px;
+    height: 150px;
+}
+
+.qrcode {
+    height: 300px;
 }

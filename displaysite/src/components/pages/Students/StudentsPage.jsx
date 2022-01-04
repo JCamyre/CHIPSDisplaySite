@@ -7,7 +7,7 @@ import Person from '../../Person/Person';
 
 function Students() {
     return (
-        <div className='container'>
+        <div className='content'>
             {StudentsData.map((student, idx)=>(
                 <Person
                     key={idx}
