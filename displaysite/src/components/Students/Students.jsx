@@ -4,6 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import StudentsData from '../People/People.json';
 import Person from '../Person/Person';
 import './Students.css';
+import Button from '@mui/material/Button';
 
 // sort by name
 
@@ -38,7 +39,7 @@ function Students() {
       </Carousel>
         </div>
       <Link to='/students'>
-          <button>See all students</button>
+          <Button style={{fontSize: "39px", backgroundColor: '#1f497d'}} variant='contained' fontSize='inherit'>See all students</Button>
         </Link>
     </div>
     )

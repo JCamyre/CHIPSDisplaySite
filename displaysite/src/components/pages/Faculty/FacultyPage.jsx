@@ -1,11 +1,13 @@
 import React from 'react';
 import Person from '../../Person/Person';
 import FacultyMembers from '../../People/Faculty.json';
+import BackButton from '../../BackButton/BackButton';
 
 
 function Faculty() {
     return (
         <div className='content'>
+            <BackButton />
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}

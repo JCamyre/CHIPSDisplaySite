@@ -27,7 +27,7 @@ function Home() {
                         <Publications />
                     </div>
                 </div>
-                <div><Link to='/about'><Button style={{fontSize: "48px"}} variant='contained' fontSize='inherit'>ABOUT US</Button></Link></div>
+                <div><Link to='/about'><Button style={{fontSize: "48px", backgroundColor: '#1f497d'}} variant='contained' fontSize='inherit'>ABOUT US</Button></Link></div>
                 <Videos />
                 <h1>Scan for lab contact information</h1>
                 <img className='qrcode' src={QRCode} alt='QRCode' />    

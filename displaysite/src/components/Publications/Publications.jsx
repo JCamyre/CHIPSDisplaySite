@@ -1,5 +1,5 @@
 import React from 'react';
-import Publication from '../Publication/Publication';
+import Publication from '../Publication/Publication';   
 
 function Publications() {
     return (

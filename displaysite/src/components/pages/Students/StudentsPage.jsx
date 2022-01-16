@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StudentsData from '../../People/People.json';
 import Person from '../../Person/Person';
+import BackButton from '../../BackButton/BackButton';
 
 // Display all students, rather than cycling through a few at a time
 
 function Students() {
     return (
         <div className='content'>
+            <BackButton />
             {StudentsData.map((student, idx)=>(
                 <Person
                     key={idx}
