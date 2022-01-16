@@ -10,8 +10,9 @@ import './Students.css';
 function Students() {
     return (
         <div>
+            <div style={{marginBottom: "20px"}}>
             <h2>Students</h2>
-            <Carousel interval={25000} controls={false} indicators={false}>
+            <Carousel interval={5000} indicators={false} controls={false} >
         {StudentsData.map((student, index) => (
             ((index%2===0) && (
                 <Carousel.Item key={index}>
@@ -35,10 +36,11 @@ function Students() {
             ))
         ))}
       </Carousel>
+        </div>
       <Link to='/students'>
           <button>See all students</button>
         </Link>
-        </div>
+    </div>
     )
 }
 

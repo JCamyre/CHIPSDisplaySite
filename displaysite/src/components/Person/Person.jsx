@@ -5,7 +5,7 @@ import './Person.css';
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
-        <div>
+        <div className='profile-box'>
             <div>
                 <img src={img} alt='Profile Picture' />
             </div>

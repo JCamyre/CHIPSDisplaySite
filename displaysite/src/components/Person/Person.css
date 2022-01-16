@@ -6,3 +6,13 @@ img {
     height: 35px;
     border-right: 10px;
 }
+
+.profile-box {
+    border-width: 0px;
+    border-radius: 3px;
+    box-shadow: 6px 10px 18px -6px rgb(0 0 0 / 20%);
+    padding: 10px;
+    padding-left: 20px;
+    width: 95%;
+    height: 350px;
+}
