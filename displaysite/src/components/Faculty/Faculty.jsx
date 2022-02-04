@@ -4,12 +4,15 @@ import Carousel from "react-bootstrap/Carousel";
 import FacultyData from '../People/Faculty.json';
 import Person from '../Person/Person';
 import Button from '@mui/material/Button';
+import './Faculty.css';
 
 function Faculty() {
     return (
-        <div>
-            <h2>Faculty</h2>
-            <Carousel controls={false} indicators={false}>
+        <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'left'}}>
+
+            <h1>Faculty</h1>
+            <Carousel interval={25000} controls={false} indicators={false}>
         {FacultyData.map((student, index) => (
             ((index%2===0) && (
                 <Carousel.Item key={index}>
@@ -33,11 +36,13 @@ function Faculty() {
             ))
         ))}
       </Carousel>
+      </div>
       <Link to='/faculty'>
-      <Button style={{fontSize: "40px", backgroundColor: '#1f497d'}} variant='contained' fontSize='inherit'>See all faculty</Button>
-        </Link>
-        </div>
+            <Button style={{fontSize: "40px", backgroundColor: '#1f497d', width: '98%'}} variant='contained' fontSize='inherit'>See all faculty</Button>
+        </Link> 
+
+    </div>
     )
 }
 
-export default Faculty
+export default Faculty;

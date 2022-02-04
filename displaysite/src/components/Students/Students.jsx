@@ -10,36 +10,37 @@ import Button from '@mui/material/Button';
 
 function Students() {
     return (
-        <div>
-            <div style={{marginBottom: "20px"}}>
-            <h2>Students</h2>
-            <Carousel interval={5000} indicators={false} controls={false} >
-        {StudentsData.map((student, index) => (
-            ((index%2===0) && (
-                <Carousel.Item key={index}>
-                    <Person 
-                        name={StudentsData[index].name}
-                        major={StudentsData[index].major} 
-                        primary_area={StudentsData[index].primary_area}
-                        img={StudentsData[index].img}
-                        email={StudentsData[index].email}
-                        linkedin={StudentsData[index].linkedin}
-                    />
-                    <Person 
-                        name={StudentsData[index+1].name}
-                        major={StudentsData[index+1].major} 
-                        primary_area={StudentsData[index+1].primary_area}
-                        img={StudentsData[index+1].img}
-                        email={StudentsData[index+1].email}
-                        linkedin={StudentsData[index+1].linkedin}
-                    />
-                </Carousel.Item>
-            ))
-        ))}
+        <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'left'}}>
+            <h1>Students</h1>
+            <Carousel interval={25000} indicators={false} controls={false}>
+                {StudentsData.map((student, index) => (
+                    // Only do even indexes, 0, 2, 4, etc. So that we can also display index+1 (1, 3, 5, etc.)
+                    ((index%2===0) && (
+                        <Carousel.Item key={index}>
+                            <Person 
+                                name={StudentsData[index].name}
+                                major={StudentsData[index].major} 
+                                primary_area={StudentsData[index].primary_area}
+                                img={StudentsData[index].img}
+                                email={StudentsData[index].email}
+                                linkedin={StudentsData[index].linkedin}
+                            />
+                            <Person 
+                                name={StudentsData[index+1].name}
+                                major={StudentsData[index+1].major} 
+                                primary_area={StudentsData[index+1].primary_area}
+                                img={StudentsData[index+1].img}
+                                email={StudentsData[index+1].email}
+                                linkedin={StudentsData[index+1].linkedin}
+                            />
+                        </Carousel.Item>
+                    ))
+                ))}
       </Carousel>
         </div>
       <Link to='/students'>
-          <Button style={{fontSize: "39px", backgroundColor: '#1f497d'}} variant='contained' fontSize='inherit'>See all students</Button>
+          <Button style={{fontSize: "39px", backgroundColor: '#1f497d', width: '98%'}} variant='contained' fontSize='inherit'>See all students</Button>
         </Link>
     </div>
     )

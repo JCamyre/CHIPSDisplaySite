@@ -6,7 +6,7 @@ import './Event.css';
 
 function Event({title, link, datetime}) {
   return (
-    <div>
+    <div className='profile-box' id='event-box'>
       <a href={link}>{title}</a>
       <br/>
       <small>{datetime}</small>
