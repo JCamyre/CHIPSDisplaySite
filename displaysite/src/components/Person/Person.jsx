@@ -23,7 +23,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                 )}
                 <h4>Email: {email}</h4>
                 {(research_lab) && (
-                    <a href={research_lab_url}>{research_lab}</a>
+                    <h4>Lab: <a href={research_lab_url}>{research_lab}</a></h4>
                 )}
                 {/* {(linkedin) && (
                     <h4><a href={linkedin}><img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png'  alt='Linkedin Logo' />LinkedIn Profile</a></h4>

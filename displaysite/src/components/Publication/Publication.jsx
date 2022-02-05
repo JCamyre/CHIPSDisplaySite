@@ -5,7 +5,7 @@ import './Publication.css';
 function Publication({information}) {
     return (
         <div id='publication-box' className='profile-box'>
-            <span>
+            <span style={{fontSize: '20px'}}>
                 {information}
             </span>
         </div>
