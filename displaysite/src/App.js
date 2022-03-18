@@ -17,10 +17,10 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           <Route index path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/videos" element={<Videos />} />
-          <Route paht="/news" element={<News />} />
         </Routes>
       </Router>
     </>
