@@ -28,7 +28,7 @@ function MainButtons() {
   return (
     // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
-      <Link to='people'>
+      <Link to='news'>
       <Button onClick={() => { setClicked(true) }} 
           className={clicked ? 'clicked' : ''}
           style={buttonStyle}>

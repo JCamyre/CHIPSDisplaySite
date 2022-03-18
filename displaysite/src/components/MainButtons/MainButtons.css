@@ -17,7 +17,7 @@ Button {
     box-shadow: 0 9px #999;
 }
 
-Button:hover {background-color: #3e8e41}
+Link:Button:hover {background-color: #3e8e41}
 
 Button.clicked {
     background-color: #3e8e41;

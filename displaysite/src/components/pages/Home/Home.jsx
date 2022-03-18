@@ -3,7 +3,6 @@ import Events from '../../Events/Events';
 import Publications from '../../Publications/Publications';
 import Students from '../../Students/Students';
 import Faculty from '../../Faculty/Faculty';
-import Videos from '../../Videos/Videos';
 import './Home.css';
 import QRCode from '../../../images/QRCode.png';
 import { Link } from 'react-router-dom';
@@ -14,7 +13,7 @@ import MainButtons from '../../MainButtons/MainButtons';
 
 function Home() {
     return (
-        <div className='content'>
+        <div style={{padding: '0%'}} className='content'>
             <MainButtons />
             {/* <div className='content'>
                 <div className='row'>

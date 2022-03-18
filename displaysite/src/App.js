@@ -7,7 +7,8 @@ import Students from "./components/pages/Students/StudentsPage";
 import Faculty from "./components/pages/Faculty/FacultyPage";
 import About from "./components/pages/About/AboutPage";
 import PeoplePage from "./components/pages/PeoplePage/PeoplePage";
-import Videos from "./components/Videos/Videos";
+import Videos from "./components/pages/Videos/Videos";
+import News from "./components/pages/News/News";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/videos" element={<Videos />} />
+          <Route paht="/news" element={<News />} />
         </Routes>
       </Router>
     </>
