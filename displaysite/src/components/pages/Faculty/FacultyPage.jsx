@@ -6,8 +6,7 @@ import BackButton from '../../BackButton/BackButton';
 
 function Faculty() {
     return (
-        <div className='content'>
-            <BackButton />
+        <div style={{display: 'inline-block'}} className='content'>
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}

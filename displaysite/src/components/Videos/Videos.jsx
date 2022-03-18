@@ -4,7 +4,7 @@ import React from 'react'
 
 function Videos() {
     return (
-        <div style={{paddingTop: '20px'}}>
+        <div className='content'>
             <h1>Videos: </h1>
             <Video url='https://www.youtube.com/watch?v=cxRDNjvUFXM' />
         </div>

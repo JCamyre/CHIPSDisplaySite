@@ -8,8 +8,7 @@ import BackButton from '../../BackButton/BackButton';
 
 function Students() {
     return (
-        <div className='content'>
-            <BackButton />
+        <div style={{display: 'inline-block'}} className='content'>
             {StudentsData.map((student, idx)=>(
                 <Person
                     key={idx}
