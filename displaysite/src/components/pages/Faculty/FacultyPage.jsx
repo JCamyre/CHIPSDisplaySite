@@ -1,11 +1,12 @@
 import React from 'react';
 import Person from '../../Person/Person';
 import FacultyMembers from '../../People/Faculty.json';
+import { Stack } from '@mui/material'
 
 function Faculty() {
     // Maybe try no className='content'?
     return (
-        <div style={{display: 'inline-block'}} className='content'>
+        <Stack style={{display: 'inline-block'}} justifyContent='center' alignItems='center' className='content'>
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}
@@ -20,7 +21,7 @@ function Faculty() {
                     research_lab_url={faculty.research_lab_url}
                 />
             ))}
-        </div>
+        </Stack>
     )
 }
 

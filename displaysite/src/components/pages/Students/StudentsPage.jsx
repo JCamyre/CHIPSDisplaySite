@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import StudentsData from '../../People/People.json';
 import Person from '../../Person/Person';
 import BackButton from '../../BackButton/BackButton';
+import { Stack } from '@mui/material';
 
 // Display all students, rather than cycling through a few at a time
 
 function Students() {
     return (
-        <div style={{display: 'inline-block'}} className='content'>
+        <Stack style={{display: 'inline-block'}} justifyContent='center' alignItems='center' className='content'>
             {StudentsData.map((student, idx)=>(
                 <Person
                     key={idx}
@@ -20,7 +21,7 @@ function Students() {
                     linkedin={student.linked}
                 />
             ))}
-        </div>
+        </Stack>
     )
 }
 

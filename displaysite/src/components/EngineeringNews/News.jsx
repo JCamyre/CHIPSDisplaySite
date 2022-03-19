@@ -1,11 +1,12 @@
 import React from 'react';
 import NewsArticle from '../NewsArticle/NewsArticle';
+import { Stack } from '@mui/material';
 
 // Can do webscraping later
 
 function News() {
   return (
-    <div style={{paddingTop: '20px'}}>
+    <Stack alignItems='center' justifyContents='center' style={{paddingTop: '20px'}}>
         <h1>UCLA Engineering News</h1>
         <NewsArticle 
             title='UCLA Computer Scientist Receives Major Award for Contributions to Cyber Security'
@@ -22,7 +23,7 @@ function News() {
             link='https://samueli.ucla.edu/ucla-engineering-online-masters-program-ranked-no-1-for-veterans-by-u-s-news-world-report/'
             summary='The online master’s degree program at the UCLA Samueli School of Engineering is ranked No. 1 for veterans in U.S. News & World Report’s 2022 list of the best online engineering programs.'
             date='Jan 26, 2022'/>
-        </div>
+    </Stack>
   )
 }
 
