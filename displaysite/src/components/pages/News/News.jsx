@@ -1,11 +1,16 @@
 import React from 'react'
-import getNews from '../../../scripts/getNews'
+// import getNews from '../../../scripts/getNews'
+import BackButton from './../../BackButton/BackButton';
 
 
 function News() {
-    getNews('https://samueli.ucla.edu/news-events/');
+  // 'https://samueli.ucla.edu/news-events/'
   return (
-    <div>News</div>
+    <div className='content'>
+      <BackButton />
+      NEWS GOES HERE...
+      {/* <embed src='https://www.ee.ucla.edu' style={{width: '500px', height: '300px'}} /> */}
+    </div>
   )
 }
 

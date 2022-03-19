@@ -1,16 +1,9 @@
-const axios = require('axios')
-const cheerio = require('cheerio')
-// https://samueli.ucla.edu/news-events/
+var req = new XMLHttpRequest();  
 
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
-
-export default function getNews(url)
+export default function getNews()
 {
-    axios.get(url).then((res)=>{
-        const $ = cheerio.load(res);
-        console.log($('title').text())
-    }).catch((err) => {
-        console.error(err);
-    })
+    req.open('GET', 'https://samueli.ucla.edu/news-events/', false);   
+    req.send(null);  
+    if(req.status === 200)  
+       console.log(req.responseText);
 }

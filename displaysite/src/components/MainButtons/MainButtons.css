@@ -13,14 +13,16 @@ Button {
     color: #fff;
     background-color: #04AA6D;
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+    /* background: #eee; */
+    box-shadow: 0 16px 8px -4px lightblue;
 }
 
-Link:Button:hover {background-color: #3e8e41}
+Link:Button:hover {
+    text-decoration: none;
+    background-color: #04AA6D;
+}
 
 Button.clicked {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
