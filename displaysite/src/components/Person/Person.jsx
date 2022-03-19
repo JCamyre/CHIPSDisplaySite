@@ -7,7 +7,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
     return (
         <div className='profile-box'>
             <div>
-                <img src={img} alt='Profile Picture' />
+                <img style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
             </div>
             <div style={{border: '2px green dashed'}}>
                 <h3>{name}</h3>
