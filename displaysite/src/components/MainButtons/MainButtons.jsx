@@ -6,12 +6,11 @@ import './MainButtons.css'
 // Fix so that height: '100%' actually stretches fits
 const mainButtons = {
     height: '100%',
-    backgroundColor: '#eee'
 };
 
 // Do the div:nth-child(1) { paddingRight: '1%' } div:nth-child(2) { paddingLeft: '1%' }
 const buttonStyle = {
-  backgroundColor: '#fff', color: '#1f497d', fontSize: '48px', height: '95%', width: '45%'
+  backgroundColor: '#fff', color: '#1f497d', fontSize: '48px', height: '95%', width: '46%'
 };
 
 // const [clicked, setClicked] = setState(false);

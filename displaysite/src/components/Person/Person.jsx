@@ -9,7 +9,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
             <div>
                 <img src={img} alt='Profile Picture' />
             </div>
-            <div>
+            <div style={{border: '2px green dashed'}}>
                 <h3>{name}</h3>
                 {(title) && 
                     (<i>{title}</i>)

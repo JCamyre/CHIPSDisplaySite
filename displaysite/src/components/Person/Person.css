@@ -12,7 +12,10 @@ img {
     border-radius: 3px;
     box-shadow: 3px 10px 18px -6px rgb(0 0 0 / 20%);
     padding: 10px;
-    padding-left: 20px;
-    width: 99%;
+    padding-left: 40px;
+    padding-top: 20px;
+    width: 95%;
     height: 420px;
+    background-color: #fff;
+    margin-bottom: 20px;
 }

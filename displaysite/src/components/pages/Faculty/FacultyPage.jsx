@@ -1,10 +1,9 @@
 import React from 'react';
 import Person from '../../Person/Person';
 import FacultyMembers from '../../People/Faculty.json';
-import BackButton from '../../BackButton/BackButton';
-
 
 function Faculty() {
+    // Maybe try no className='content'?
     return (
         <div style={{display: 'inline-block'}} className='content'>
             {FacultyMembers.map((faculty, idx)=>(
