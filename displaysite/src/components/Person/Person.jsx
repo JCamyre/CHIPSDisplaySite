@@ -10,7 +10,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
             <Box>
                 <img style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
             </Box>
-            <Box style={{border: '2px green dashed'}}>
+            <Box style={{paddingTop: '20px'}}>
                 <h3>{name}</h3>
                 {(title) && 
                     (<i>{title}</i>)
