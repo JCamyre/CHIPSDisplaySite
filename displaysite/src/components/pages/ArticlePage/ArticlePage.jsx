@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import Articles from "../../Articles.json";
 import { Container, Box } from "@mui/material";
+import BackButton from '../../BackButton/BackButton';
 
 // <div class='et_pb_text_inner'> To get main text from samueli.ucla.edu
 
@@ -13,6 +14,7 @@ function ArticlePage() {
 
   return (
     <Container className='content' maxWidth='lg'>
+        <BackButton />
         <Box style={{backgroundColor: '#fff', margin: 'auto', borderRadius: '10px', marginTop: '20px', padding: '20px', boxShadow: '0 10px 8px -4px rgb(142, 215, 240)'}}>
         {(Articles.length > id) && 
         (
@@ -22,6 +24,7 @@ function ArticlePage() {
                 </h1>
                 <img src={Articles[id].image} alt='Article Thumbnail' />
                 <h3>{Articles[id].summary}</h3>
+                <p>{Articles[id].full_text}</p>
             </>
         )}
         {(Articles.length <= id) &&
