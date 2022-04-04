@@ -42,5 +42,60 @@
         "email": "puneet@ee.ucla.edu",
         "research_lab": "NanoCAD Laboratory",
         "research_lab_url": "http://nanocad.ee.ucla.edu/"
+    },
+    {
+        "name": "Luke Macyszyn",
+        "title": "Associate Professor",
+        "major": "Neurosurgery",
+        "primary_area": "Biomedical Image Analysis and Machine Learning",
+        "secondary_area": null,
+        "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/50.png",
+        "email": "lmacyszyn@mednet.ucla.edu",
+        "research_lab": "Machine Learning @ Neurosurgery UCLA",
+        "research_lab_url": "http://mlab.neurosurgery.ucla.edu/"
+    },
+    {
+        "name": "Dejan Markovic",
+        "title": "Professor",
+        "major": "Electrical and Computer Engineering",
+        "primary_area": "Circuits and Embedded Systems",
+        "secondary_area": "Neuroengineering",
+        "img": "http://www.ee.ucla.edu/dejan-markovic/",
+        "email": "dejan@ucla.edu",
+        "research_lab": "Parallel Data Architectures Group",
+        "research_lab_url": "http://icslwebs.ee.ucla.edu/dejan/researchwiki/index.php?title=Main_Page"
+    },
+    {
+        "name": "Sudhakar Pamarti",
+        "title": "Associate Professor",
+        "major": "Electrical and Computer Engineering",
+        "primary_area": "Circuits and Embedded Systems",
+        "secondary_area": null,
+        "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/15.png",
+        "email": "spamarti@ee.ucla.edu",
+        "research_lab": null,
+        "research_lab_url": null
+    },
+    {
+        "name": "Dwight Streit",
+        "title": "Professor",
+        "major": "Materials Science and Engineering",
+        "primary_area": "Electronic and optical materials, Semiconductor fabrication and characterization",
+        "secondary_area": null,
+        "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/17.png",
+        "email": "streit@ucla.edu",
+        "research_lab": null,
+        "research_lab_url": null
+    },
+    {
+        "name": "King-Ning Tu",
+        "title": "Professor",
+        "major": "Electrical Engineering",
+        "primary_area": "Physical and Wave Electronics",
+        "secondary_area": null,
+        "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/15.png",
+        "email": "kntu@ucla.edu",
+        "research_lab": "Electronic Thin Film Lab",
+        "research_lab_url": "http://www.seas.ucla.edu/eThinFilm/"
     }
 ]

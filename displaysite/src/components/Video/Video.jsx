@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Box } from '@mui/material';
 
 // Either do just pass in src='' or have to do copy the full embeded HTML code and pass in
 
 function Video({url}) {
     return (
-        <div>
-           <iframe width="840" height="472.5" src={"https://www.youtube.com/embed/" + url.split('v=')[1]} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-        </div>
+        <Box>
+           <iframe width="800px" height="472.5" src={"https://www.youtube.com/embed/" + url.split('v=')[1]} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </Box>
     )
 }
 
