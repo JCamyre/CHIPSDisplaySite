@@ -21,6 +21,7 @@
             "name": "Randall Irwin",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3-us-west-1.amazonaws.com/chips.user.media/images/users/39.png",
             "years": "2019 - Present",
             "email": "rirwin004@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/randall-irwin-baa074127/"
@@ -29,6 +30,7 @@
             "name": "Ankit Kuchhangi",
             "major": "Materials Science and Engineering",
             "primary_area": "Fusion Bonding",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/84.png",
             "years": "2020 - Present",
             "email": "akuchhangi3@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/ankitkuchhangi/"
@@ -37,6 +39,7 @@
             "name": "Sepideh Nouri",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Circuits & Embedded Systems",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/67.png",
             "years": "2019 - Present",
             "email": "sepidehnouri@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/sepidehnouri/"
@@ -45,6 +48,7 @@
             "name": "Guangqi Ouyang",
             "major": "Material Science and Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/69.png",
             "years": "2019 - Present",
             "email": "guangqiouyang@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/guangqiouyang/"
@@ -53,6 +57,7 @@
             "name": "Siyun Qiao",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/88.png",
             "years": "2020 - Present",
             "email": "qiaosy@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/siyun-qiao-8388b1152/"
@@ -61,6 +66,7 @@
             "name": "Harshit Ranjan",
             "major": "Materials Science and Engineering",
             "primary_area": "Flexible Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/94.png",
             "years": "2021 - Present",
             "email": "harshitranjan20@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/harshit-ranjan-2098"
@@ -69,6 +75,7 @@
             "name": "Haoxiang Ren",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/79.png",
             "years": "2020 - Present",
             "email": "flymetothemoon@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/haoxiang-ren-2b3951179/"
@@ -77,6 +84,7 @@
             "name": "Golam Sabbir",
             "major": "Materials Science and Engineering",
             "primary_area": "Metal Bonding and Thermal Science",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/63.png",
             "years": "2017 - Present",
             "email": "gsabbir87@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/gsabbir"
@@ -85,6 +93,7 @@
             "name": "Krutikesh Sahoo",
             "major": "Electrical & Computer Engineering",
             "primary_area": "Physical and Wave Electronics (PWE)",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/71.png",
             "years": "2019 - Present",
             "email": "krutikesh@g.ucla.edu",
             "linkedin": "https://in.linkedin.com/in/krutikesh-sahoo-60b02979"
@@ -93,6 +102,7 @@
             "name": "Ujash Shah",
             "major": "Mechanical and Aerospace Engineering",
             "primary_area": "Thermal Science and Engineering",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/61.png",
             "years": "2018 - Present",
             "email": "ujash@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/ujash/"
@@ -101,6 +111,7 @@
             "name": "Dhruv Srinivas",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/81.png",
             "years": "2021 - Present",
             "email": "dhruvsrinivas11@gmail.com",
             "linkedin": "https://www.linkedin.com/in/dhruv-s-ab0b1311b/"
@@ -109,6 +120,7 @@
             "name": "Henry Sun",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/83.png",
             "years": "2020 - Present",
             "email": "Hsunhenry@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/henry-sun95/"
@@ -117,6 +129,7 @@
             "name": "Niharika Tripathi",
             "major": "Materials Science and Engineering",
             "primary_area": "Energy Storage and Flexible Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/101.png",
             "years": "2022 - Present",
             "email": "niharika999@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/niharika-tripathi-05/"
@@ -125,6 +138,7 @@
             "name": "Yu-Tao (Ray) Yang",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/57.png",
             "years": "2018 - Present",
             "email": "yutaoyang@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/yu-taoyang/"
@@ -133,6 +147,7 @@
             "name": "Anthony Kim",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/96.png",
             "years": "2021 - Present",
             "email": "akim58@g.ucla.edu",
             "linkedin": "http://www.linkedin.com/in/anthonykim-ee"
@@ -141,6 +156,7 @@
             "name": "Dominic Konrad",
             "major": "Electrical & Computer Engineering",
             "primary_area": "Circuits & Embedded Systems (CES)",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/98.png",
             "years": "2021 - Present",
             "email": "djkonrad@g.ucla.edu",
             "linkedin": null
@@ -149,6 +165,7 @@
             "name": "Xiaoya Ma",
             "major": "Electrical and Computer Engineering",
             "primary_area": null,
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/85.png",
             "years": "2020 - Present",
             "email": "ashleyma100@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/xiaoya-ma-a344681a9/"
@@ -157,6 +174,7 @@
             "name": "Emily MacInnis",
             "major": "Materials Science and Engineering",
             "primary_area": "Physical and Wave Electronics",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/82.png",
             "years": "2020 - Present",
             "email": "emilymacinnis@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/emily-macinnis/"
@@ -165,6 +183,7 @@
             "name": "Tri Nguyen",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Circuits & Embedded Systems (CES)",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/91.png",
             "years": "2021 - Present",
             "email": "tri.t.nguyen@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/tri-nguyen-88841519a/"
@@ -173,6 +192,7 @@
             "name": "Pragathi Venkatesh",
             "major": "Electrical and Computer Engineering",
             "primary_area": "Sensor Design for Non-invasive Glucose Monitoring",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/89.png",
             "years": "2020 - Present",
             "email": "pvenkatesh22@g.ucla.edu",
             "linkedin": "https://www.linkedin.com/in/pven/"
@@ -181,6 +201,7 @@
             "name": "Yilin (Lenny) Wu",
             "major": "Computer Science and Applied Mathematics",
             "primary_area": "Undecided",
+            "img": "https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/99.png",
             "years": "2021 - Present",
             "email": "lenny.wu@ucla.edu",
             "linkedin": "https://www.linkedin.com/in/lenny-wu/"

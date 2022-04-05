@@ -7,6 +7,7 @@ function Faculty() {
     // Maybe try no className='content'?
     return (
         <Stack style={{display: 'inline-block'}} justifyContent='center' alignItems='center' className='content'>
+            <h1>Faculty:</h1>
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}
