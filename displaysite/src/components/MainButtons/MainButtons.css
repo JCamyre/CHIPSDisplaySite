@@ -13,7 +13,7 @@ Button {
     color: #fff;
     border: none;
     /* background: #eee; */
-    box-shadow: 0 12px 8px -4px rgb(142, 215, 240);
+    box-shadow: 0 12px 8px -4px rgba(0, 0, 0, 0.1);
 }
 
 Button:nth-child(1)

@@ -9,23 +9,22 @@ import BackButton from '../../BackButton/BackButton';
 function ArticlePage() {
     // get the params from the current path (which would be /article/:id). Ie /article/23, id = 23;
     let { id } = useParams();
-
-    console.log(Articles.length);
-
+    
   return (
     <Container className='content' maxWidth='lg'>
         <BackButton />
-        <Box style={{backgroundColor: '#fff', margin: 'auto', borderRadius: '10px', marginTop: '20px', padding: '20px', boxShadow: '0 10px 8px -4px rgb(142, 215, 240)'}}>
+        <Box style={{backgroundColor: '#fff', margin: 'auto', borderRadius: '10px', marginTop: '20px', padding: '20px', boxShadow: '0 10px 8px -4px rgba(0, 0, 0, 0.1)', display: 'flex', justifyContent: 'center'}}>
         {(Articles.length > id) && 
         (
-            <>
+            <Box style={{paddingTop: '20px', width: '80%'}}>
                 <h1>
                     {Articles[id].title}
                 </h1>
-                <img src={Articles[id].image} alt='Article Thumbnail' />
-                <h3>{Articles[id].summary}</h3>
+                <img style={{height: '200px'}} src={Articles[id].image} alt='Article Thumbnail' />
+                <p>{Articles[id].date}</p>
+                <h3 style={{fontStyle: 'italic'}}>"{Articles[id].summary}"</h3>
                 <p>{Articles[id].full_text}</p>
-            </>
+            </Box>
         )}
         {(Articles.length <= id) &&
         (
