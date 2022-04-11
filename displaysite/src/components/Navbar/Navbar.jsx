@@ -1,17 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../images/CHIPS-logo.png';
 
 function Navbar() {
     return (
-        <div>
-            <header>
-                <Link to='/'>
-                    <img id='CHIPS-logo' src={logo} alt='CHIPS logo' />
-                </Link>
-            </header>
-        </div>
+        <header id="flex-container" style={{display: "flex"}}>
+            <div>
+            <img id='CHIPS-logo' src={logo} alt='CHIPS logo' />
+
+            </div>
+            <div>
+            <span style={{color: "white", fontSize: 48}}>TOUCH ME!</span>
+            </div>
+        </header>
     )
 }
 

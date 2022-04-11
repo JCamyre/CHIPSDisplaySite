@@ -12,11 +12,13 @@ import News from "./components/pages/News/News";
 import Posters from "./components/pages/Posters/Posters";
 import ArticlePage from "./components/pages/ArticlePage/ArticlePage";
 
+// Make entire thing fit on one window exactly.
+
 function App() {
   return (
-    <>
+    <div style={{ height: "100vh" }}>
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/news" element={<News />} />
@@ -27,7 +29,7 @@ function App() {
           <Route path="/article/:id" element={<ArticlePage />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
