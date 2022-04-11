@@ -16,7 +16,7 @@ import ArticlePage from "./components/pages/ArticlePage/ArticlePage";
 
 function App() {
   return (
-    <div style={{ height: "100vh" }}>
+    <>
       <Router>
         <Navbar />
         <Routes>
@@ -29,7 +29,7 @@ function App() {
           <Route path="/article/:id" element={<ArticlePage />} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 

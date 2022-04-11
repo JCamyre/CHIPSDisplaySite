@@ -5,30 +5,3 @@ header {
 #CHIPS-logo {
     height: 100px;
 }
-
-#flex-container {
-    display: flex;
-    flex-direction: column;
-    background: teal;
-    width: 150px;
-    min-height: 80vh;
-    justify-content: space-between;
-  }
-  
-  #flex-container > div {
-    background: orange;
-    margin: 5px;
-  }
-  
-  /* OVERRIDE THE BROWSER SETTING IN THE FLEX PROPERTY */
-  
-#flex-container > div:first-child {
-flex: 1;
-flex-basis: 0;
-}
-
-#flex-container::after {
-content: "";
-flex: 1;
-flex-basis: 0;
-}
