@@ -15,8 +15,7 @@ function Posters() {
     <Container className='content' maxWidth='lg'>
         <BackButton />
         <Box style={{justiyContent: 'center', backgroundColor: '#fff', margin: 'auto', borderRadius: '10px', marginTop: '20px', padding: '20px', boxShadow: '0 10px 8px -4px rgba(0, 0, 0, 0.1)'}}>
-          <h1>INSERT POSTERS HERE</h1> 
-          <h2>okay</h2>
+          <h1>Posters:</h1>
           <Carousel width={'100%'} height={'50%'} centerMode={true} transitionTime={700} centerSlidePercentage={55} showIndicators={false} showStatus={false} infiniteLoop={true} showThumbs={false} stopOnHover={true} >
             <div>
               <Document onLoadError={console.error} file={pdf1} error='Trying to find the poster, sorry!'>

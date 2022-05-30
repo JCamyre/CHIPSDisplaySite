@@ -3,6 +3,8 @@ import { Box } from '@mui/material';
 
 // Either do just pass in src='' or have to do copy the full embeded HTML code and pass in
 
+// maybe do the react carousel thing with react-player
+
 function Video({url}) {
     return (
         <Box>
