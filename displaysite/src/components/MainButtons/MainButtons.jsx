@@ -12,7 +12,6 @@ const mainButtons = {
     justifyContent: 'center',
     height: '100%',
     width: '99%',
-    margin: 0,
     minWidth: '50%',
     display: 'grid',
     gridTemplateColumns: "1fr 1fr",
@@ -21,13 +20,8 @@ const mainButtons = {
     // gridAutoFlow: 'column'
 };
 
-// Do the div:nth-child(1) { paddingRight: '1%' } div:nth-child(2) { paddingLeft: '1%' }
-// const buttonStyle = {
-//   backgroundColor: '#fff', color: '#1f497d', fontSize: '48px', height: '95%', width: '48%'
-// };
-
 const buttonStyle = {
-  display: 'flex', 
+  display: 'flex',
   alignItems: 'center', 
   justifyContent: 'center', 
   height: '100%', 
