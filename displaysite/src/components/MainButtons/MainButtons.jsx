@@ -45,21 +45,37 @@ function MainButtons() {
   return (
     // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
-      <div style={{height: '50%', display: 'block'}}>
-        <Link style={{textDecoration: 'none'}} to='news'>
-          <MainButton image={images[0]} style={buttonStyle} />
+      <div style={{display: 'block', height: '50%'}}>
+        <Link to='news'>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
+            <div>
+                yo
+            </div>
+        </div>
         </Link>
-        <Link style={{textDecoration: 'none'}} to='people'>
-          <MainButton image={images[1]} style={buttonStyle} />
+        <Link to='news'>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
+            <div>
+                yo
+            </div>
+        </div>
         </Link>
       </div>
-      <div style={{height: '50%', display: 'block'}}>
-        <Link style={{textDecoration: 'none'}} to='posters'>
-          <MainButton image={images[2]} style={buttonStyle} />
+      <div style={{display: 'block', height: '50%'}}>
+        <Link to='news'>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
+            <div>
+                yo
+            </div>
+        </div>
         </Link>
-        <Link style={{textDecoration: 'none'}} to='videos'>
-          <MainButton image={images[3]} style={buttonStyle} />
-        </Link>
+        <Link to='news'>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
+            <div>
+                yo
+            </div>
+        </div>
+        </Link> 
       </div>
     </div>
   )
