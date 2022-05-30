@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MainButton from '../MainButton/MainButton';
 import { Link } from 'react-router-dom'
 import './MainButtons.css'
@@ -20,7 +20,15 @@ const mainButtons = {
     // gridAutoFlow: 'column'
 };
 
+function getRandomArticle()
+{
+  return Articles[Math.floor(Math.random() * Articles.length)];
+}
 
+function getRandomPerson()
+{
+  return People[Math.floor(Math.random() * People.length)];
+}
 
 const images = [
   {
@@ -46,14 +54,21 @@ const images = [
 ];
   
 function MainButtons() {
+  var article = '';
+  var person = '';
+
+  useEffect(() => {
+    article = getRandomArticle();
+    person = getRandomPerson();
+  });
 
   return (
     // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
-      <MainButton url='news'>
+      <MainButton url='news' img={article['image']}>
         News
       </MainButton>
-      <MainButton url='people'>
+      <MainButton url='people' img={person['img']}>
         People
       </MainButton>
       <MainButton url='posters'>
