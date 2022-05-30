@@ -17,7 +17,7 @@ const mainButtons = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
-    width: '99%',
+    width: '100%',
     minWidth: '50%',
     display: 'grid',
     gridTemplateColumns: "1fr 1fr",
@@ -58,7 +58,7 @@ function MainButtons() {
       <MainButton url='posters' pdf={true} img={pdf}>
         Posters
       </MainButton>
-      <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url']}/hqdefault.jpg`}>
+      <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
         Videos
       </MainButton>
     </div>
