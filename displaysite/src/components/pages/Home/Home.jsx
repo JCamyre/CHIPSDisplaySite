@@ -13,7 +13,7 @@ import MainButtons from '../../MainButtons/MainButtons';
 
 function Home() {
     return (
-        <div style={{padding: '0%'}} className='content'>
+        <div className='content'>
             <MainButtons />
         </div>
     )

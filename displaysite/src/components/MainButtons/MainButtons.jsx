@@ -8,14 +8,32 @@ import Videos from '../Videos.json';
 
 // Fix so that height: '100%' actually stretches fits
 const mainButtons = {
+    alignItems: 'center',
+    justifyContent: 'center',
     height: '100%',
-    minWidth: '25%'
+    width: '99%',
+    margin: 0,
+    minWidth: '50%',
+    display: 'grid',
+    gridTemplateColumns: "1fr 1fr",
+    gridTemplateRows: "1fr 1fr",
+    gridGap: 10,
+    // gridAutoFlow: 'column'
 };
 
 // Do the div:nth-child(1) { paddingRight: '1%' } div:nth-child(2) { paddingLeft: '1%' }
+// const buttonStyle = {
+//   backgroundColor: '#fff', color: '#1f497d', fontSize: '48px', height: '95%', width: '48%'
+// };
+
 const buttonStyle = {
-  backgroundColor: '#fff', color: '#1f497d', fontSize: '48px', height: '95%', width: '48%'
-};
+  display: 'flex', 
+  alignItems: 'center', 
+  justifyContent: 'center', 
+  height: '100%', 
+  borderRadius: 10,
+  backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"
+}
 
 const images = [
   {
@@ -45,39 +63,35 @@ function MainButtons() {
   return (
     // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
-      <div style={{display: 'block', height: '50%'}}>
         <Link to='news'>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
-            <div>
-                yo
-            </div>
-        </div>
+          <div style={buttonStyle}>
+              <div>
+                  yo
+              </div>
+          </div>
         </Link>
         <Link to='news'>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
-            <div>
-                yo
-            </div>
-        </div>
-        </Link>
-      </div>
-      <div style={{display: 'block', height: '50%'}}>
-        <Link to='news'>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
-            <div>
-                yo
-            </div>
-        </div>
+          <div style={buttonStyle}>
+              <div>
+                  yo
+              </div>
+          </div>
         </Link>
         <Link to='news'>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '50%', width: '50%', backgroundImage: "url(https://dinnerthendessert.com/wp-content/uploads/2015/08/Burger-B-Small-1.jpg)"}}>
-            <div>
-                yo
-            </div>
-        </div>
+          <div style={buttonStyle}>
+              <div>
+                  yo
+              </div>
+          </div>
+        </Link>
+        <Link to='news'>
+          <div style={buttonStyle}>
+              <div>
+                  yo
+              </div>
+          </div>
         </Link> 
       </div>
-    </div>
   )
 }
 
