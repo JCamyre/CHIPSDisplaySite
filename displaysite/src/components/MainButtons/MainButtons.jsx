@@ -55,7 +55,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' pdf={true} img={pdf}>
+      <MainButton url='posters' pdf={true} img={'../../posters/instructions.pdf'}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>

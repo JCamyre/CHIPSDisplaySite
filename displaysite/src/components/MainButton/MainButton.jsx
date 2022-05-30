@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 function MainButton({url, children, img, pdf=false}) {
   const buttonStyle = {
     display: 'flex',
