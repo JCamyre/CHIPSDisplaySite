@@ -8,10 +8,12 @@ function MainButton({url, children, img, pdf=false}) {
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 
-    height: '350px', 
+    height: '310px', 
     borderRadius: 10,
     backgroundImage: pdf ? img : "url(" + img + ")"
   }
+
+  console.log(url, ': ', img);
 
   return (
     <Link to={url}>

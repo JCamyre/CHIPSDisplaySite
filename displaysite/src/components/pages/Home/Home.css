@@ -1,7 +1,7 @@
 .content {
-    width: 99vw;
+    width: 100%;
     margin: 0;
-    height: 100vh;
+    height: 90%;
     padding: 0; 
     overflow-x: hidden;
 }
