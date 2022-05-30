@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 
 
-function MainButton({url, children, img}) {
+function MainButton({url, children, img, pdf=false}) {
   const buttonStyle = {
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 
     height: '350px', 
     borderRadius: 10,
-    backgroundImage: "url(" + img + ")"
+    backgroundImage: pdf ? img : "url(" + img + ")"
   }
 
   return (

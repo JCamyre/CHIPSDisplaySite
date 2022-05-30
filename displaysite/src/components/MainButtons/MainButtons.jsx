@@ -5,7 +5,10 @@ import './MainButtons.css'
 import Articles from '../Articles.json';
 import People from '../People/People.json';
 import Videos from '../Videos.json';
+import { Document, Page, pdfjs } from "react-pdf";
+import pdf from '../../posters/instructions.pdf';
 
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 // Fix so that height: '100%' actually stretches fits
 const mainButtons = {
     alignItems: 'center',
@@ -65,13 +68,13 @@ function MainButtons() {
   return (
     // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
-      <MainButton url='news' img={article['image']}>
+      <MainButton url='news' img={'https://samueli.ucla.edu/wp-content/uploads/samueli/eweek_hero.png'}>
         News
       </MainButton>
-      <MainButton url='people' img={person['img']}>
+      <MainButton url='people' img={'https://s3.us-west-1.amazonaws.com/chips.user.media/images/users/92.png'}>
         People
       </MainButton>
-      <MainButton url='posters'>
+      <MainButton url='posters' pdf={true} img={pdf}>
         Posters
       </MainButton>
       <MainButton url='videos'>
