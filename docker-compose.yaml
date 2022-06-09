@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  nginx:
+    depends_on:
+      - api
+      - displaysite
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3050:80"
+  
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: './api'
+    # going with /api/node-modules since in the api
+    # Dockerfile I put WORKDIR /api, not WORKDIR /app
+    volumes:
+      - /app/node-modules
+      # same here
+      - ./api:/app
+    
+  displaysite:
+    stdin_open: True
+    environment:
+      - CHOKIDAR_USEPOLLING=True
+    build:
+      dockerfile: Dockerfile
+      context: ./displaysite
+    volumes:
+      - /app/node-modules
+      - ./displaysite:/app

@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/webscrape", (req, res) => {
   const url = req.query.url;
-  res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
+  // res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
 
   axios
     .get(url)
@@ -21,8 +21,25 @@ app.get("/webscrape", (req, res) => {
       const html_data = response.data;
       const $ = cheerio.load(html_data);
 
-      const mainText = "div.et_pb_section"; // et_pb_section_2 et_section_regular
+      const mainText = "div.et_pb_section_2.et_section_regular"; // et_pb_section_2 et_section_regular
+      res.send($(mainText).text().replace("\n", "\n\n\n"));
       console.log($(mainText).text());
+
+      const summary = $(mainText).text()[0];
+      console.log(summary);
+
+      const title = "div.et_pb_blurb_content";
+      console.log($(title).text());
+
+      const img =
+        "div.et_pb_column.et_pb_column_2_3.et_pb_column_1.et_pb_css_mix_blend_mode_passthrough.et-last-child";
+      console.log($(img).find("img").attr("src"));
+
+      const date = "div.vet_pb_title_container";
+      console.log($(date).find("span").text());
+
+      const otherImgs = "figure";
+      console.log($(otherImgs).find("img").attr("src"));
 
       // res.send(), which sets the header to 200 (I think)
       // Since we already used res.send(), we already set headers, so we
@@ -33,6 +50,7 @@ app.get("/webscrape", (req, res) => {
     })
     .catch((err) => {
       console.log("Error! ", err);
+      res.send("Sorry, there was an error processing the url!");
     });
 });
 
