@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/webscrape", (req, res) => {
   const url = req.query.url;
-  console.log(req.query);
   res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
 
   axios
@@ -22,8 +21,15 @@ app.get("/webscrape", (req, res) => {
       const html_data = response.data;
       const $ = cheerio.load(html_data);
 
-      const mainText = "div.et-l et-l--post";
-      res.send($(mainText).text());
+      const mainText = "div.et_pb_section"; // et_pb_section_2 et_section_regular
+      console.log($(mainText).text());
+
+      // res.send(), which sets the header to 200 (I think)
+      // Since we already used res.send(), we already set headers, so we
+      // are setting headers again, which isn't good.
+      // Can you use res.write(), which is different since we are just updating
+      // The text, rather than setting headers (like response code)
+      // res.send($(mainText).text());
     })
     .catch((err) => {
       console.log("Error! ", err);
