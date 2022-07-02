@@ -20,7 +20,7 @@ function ArticlePage() {
                 <h1>
                     {Articles[id].title}
                 </h1>
-                <img style={{height: '200px'}} src={Articles[id].image} alt='Article Thumbnail' />
+                <img src={Articles[id].img} style={{height: '300px'}} alt='Article Thumbnail' />
                 <p>{Articles[id].date}</p>
                 <h3 style={{fontStyle: 'italic'}}>"{Articles[id].summary}"</h3>
                 <p>{Articles[id].full_text}</p>

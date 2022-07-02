@@ -6,9 +6,14 @@ function MainButton({url, children, img, pdf=false}) {
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 
-    height: '310px', 
+    height: '44vh', 
     borderRadius: 10,
-    backgroundImage: pdf ? img : "url(" + img + ")"
+    backgroundImage: pdf ? img : "url(" + img + ")",
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'auto',
+    backgroundPosition: 'center',
+    // backgroundAttachment: 'fixed',
+    border: '2px solid black'
   }
 
   console.log(url, ': ', img);

@@ -6,10 +6,6 @@ import People from '../People/People.json';
 import Videos from '../Videos.json';
 import pdf from '../../posters/instructions.pdf';
 import './MainButtons.css'
-import Article from '../Article/Article';
-
-// May 29th: 5 hours
-// Math 30th: 5 hours
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
