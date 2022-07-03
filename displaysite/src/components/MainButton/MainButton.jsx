@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MainButton({url, children, img, pdf=false}) {
+function MainButton({url, children, img, local=false}) {
   const buttonStyle = {
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 
     height: '44vh', 
     borderRadius: 10,
-    backgroundImage: pdf ? img : "url(" + img + ")",
+    backgroundImage: local ? img : "url(" + img + ")",
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',
-    boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.1)",
+    boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.25)",
   }
 
   return (

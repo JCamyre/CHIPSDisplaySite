@@ -4,7 +4,7 @@ import MainButton from '../MainButton/MainButton';
 import Articles from '../Articles.json';
 import People from '../People/People.json';
 import Videos from '../Videos.json';
-import pdf from '../../posters/instructions.pdf';
+// import pdf from '/posters/instructions.pdf';
 import './MainButtons.css'
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -44,7 +44,6 @@ function MainButtons() {
   }, []); // infinite updates cause once this gets updated, useEffect called again?
 
   return (
-    // Make the div stretch to fit the entire page (besides the Navbar)
     <div style={mainButtons}>
       <MainButton url='news' img={article['img']}>
         News
@@ -52,7 +51,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' pdf={true} img={'../../posters/instructions.pdf'}>
+      <MainButton url='posters' local={true} img={'/poster_images/instructions.pdf'}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
