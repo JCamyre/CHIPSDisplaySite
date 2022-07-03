@@ -13,7 +13,7 @@ function Students() {
           <Box>
             <FacultyPage />
           </Box>
-          <Box style={{paddingTop: '40px'}}>
+          <Box>
             <StudentsPage />
           </Box>
         </Container>

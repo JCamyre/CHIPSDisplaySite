@@ -10,7 +10,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
             <Box>
                 <img style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
             </Box>
-            <Box style={{paddingTop: '20px'}}>
+            <Box style={{paddingTop: '20px', display: 'inline'}}>
                 <h3>{name}</h3>
                 {(title) && 
                     (<i>{title}</i>)
@@ -27,7 +27,14 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                     <h4>Lab: <a href={research_lab_url}>{research_lab}</a></h4>
                 )}
                 {(linkedin) && (
-                    <h4><a href={linkedin}><img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png'  alt='Linkedin Logo' />LinkedIn Profile</a></h4>
+                    <span style={{alignItems: 'center', justifyContent: 'center'}}>
+                        <h4>
+                        <a href={linkedin}>
+                            <img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png' alt='Linkedin Logo' />
+                            LinkedIn Profile
+                        </a>
+                        </h4>
+                    </span>
                 )}
             </Box>
         </Box>
