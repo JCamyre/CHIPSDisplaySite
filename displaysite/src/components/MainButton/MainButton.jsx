@@ -10,13 +10,10 @@ function MainButton({url, children, img, pdf=false}) {
     borderRadius: 10,
     backgroundImage: pdf ? img : "url(" + img + ")",
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'auto',
+    backgroundSize: 'contain',
     backgroundPosition: 'center',
-    // backgroundAttachment: 'fixed',
-    border: '2px solid black'
+    boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.1)",
   }
-
-  console.log(url, ': ', img);
 
   return (
     <Link to={url}>
