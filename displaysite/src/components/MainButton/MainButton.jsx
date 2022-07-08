@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 function MainButton({url, children, img, local=false}) {
   const buttonStyle = {
+    color: '#000000',
+    fontSize: '36px',
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 

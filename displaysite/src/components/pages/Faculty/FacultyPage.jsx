@@ -1,13 +1,15 @@
 import React from 'react';
 import Person from '../../Person/Person';
 import FacultyMembers from '../../People/Faculty.json';
-import { Stack } from '@mui/material'
+import { Stack, Container, Box } from '@mui/material'
+import BackButton from '../../BackButton/BackButton';
 
 function Faculty() {
     // Maybe try no className='content'?
     return (
+    
         <Stack justifyContent='center' alignItems='center' className='content'>
-            <h1>Faculty:</h1>
+            <h1>Faculty</h1>
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}
@@ -23,6 +25,7 @@ function Faculty() {
                 />
             ))}
         </Stack>
+
     )
 }
 

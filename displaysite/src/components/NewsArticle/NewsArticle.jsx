@@ -13,6 +13,11 @@ function NewsArticle({id}) {
         <Button style={{height: '100%', width: '100%', textDecoration: 'none'}} className='profile-box'>
           <Box style={{"padding": "40px"}}>
             <h2>{article.title}</h2>
+            <Box 
+              component='img'
+              src={article.img}
+              style={{ borderRadius: '12px', marginTop: '20px', marginBottom: '20px' }}
+            />
             {/* <h5>{date}</h5> */}
             <h4>{article.summary}</h4>
           </Box>
