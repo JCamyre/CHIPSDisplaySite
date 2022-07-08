@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const cheerio = require("cheerio");
 const axios = require("axios");
+const fs = require("fs");
+const util = require("util");
 
-// 4.5 hrs
+const writeFile = util.promisify(fs.writeFile);
 
 const app = express();
 
@@ -26,20 +28,15 @@ async function getArticle(url) {
       const $ = cheerio.load(html_data);
 
       const mainText = "div.et_pb_section_2.et_section_regular"; // et_pb_section_2 et_section_regular
-      // console.log($(mainText).text());
 
       const summary = $(mainText).text().split(".")[0];
-      // console.log(summary);
 
       const title = "div.et_pb_blurb_content";
-      // console.log($(title).text());
 
       const img =
         "div.et_pb_column.et_pb_column_2_3.et_pb_column_1.et_pb_css_mix_blend_mode_passthrough.et-last-child";
-      // console.log($(img).find("img").attr("src"));
 
       const date = "div.et_pb_title_container";
-      // console.log($(date).find("span").text());
 
       data = {
         title: $(title).text().trim(),
@@ -49,15 +46,15 @@ async function getArticle(url) {
         full_text: $(mainText).text().trim(),
       };
 
-      processArticle(data);
+      // processArticle(data);
 
       // this extra lol
       const otherImgs = "figure";
-      console.log($(otherImgs).find("img").attr("src"));
+      // console.log($(otherImgs).find("img").attr("src"));
       $(otherImgs)
         .find("img")
         .each((index, element) => {
-          console.log(index, $(element).attr("src"));
+          // console.log(index, $(element).attr("src"));
         });
 
       // res.send(), which sets the header to 200 (I think)
@@ -77,28 +74,40 @@ async function getArticle(url) {
 
 // https://samueli.ucla.edu/newsroom
 app.get("/all_article_urls", (req, res) => {
-  const url = req.query.url;
-  var urls = [];
-  axios.get(url).then((response) => {
-    const html_data = response.data;
-    const $ = cheerio.load(html_data);
+  const url = req.query.url
+    ? req.query.url
+    : "https://samueli.ucla.edu/newsroom";
+  axios
+    .get(url)
+    .then((response) => {
+      const html_data = response.data;
+      const $ = cheerio.load(html_data);
 
-    const articles = "article.et_pb_post.clearfix";
-    $(articles).each(function (index, element) {
-      let url = $(element).find("h2 > a").attr("href");
-      console.log(JSON.stringify(getArticle(url)));
-      urls.push(url);
+      const articles = "article.et_pb_post.clearfix";
+
+      const articleData = [];
+      $(articles).each(function (index, element) {
+        let url = $(element).find("h2 > a").attr("href");
+        // console.log(JSON.stringify(getArticle(url)));
+        getArticle(url).then((article) => {
+          // console.log(article["title"]);
+          articleData.push(article);
+        });
+      });
+      // writeFile("./test.json", JSON.stringify(urls), "utf8");
+      // await console.log(JSON.stringify(urls));
+      return articleData;
+    })
+    .then((articles) => {
+      console.log("Articles: ", articles);
     });
-
-    console.log(urls);
-  });
   res.send("yoyo");
 });
 
 // http://localhost:8000/webscrape?url=https://samueli.ucla.edu/ucla-engineers-win-american-chemical-society-young-investigator-award-two-years-in-a-row/
 app.get("/webscrape", (req, res) => {
   const url = req.query.url;
-  console.log("Url: ", url);
+
   // res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
   var data = {};
   axios
@@ -109,20 +118,15 @@ app.get("/webscrape", (req, res) => {
 
       const mainText = "div.et_pb_section_2.et_section_regular"; // et_pb_section_2 et_section_regular
       res.send($(mainText).text()); // .replace("\n", "\n\n\n")
-      // console.log($(mainText).text());
 
       const summary = $(mainText).text().split(".")[0];
-      // console.log(summary);
 
       const title = "div.et_pb_blurb_content";
-      // console.log($(title).text());
 
       const img =
         "div.et_pb_column.et_pb_column_2_3.et_pb_column_1.et_pb_css_mix_blend_mode_passthrough.et-last-child";
-      // console.log($(img).find("img").attr("src"));
 
       const date = "div.et_pb_title_container";
-      // console.log($(date).find("span").text());
 
       data = {
         title: $(title).text().trim(),
@@ -136,11 +140,11 @@ app.get("/webscrape", (req, res) => {
 
       // this extra lol
       const otherImgs = "figure";
-      console.log($(otherImgs).find("img").attr("src"));
+      // console.log($(otherImgs).find("img").attr("src"));
       $(otherImgs)
         .find("img")
         .each((index, element) => {
-          console.log(index, $(element).attr("src"));
+          // console.log(index, $(element).attr("src"));
         });
 
       // res.send(), which sets the header to 200 (I think)
@@ -155,7 +159,6 @@ app.get("/webscrape", (req, res) => {
       res.send("Sorry, there was an error processing the url!");
     });
   processArticle(data);
-  console.log("done");
 });
 
 const PORT = 8000;
