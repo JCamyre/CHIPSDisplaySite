@@ -16,8 +16,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: './api'
-    # going with /api/node-modules since in the api
-    # Dockerfile I put WORKDIR /api, not WORKDIR /app
+    # Dockerfile I put WORKDIR /app, not WORKDIR /api, so that's why /app
     volumes:
       - /app/node-modules
       # same here

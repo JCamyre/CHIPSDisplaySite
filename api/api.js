@@ -45,8 +45,6 @@ async function getArticle(url) {
         full_text: $(mainText).text().trim(),
       };
 
-      // processArticle(data);
-
       // this extra lol
       const otherImgs = "figure";
       // console.log($(otherImgs).find("img").attr("src"));
@@ -69,7 +67,6 @@ async function getArticle(url) {
       console.log("Error! ", err);
       return { error: "bad error" };
     });
-  // processArticle(data);
 
   return data;
 }
@@ -79,7 +76,7 @@ app.get("/get_article", (req, res) => {
     ? req.query.url
     : "https://samueli.ucla.edu/ucla-scientists-develop-durable-material-for-flexible-artificial-muscles/";
 
-  const article = getArticle(url).then((article) => {
+  getArticle(url).then((article) => {
     console.log(article);
     res.json(article);
   });
@@ -102,113 +99,71 @@ app.get("/all_article_urls", (req, res) => {
 
       $(articles).each(function (index, element) {
         let url = $(element).find("h2 > a").attr("href");
-        // console.log(JSON.stringify(getArticle(url)));
-        // console.log(url);
         articleData.push(url);
-        // getArticle(url).then((article) => {
-        //   // console.log(article["title"]);
-        //   articleData.push(article);
-        // });
       });
-      // writeFile("./test.json", JSON.stringify(urls), "utf8");
-      // console.log(JSON.stringify(urls));
-      return articleData;
-    })
-    .then((articles) => {
-      // console.log(articles);
-      // async () => {
-      //   console.log(await getArticle(articles[0]));
-      // };
-      articles.map((url) => {
-        let test = getArticle(url).then((article) => {
-          return article;
-        });
-        console.log(test);
-      });
-
-      // console.log(articles);
-      // // async () => {
-      // //   console.log(await getArticle(articles[0]));
-      // // };
-      // async function test() {
-      //   const articleData = articles.map((url) => {
-      //     let curArticle = getArticle(url).then((article) => {
-      //       return article;
-      //     });
-      //     return curArticle;
-      //   });
-      //   return articleData;
-      // }
-
-      // const yo = test();
-
-      // console.log(yo);
+      res.send(articleData);
     })
     .catch((err) => {
       console.log(err);
     });
-  // .then((articles) => {
-  //   console.log("Articles: ", articles);
-  // });
-  res.send("yoyo");
 });
 
 // http://localhost:8000/webscrape?url=https://samueli.ucla.edu/ucla-engineers-win-american-chemical-society-young-investigator-award-two-years-in-a-row/
-app.get("/webscrape", (req, res) => {
-  const url = req.query.url;
+// app.get("/webscrape", (req, res) => {
+//   const url = req.query.url;
 
-  // res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
-  var data = {};
-  axios
-    .get(url)
-    .then((response) => {
-      const html_data = response.data;
-      const $ = cheerio.load(html_data);
+//   // res.send(`Wow, thanks so much for the url: ${url}, appreciate it!`);
+//   var data = {};
+//   axios
+//     .get(url)
+//     .then((response) => {
+//       const html_data = response.data;
+//       const $ = cheerio.load(html_data);
 
-      const mainText = "div.et_pb_section_2.et_section_regular"; // et_pb_section_2 et_section_regular
-      res.send($(mainText).text()); // .replace("\n", "\n\n\n")
+//       const mainText = "div.et_pb_section_2.et_section_regular"; // et_pb_section_2 et_section_regular
+//       res.send($(mainText).text()); // .replace("\n", "\n\n\n")
 
-      const summary = $(mainText).text().split(".")[0];
+//       const summary = $(mainText).text().split(".")[0];
 
-      const title = "div.et_pb_blurb_content";
+//       const title = "div.et_pb_blurb_content";
 
-      const img =
-        "div.et_pb_column.et_pb_column_2_3.et_pb_column_1.et_pb_css_mix_blend_mode_passthrough.et-last-child";
+//       const img =
+//         "div.et_pb_column.et_pb_column_2_3.et_pb_column_1.et_pb_css_mix_blend_mode_passthrough.et-last-child";
 
-      const date = "div.et_pb_title_container";
+//       const date = "div.et_pb_title_container";
 
-      data = {
-        title: $(title).text().trim(),
-        summary: summary.replace("\t\t\t", "").trim(),
-        img: $(img).find("img").attr("src"),
-        date: $(date).find("span").text().trim(),
-        full_text: $(mainText).text().trim(),
-      };
+//       data = {
+//         title: $(title).text().trim(),
+//         summary: summary.replace("\t\t\t", "").trim(),
+//         img: $(img).find("img").attr("src"),
+//         date: $(date).find("span").text().trim(),
+//         full_text: $(mainText).text().trim(),
+//       };
 
-      processArticle(data);
+//       processArticle(data);
 
-      // this extra lol
-      const otherImgs = "figure";
-      // console.log($(otherImgs).find("img").attr("src"));
-      $(otherImgs)
-        .find("img")
-        .each((index, element) => {
-          // console.log(index, $(element).attr("src"));
-        });
+//       // this extra lol
+//       const otherImgs = "figure";
+//       // console.log($(otherImgs).find("img").attr("src"));
+//       $(otherImgs)
+//         .find("img")
+//         .each((index, element) => {
+//           // console.log(index, $(element).attr("src"));
+//         });
 
-      // res.send(), which sets the header to 200 (I think)
-      // Since we already used res.send(), we already set headers, so we
-      // are setting headers again, which isn't good.
-      // Can you use res.write(), which is different since we are just updating
-      // The text, rather than setting headers (like response code)
-      // res.send($(mainText).text());
-    })
-    .catch((err) => {
-      console.log("Error! ", err);
-      res.send("Sorry, there was an error processing the url!");
-    });
-  processArticle(data);
-});
+//       // res.send(), which sets the header to 200 (I think)
+//       // Since we already used res.send(), we already set headers, so we
+//       // are setting headers again, which isn't good.
+//       // Can you use res.write(), which is different since we are just updating
+//       // The text, rather than setting headers (like response code)
+//       // res.send($(mainText).text());
+//     })
+//     .catch((err) => {
+//       console.log("Error! ", err);
+//       res.send("Sorry, there was an error processing the url!");
+//     });
+//   processArticle(data);
+// });
 
 const PORT = 8000;
 app.listen(PORT, () => {
