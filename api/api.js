@@ -20,8 +20,11 @@ function processArticle(data) {
 }
 
 async function getArticle(url) {
+  console.log(url);
   var data = {};
-  await axios
+  // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
+  // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
+  data = axios
     .get(url)
     .then((response) => {
       const html_data = response.data;
@@ -63,6 +66,8 @@ async function getArticle(url) {
       // Can you use res.write(), which is different since we are just updating
       // The text, rather than setting headers (like response code)
       // res.send($(mainText).text());
+
+      return data;
     })
     .catch((err) => {
       console.log("Error! ", err);
@@ -86,21 +91,36 @@ app.get("/all_article_urls", (req, res) => {
       const articles = "article.et_pb_post.clearfix";
 
       const articleData = [];
+
       $(articles).each(function (index, element) {
         let url = $(element).find("h2 > a").attr("href");
         // console.log(JSON.stringify(getArticle(url)));
-        getArticle(url).then((article) => {
-          // console.log(article["title"]);
-          articleData.push(article);
-        });
+        // console.log(url);
+        articleData.push(url);
+        // getArticle(url).then((article) => {
+        //   // console.log(article["title"]);
+        //   articleData.push(article);
+        // });
       });
       // writeFile("./test.json", JSON.stringify(urls), "utf8");
-      // await console.log(JSON.stringify(urls));
+      // console.log(JSON.stringify(urls));
       return articleData;
     })
     .then((articles) => {
-      console.log("Articles: ", articles);
+      console.log(articles);
+      // async () => {
+      //   console.log(await getArticle(articles[0]));
+      // };
+      getArticle(articles[0]).then((article) => {
+        console.log(article);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
     });
+  // .then((articles) => {
+  //   console.log("Articles: ", articles);
+  // });
   res.send("yoyo");
 });
 
