@@ -15,12 +15,8 @@ app.use(express.json());
 // means api/"SOME ROUTE"
 app.use(express.urlencoded({ extended: true }));
 
-function processArticle(data) {
-  console.log(data);
-}
-
 async function getArticle(url) {
-  console.log(url);
+  // console.log(url);
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -71,11 +67,23 @@ async function getArticle(url) {
     })
     .catch((err) => {
       console.log("Error! ", err);
+      return { error: "bad error" };
     });
   // processArticle(data);
 
   return data;
 }
+
+app.get("/get_article", (req, res) => {
+  const url = req.query.url
+    ? req.query.url
+    : "https://samueli.ucla.edu/ucla-scientists-develop-durable-material-for-flexible-artificial-muscles/";
+
+  const article = getArticle(url).then((article) => {
+    console.log(article);
+    res.json(article);
+  });
+});
 
 // https://samueli.ucla.edu/newsroom
 app.get("/all_article_urls", (req, res) => {
@@ -107,13 +115,34 @@ app.get("/all_article_urls", (req, res) => {
       return articleData;
     })
     .then((articles) => {
-      console.log(articles);
+      // console.log(articles);
       // async () => {
       //   console.log(await getArticle(articles[0]));
       // };
-      getArticle(articles[0]).then((article) => {
-        console.log(article);
+      articles.map((url) => {
+        let test = getArticle(url).then((article) => {
+          return article;
+        });
+        console.log(test);
       });
+
+      // console.log(articles);
+      // // async () => {
+      // //   console.log(await getArticle(articles[0]));
+      // // };
+      // async function test() {
+      //   const articleData = articles.map((url) => {
+      //     let curArticle = getArticle(url).then((article) => {
+      //       return article;
+      //     });
+      //     return curArticle;
+      //   });
+      //   return articleData;
+      // }
+
+      // const yo = test();
+
+      // console.log(yo);
     })
     .catch((err) => {
       console.log(err);
