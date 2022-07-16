@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MainButton({url, children, img, local=false}) {
+function MainButton({url, children, img}) {
   const buttonStyle = {
     color: '#ffffff',
     fontSize: '60px',
@@ -10,7 +10,7 @@ function MainButton({url, children, img, local=false}) {
     justifyContent: 'center', 
     height: '44vh', 
     borderRadius: 10,
-    backgroundImage: local ? img : "url(" + img + ")",
+    backgroundImage: "url(" + img + ")",
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',

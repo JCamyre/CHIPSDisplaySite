@@ -7,7 +7,7 @@ import Posters from '../Posters.json';
 import Videos from '../Videos.json';
 // import pdf from '/posters/instructions.pdf';
 import './MainButtons.css'
-import image from '../../poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg'
+import image from '../../poster_images/2021_10_Poster_Moran_v21024_1.jpg';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -61,7 +61,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' local={true} img={'./displaysite/public/poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg'}>
+      <MainButton url='posters' img={image}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
