@@ -8,6 +8,19 @@ import axios from 'axios';
 
 async function getArticle()
 {
+  axios.get('api/all_article_urls').then(urls => {
+    console.log(urls)
+    urls['data'].forEach(url => {
+      axios.get('api/get_article', { params: { url: url }}).then(res => {
+        console.log(JSON.stringify(res['data']));
+      }).catch(err => {
+        console.log(err);
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err);
+  })
   return await axios.get('api/get_article').then(res => (
     res
   )).catch(err => {

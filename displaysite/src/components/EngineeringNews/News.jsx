@@ -20,9 +20,7 @@ async function getNews(url)
 }
 
 function News() {
-  useEffect(() => {
-    console.log(getNews('yourmom.com'));
-  }, [])
+
   return (
     <Stack alignItems='center' justifyContents='center' style={{paddingTop: '20px'}}>
         <h1>UCLA Engineering News</h1>
