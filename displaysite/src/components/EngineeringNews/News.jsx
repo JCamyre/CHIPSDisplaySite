@@ -20,14 +20,9 @@ async function getNews(url)
 }
 
 function News() {
-  // useEffect(() => {
-  //   Articles.map((key, article) => {
-  //     console.log(key, article);
-  //   })
-  // })
 
   return (
-    <Stack alignItems='center' justifyContents='center' style={{paddingTop: '20px'}}>
+    <Stack alignItems='center' style={{paddingTop: '20px'}}>
         <h1>UCLA Engineering News</h1>
         {Articles.map((article, key) => (
           <NewsArticle
