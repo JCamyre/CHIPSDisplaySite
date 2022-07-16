@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MainButton({url, children, img}) {
+function MainButton({url, children, img, pdf=false, ...args}) {
   const buttonStyle = {
-    color: '#ffffff',
+    color: pdf ? '#000000' : '#ffffff',
     fontSize: '60px',
     display: 'flex',
     alignItems: 'center', 
@@ -15,6 +15,7 @@ function MainButton({url, children, img}) {
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.25)",
+    ...args
   }
 
   return (

@@ -9,6 +9,7 @@ import Videos from './components/pages/Videos/Videos';
 import News from './components/pages/News/News';
 import Posters from './components/pages/Posters/Posters';
 import ArticlePage from './components/pages/ArticlePage/ArticlePage';
+import PosterPage from './components/pages/Poster/Poster';
 
 // Make entire thing fit on one window exactly.
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/videos" element={<Videos />} />
           <Route path="/posters" element={<Posters />} />
           <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/poster/:id" element={<PosterPage />} />
         </Routes>
       </Router>
     </>

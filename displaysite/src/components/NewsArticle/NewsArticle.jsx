@@ -1,5 +1,4 @@
 import React from 'react';
-import Articles from '../Articles.json';
 import { Box, Button } from '@mui/material';
 import './NewsArticle.css'
 

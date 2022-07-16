@@ -61,7 +61,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' img={image}>
+      <MainButton url='posters' img={image} style={{color: 'black'}} pdf={true}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
