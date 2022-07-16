@@ -4,9 +4,9 @@ import { Box, Button } from '@mui/material';
 import './NewsArticle.css'
 
 
-function NewsArticle({id}) {
+function NewsArticle({id, article}) {
 
-  let article = Articles[id];
+  console.log(id, article);
   return (
     <>
       <a id='ArticleButton' href={`article/${id}`}>
