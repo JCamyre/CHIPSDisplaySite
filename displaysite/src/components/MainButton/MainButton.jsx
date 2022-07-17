@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MainButton({url, children, img, local=false}) {
+function MainButton({url, children, img, pdf=false, ...args}) {
   const buttonStyle = {
-    color: '#000000',
-    fontSize: '36px',
+    color: pdf ? '#000000' : '#ffffff',
+    fontSize: '60px',
     display: 'flex',
     alignItems: 'center', 
     justifyContent: 'center', 
     height: '44vh', 
     borderRadius: 10,
-    backgroundImage: local ? img : "url(" + img + ")",
+    backgroundImage: "url(" + img + ")",
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.25)",
+    ...args
   }
 
   return (

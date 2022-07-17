@@ -3,9 +3,11 @@ import { pdfjs } from "react-pdf";
 import MainButton from '../MainButton/MainButton';
 import Articles from '../Articles.json';
 import People from '../People/People.json';
+import Posters from '../Posters.json';
 import Videos from '../Videos.json';
 // import pdf from '/posters/instructions.pdf';
 import './MainButtons.css'
+import image from '../../poster_images/2021_10_Poster_Moran_v21024_1.jpg';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -25,22 +27,30 @@ const mainButtons = {
 
 function getRandomArticle()
 {
-  return Articles[Math.floor(Math.random() * Articles.length)];
+  return Articles[Math.floor(Math.random() * (Articles.length - 1))];
 }
 
 function getRandomPerson()
 {
-  return People[Math.floor(Math.random() * People.length)];
+  return People[Math.floor(Math.random() * (People.length - 1))];
+}
+
+function getRandomPoster()
+{
+  return Posters[Math.floor(Math.random() * (Posters.length - 1))]
 }
 
 function MainButtons() {
   const [article, setArticle] = useState('');
   const [person, setPerson] = useState('');
+  const [poster, setPoster] = useState('');
 
   useEffect(() => {
     // once article/person updates, state changes, MainButton associated with state, rerenders component
     setArticle(getRandomArticle());
     setPerson(getRandomPerson());
+    setPoster(getRandomPoster());
+    console.log(poster['thumbnail'])
   }, []); // infinite updates cause once this gets updated, useEffect called again?
 
   return (
@@ -51,7 +61,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' local={true} img={'/poster_images/instructions.pdf'}>
+      <MainButton url='posters' img={image} style={{color: 'black'}} pdf={true}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
