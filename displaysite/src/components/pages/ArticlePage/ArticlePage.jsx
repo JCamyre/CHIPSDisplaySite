@@ -12,7 +12,7 @@ function ArticlePage() {
     
   return (
     <Container className='content' maxWidth='lg'>
-        <BackButton />
+        <BackButton path='/news' />
         <Box style={{backgroundColor: '#fff', margin: 'auto', borderRadius: '10px', marginTop: '20px', padding: '20px', boxShadow: '0 10px 8px -4px rgba(0, 0, 0, 0.1)', display: 'flex', justifyContent: 'center'}}>
         {(Articles.length > id) && 
         (
