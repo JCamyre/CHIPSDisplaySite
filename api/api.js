@@ -71,15 +71,41 @@ async function getArticle(url) {
   return data;
 }
 
+var obj = {
+  data: [],
+};
+
+const pathToJSON = "../displaysite/src/components/Articles.json";
+
 app.get("/get_article", (req, res) => {
   const url = req.query.url
     ? req.query.url
     : "https://samueli.ucla.edu/ucla-scientists-develop-durable-material-for-flexible-artificial-muscles/";
 
-  getArticle(url).then((article) => {
-    console.log(article);
-    res.json(article);
-  });
+  getArticle(url)
+    .then((article) => {
+      console.log(article);
+      fs.readFile(pathToJSON, "utf8", function readFileCallback(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          // convert from JSON to a JS object
+
+          if (data === "") {
+            obj = { data: [] };
+          } else {
+            obj = JSON.parse(data);
+          }
+          obj.data.push(article);
+          const json = JSON.stringify(obj);
+          fs.writeFile(pathToJSON, json, "utf8", () => {});
+        }
+      });
+      res.json(article);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 // https://samueli.ucla.edu/newsroom
