@@ -50,12 +50,11 @@ function MainButtons() {
     setArticle(getRandomArticle());
     setPerson(getRandomPerson());
     setPoster(getRandomPoster());
-    console.log(poster['thumbnail'])
-  }, []); // infinite updates cause once this gets updated, useEffect called again?
+  }); // infinite updates cause once this gets updated, useEffect called again?
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' img={article['img']}>
+      <MainButton url='news' img={article ? article['img'] : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
         News
       </MainButton>
       <MainButton url='people' img={person['img']}>

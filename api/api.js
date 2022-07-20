@@ -71,11 +71,20 @@ async function getArticle(url) {
   return data;
 }
 
-var obj = {
-  data: [],
-};
+var obj = [
+  {
+    data: [],
+  },
+];
 
-const pathToJSON = "../displaysite/src/components/Articles.json";
+// maybe path from root directory
+const pathToJSON = "./displaysite/src/components/Articles.json";
+
+app.get("/reset_articles", (req, res) => {
+  fs.writeFile(pathToJSON, JSON.stringify([]), "utf8", () => {});
+
+  res.send("Done.");
+});
 
 app.get("/get_article", (req, res) => {
   const url = req.query.url
@@ -84,7 +93,6 @@ app.get("/get_article", (req, res) => {
 
   getArticle(url)
     .then((article) => {
-      console.log(article);
       fs.readFile(pathToJSON, "utf8", function readFileCallback(err, data) {
         if (err) {
           console.log(err);
@@ -92,12 +100,14 @@ app.get("/get_article", (req, res) => {
           // convert from JSON to a JS object
 
           if (data === "") {
-            obj = { data: [] };
+            obj = [];
           } else {
             obj = JSON.parse(data);
           }
-          obj.data.push(article);
+          obj.push(article);
+
           const json = JSON.stringify(obj);
+          console.log(json);
           fs.writeFile(pathToJSON, json, "utf8", () => {});
         }
       });

@@ -8,13 +8,16 @@ import axios from 'axios';
 
 async function getArticle()
 {
+
   axios.get('api/all_article_urls').then(urls => {
     console.log(urls)
-    urls['data'].forEach(url => {
-      axios.get('api/get_article', { params: { url: url }}).then(res => {
-        console.log(JSON.stringify(res['data']));
-      }).catch(err => {
-        console.log(err);
+    axios.get('api/reset_articles').then(res => {
+      urls['data'].forEach(url => {
+        axios.get('api/get_article', { params: { url: url }}).then(res => {
+          console.log(JSON.stringify(res['data']));
+        }).catch(err => {
+          console.log(err);
+        })
       })
     })
   })
