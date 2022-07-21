@@ -4,6 +4,7 @@ import './NewsArticle.css'
 
 
 function NewsArticle({id, article}) {
+  console.log(id, article);
 
   return (
     <Box style={{borderRadius: '16px'}}>

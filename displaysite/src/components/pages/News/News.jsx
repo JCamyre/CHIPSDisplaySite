@@ -4,6 +4,7 @@ import BackButton from './../../BackButton/BackButton';
 import { Box, Container } from '@mui/material';
 import NewsArticles from '../../EngineeringNews/News';
 import axios from 'axios';  
+import { writeJsonFile } from 'write-json-file';
 
 
 async function getArticle()

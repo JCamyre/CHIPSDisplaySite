@@ -9,7 +9,7 @@ function News() {
   useEffect(() => {
     axios.get('api/get_all_articles').then(res => {
       setArticles(res['data']);
-      console.log("News.jsx: ", res);
+      console.log("News.jsx: ", res['data']);
     })
   }, []);
 
