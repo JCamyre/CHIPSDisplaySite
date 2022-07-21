@@ -29,54 +29,7 @@ initializeApp({
 
 const db = getFirestore();
 
-async function changeValues(name = "an_article") {
-  const docRef = db.collection("articles").doc(name);
-
-  await docRef.set({
-    title: "Testing123",
-    date: "ur mom lol",
-    full_text: "get fricked bro",
-  });
-}
-
-async function retrieveDocs(collection = "articles") {
-  const snapshot = await db.collection(collection).get();
-  let res = [];
-
-  snapshot.forEach((doc) => {
-    res.push(doc.data());
-  });
-
-  return res;
-}
-
-app.get("/testing", (req, res) => {
-  const name = req.query.article;
-
-  changeValues(name)
-    .then(() => {
-      res.send(`Done updating Firestore with new article ${name}!`);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send("Error!");
-    });
-});
-
-app.get("/get_all_articles", (req, res) => {
-  retrieveDocs()
-    .then((articles) => {
-      console.log(articles);
-      res.send(JSON.stringify(articles));
-    })
-    .catch((err) => {
-      console.log("Error: ", err);
-      res.send("not pog");
-    });
-});
-
 async function getArticle(url) {
-  // console.log(url);
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -107,7 +60,6 @@ async function getArticle(url) {
 
       // this extra lol
       const otherImgs = "figure";
-      // console.log($(otherImgs).find("img").attr("src"));
       $(otherImgs)
         .find("img")
         .each((index, element) => {
@@ -130,6 +82,92 @@ async function getArticle(url) {
 
   return data;
 }
+
+async function changeValues(name = "an_article") {
+  const docRef = db.collection("articles").doc(name);
+
+  await docRef.set({
+    title: "Testing123",
+    date: "ur mom lol",
+    full_text: "get fricked bro",
+  });
+}
+
+async function createArticle(name = "article", articleObj) {
+  const docRef = db.collection("articles").doc(name);
+
+  await docRef.set({
+    title: articleObj["title"],
+    summary: articleObj["summary"],
+    img: articleObj["img"],
+    date: articleObj["date"],
+    full_text: articleObj["full_text"],
+  });
+}
+
+async function retrieveDocs(collection = "articles") {
+  const snapshot = await db.collection(collection).get();
+  let res = [];
+
+  snapshot.forEach((doc) => {
+    res.push(doc.data());
+  });
+
+  return res;
+}
+
+app.get("/testing", (req, res) => {
+  const name = req.query.article;
+
+  changeValues(name)
+    .then(() => {
+      res.send(`Done updating Firestore with new article ${name}!`);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send("Error!");
+    });
+});
+
+app.get("/scrape_all_articles", (req, res) => {
+  const url = req.query.url
+    ? req.query.url
+    : "https://samueli.ucla.edu/newsroom";
+
+  // clear out firestore -> newsroom_url -> get all 9 articles -> for each article, get info and put into firestore -> done
+  axios
+    .get(url)
+    .then((response) => {
+      const html_data = response.data;
+      const $ = cheerio.load(html_data);
+
+      const articles = "article.et_pb_post.clearfix";
+
+      $(articles).each(function (index, element) {
+        let url = $(element).find("h2 > a").attr("href");
+        getArticle(url).then((article) => {
+          createArticle(`article_${index}`, article);
+        });
+      });
+
+      res.send("Done! With fdsafdsafsdafdsa");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.get("/get_all_articles", (req, res) => {
+  retrieveDocs()
+    .then((articles) => {
+      console.log(articles);
+      res.send(JSON.stringify(articles));
+    })
+    .catch((err) => {
+      console.log("Error: ", err);
+      res.send("not pog");
+    });
+});
 
 var obj = [
   {

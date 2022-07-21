@@ -9,7 +9,7 @@ import axios from 'axios';
 async function getArticle()
 {
   console.log('Fetching all articles from Firestore!');
-  axios.get('api/get_all_articles').then(res => {
+  axios.get('api/scrape_all_articles').then(res => {
     console.log("Results: ", res)
   }).catch(err => {
     console.log(err)
