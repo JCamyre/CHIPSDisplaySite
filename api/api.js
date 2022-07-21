@@ -4,16 +4,76 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs");
 const util = require("util");
-
-const writeFile = util.promisify(fs.writeFile);
+const {
+  initializeApp,
+  applicationDefault,
+  cert,
+} = require("firebase-admin/app");
+const {
+  getFirestore,
+  Timestamp,
+  FieldValue,
+} = require("firebase-admin/firestore");
 
 const app = express();
 
-// enable express to send json responses
+app.use(cors());
 app.use(express.json());
-// enable express to be accessed via urls, maybe extended
-// means api/"SOME ROUTE"
 app.use(express.urlencoded({ extended: true }));
+
+// initializing Firebase
+initializeApp({
+  credential: applicationDefault(),
+  databaseURL: "https://CHIPSDisplaySite.firebaseio.com",
+});
+
+const db = getFirestore();
+
+async function changeValues(name = "an_article") {
+  const docRef = db.collection("articles").doc(name);
+
+  await docRef.set({
+    title: "Testing123",
+    date: "ur mom lol",
+    full_text: "get fricked bro",
+  });
+}
+
+async function retrieveDocs(collection = "articles") {
+  const snapshot = await db.collection(collection).get();
+  let res = [];
+
+  snapshot.forEach((doc) => {
+    res.push(doc.data());
+  });
+
+  return res;
+}
+
+app.get("/testing", (req, res) => {
+  const name = req.query.article;
+
+  changeValues(name)
+    .then(() => {
+      res.send(`Done updating Firestore with new article ${name}!`);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send("Error!");
+    });
+});
+
+app.get("/get_all_articles", (req, res) => {
+  retrieveDocs()
+    .then((articles) => {
+      console.log(articles);
+      res.send(JSON.stringify(articles));
+    })
+    .catch((err) => {
+      console.log("Error: ", err);
+      res.send("not pog");
+    });
+});
 
 async function getArticle(url) {
   // console.log(url);
@@ -78,7 +138,7 @@ var obj = [
 ];
 
 // maybe path from root directory
-const pathToJSON = "./displaysite/src/components/Articles.json";
+const pathToJSON = "../static-content/public/Articles.json";
 
 app.get("/reset_articles", (req, res) => {
   fs.writeFile(pathToJSON, JSON.stringify([]), "utf8", () => {});
@@ -90,7 +150,8 @@ app.get("/get_article", (req, res) => {
   const url = req.query.url
     ? req.query.url
     : "https://samueli.ucla.edu/ucla-scientists-develop-durable-material-for-flexible-artificial-muscles/";
-
+  console.log(__dirname);
+  console.log(fs.readdirSync("../"));
   getArticle(url)
     .then((article) => {
       fs.readFile(pathToJSON, "utf8", function readFileCallback(err, data) {
@@ -107,7 +168,7 @@ app.get("/get_article", (req, res) => {
           obj.push(article);
 
           const json = JSON.stringify(obj);
-          console.log(json);
+          // console.log(json);
           fs.writeFile(pathToJSON, json, "utf8", () => {});
         }
       });

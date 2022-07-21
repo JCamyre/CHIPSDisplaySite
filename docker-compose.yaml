@@ -11,6 +11,8 @@ services:
       context: ./nginx
     ports:
       - "3050:80"
+    volumes:
+      - /static-content:/usr/src/app
   
   api:
     build:
@@ -21,6 +23,10 @@ services:
       - /app/node-modules
       # same here
       - ./api:/app
+      - /static-content/usr/src/app/public
+    environment:
+      NODE_ENV: 'development'
+      GOOGLE_APPLICATION_CREDENTIALS: ./firebase_creds.json
     
   displaysite:
     stdin_open: True
@@ -32,3 +38,7 @@ services:
     volumes:
       - /app/node-modules
       - ./displaysite:/app
+      - /static-content:/usr/src/app/public
+
+volumes:
+  static-content:

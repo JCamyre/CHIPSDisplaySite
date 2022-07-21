@@ -9,41 +9,18 @@ import axios from 'axios';
 async function getArticle()
 {
   console.log('Fetching all articles from Firestore!');
-  axios.get('localhost:8000/get_all_articles').then(res => {
+  axios.get('api/get_all_articles').then(res => {
     console.log("Results: ", res)
   }).catch(err => {
     console.log(err)
-  })
-
-  // console.log('Path of Frontend: ', __dirname);
-  // axios.get('api/all_article_urls').then(urls => {
-  //   console.log(urls)
-  //   axios.get('api/reset_articles').then(res => {
-  //     urls['data'].forEach(url => {
-  //       axios.get('api/get_article', { params: { url: url }}).then(res => {
-  //         console.log(JSON.stringify(res['data']));
-  //       }).catch(err => {
-  //         console.log(err);
-  //       })
-  //     })
-  //   })
-  // })
-  // .catch(err => {
-  //   console.log(err);
-  // })
-  // return await axios.get('api/get_article').then(res => (
-  //   res
-  // )).catch(err => {
-  //   console.log(err);
-  //   return {"title": "What the frick is wrong"}
-  // }); 
+  });
 }
 
 function News() {
 
   useEffect(() => {
     getArticle();
-  })
+  }, [])
 
   // 'https://samueli.ucla.edu/news-events/'
   return (
