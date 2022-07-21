@@ -47,6 +47,7 @@ function MainButtons() {
 
   useEffect(() => {
     // once article/person updates, state changes, MainButton associated with state, rerenders component
+    console.log("React path names: ", __dirname)
     setArticle(getRandomArticle());
     setPerson(getRandomPerson());
     setPoster(getRandomPoster());

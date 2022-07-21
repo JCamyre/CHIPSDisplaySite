@@ -10,9 +10,9 @@ function News() {
         <h1>UCLA Engineering News</h1>
         {Articles.map((article, key) => (
           <NewsArticle
-          id={key}
-          article={article}
-        />
+            id={key}
+            article={article}
+          />
         ))}
     </Stack>
   )
