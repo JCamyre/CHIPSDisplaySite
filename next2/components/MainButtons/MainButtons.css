@@ -1,0 +1,39 @@
+Button
+{
+    font-size: '48px';
+    height: '50%';
+    width: '50%';
+}
+Button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    /* background: #eee; */
+    box-shadow: 0 12px 8px -4px rgba(0, 0, 0, 0.1);
+}
+
+Button:nth-child(1)
+{
+    margin-top: 0.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+Button:nth-child(2)
+{
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+
+Link:Button:hover {
+    text-decoration: none;
+    background-color: #04AA6D;
+}
+
+Button.clicked {
+    transform: translateY(4px);
+}
