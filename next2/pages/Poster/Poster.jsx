@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import BackButton from '../../BackButton/BackButton';
 import Posters from '../../Posters.json';
 import { Box, Button, Container, Stack } from '@mui/material';
@@ -15,8 +15,8 @@ function Poster() {
     const [curPage, setCurPage] = useState(1);
     const [numPages, setNumPages] = useState(0);
     
-    
-    const { id } = useParams();
+    const router = useRouter();
+    const { id } = router.query;
     console.log(id)
 
     function onDocumentLoadSuccess({numPages})

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import Carousel from "react-bootstrap/Carousel";
 import StudentsData from '../People/People.json';
 import Person from '../Person/Person';
@@ -56,7 +56,7 @@ function Students() {
                 ))}
       </Carousel>
         </div>
-      <Link to='/students'>
+      <Link href='/students'>
           <Button style={{fontSize: "39px", backgroundColor: '#1f497d', width: '98%'}} variant='contained' fontSize='inherit'>See all students</Button>
         </Link>
     </div>

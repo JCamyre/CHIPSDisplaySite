@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 
-function MainButton({url, children, img, pdf=false, ...args}) {
+function MainButton({url='/', children, img, pdf=false, ...args}) {
   const buttonStyle = {
     color: pdf ? '#000000' : '#ffffff',
     fontSize: '60px',
@@ -19,7 +19,7 @@ function MainButton({url, children, img, pdf=false, ...args}) {
   }
 
   return (
-    <Link to={url}>
+    <Link href={url}>
       <div style={buttonStyle}>
           <div>
               {children}

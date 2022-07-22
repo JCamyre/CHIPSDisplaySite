@@ -1,14 +1,13 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-import Articles from "../../Articles.json";
+import { useRouter } from 'next/router';
+import Articles from '../components/Articles.json';
 import { Container, Box } from "@mui/material";
 import BackButton from '../components/BackButton/BackButton'
 
-// <div class='et_pb_text_inner'> To get main text from samueli.ucla.edu
-
 function ArticlePage() {
-    // get the params from the current path (which would be /article/:id). Ie /article/23, id = 23;
-    let { id } = useParams();
+    
+    const router = useRouter();
+    const { id } = router.query
     
   return (
     <Container className='content' maxWidth='lg'>
