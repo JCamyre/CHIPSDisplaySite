@@ -1,0 +1,11 @@
+#ArticleButton:active
+{
+    text-decoration: none;
+    transform: translateY(4px);
+}
+
+#ArticleButton:hover
+{
+    text-decoration: none;   
+}
+

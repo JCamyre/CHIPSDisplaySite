@@ -1,0 +1,12 @@
+small {
+    font-size: 24px;
+}
+
+a {
+    font-size: 30px;
+}
+
+#event-box {
+    height: 100%;
+    padding: 30px;
+}
