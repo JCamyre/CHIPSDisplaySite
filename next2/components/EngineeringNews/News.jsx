@@ -25,7 +25,16 @@ function News() {
 export default News;
 
 export const getStaticProps = async() => {
-  axios.get('api/get_all_articles').then(res => {
-    writeJsonFile('../Articles.json', res);
+  const articles = await axios.get('api/get_all_articles').then(res => {
+    writeJsonFile('../Articles.json', res['data']);
+
+    return res['data'];
   })
+
+  return {
+    props: {
+      articles,
+    },
+    revalidate: 400,
+  }
 }
