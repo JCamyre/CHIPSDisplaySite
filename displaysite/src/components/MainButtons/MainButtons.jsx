@@ -11,7 +11,6 @@ import image from '../../poster_images/2021_10_Poster_Moran_v21024_1.jpg';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-// Fix so that height: '100%' actually stretches fits
 const mainButtons = {
     alignItems: 'center',
     justifyContent: 'center',
@@ -50,7 +49,7 @@ function MainButtons() {
     setArticle(getRandomArticle());
     setPerson(getRandomPerson());
     setPoster(getRandomPoster());
-  }); // infinite updates cause once this gets updated, useEffect called again?
+  }, []); // infinite updates cause once this gets updated, useEffect called again?
 
   return (
     <div style={mainButtons}>
