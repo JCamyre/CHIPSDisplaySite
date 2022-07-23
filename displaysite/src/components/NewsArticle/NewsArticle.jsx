@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button } from '@mui/material';
 import './NewsArticle.css'
+import Article from '../Articles.json';
 
 
 function NewsArticle({id, article}) {

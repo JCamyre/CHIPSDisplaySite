@@ -129,6 +129,7 @@ app.get("/testing", (req, res) => {
     });
 });
 
+// https://www.ee.ucla.edu/newsroom
 app.get("/scrape_all_articles", (req, res) => {
   const url = req.query.url
     ? req.query.url
