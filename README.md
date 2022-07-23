@@ -1,4 +1,4 @@
-aa# CHIPSDisplaySite
+# CHIPSDisplaySite
 
 ## How to running locally
 https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/ (for reference)
@@ -20,9 +20,13 @@ https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-re
 
 `docker run -it -p 4002:3001 api`
 
+### Testing API on its own
+`$env:GOOGLE_APPLICATION_CREDENTIALS="./firebase_creds.json"`
+
 ### Additional Info
 Builds, (re)creates, starts, and attaches to containers for a service.
 
 Unless they are already running, this command also starts any linked services.
 
 The --legacy-peer-deps tells the npm to ignore the peer dependencies and continue the installation of the package.
+
