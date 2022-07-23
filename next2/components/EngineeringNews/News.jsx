@@ -3,16 +3,11 @@ import NewsArticle from '../NewsArticle/NewsArticle';
 import { Stack } from '@mui/material';
 import axios from 'axios';
 import Articles from '../Articles.json';
+import { writeJsonFile } from 'write-json-file';
+
 
 function News() {
-  const [articles, setArticles] = useState([]);
 
-  useEffect(() => {
-    // axios.get('api/get_all_articles').then(res => {
-    //   setArticles(res['data']);
-    //   console.log("News.jsx: ", res['data']);
-    // })
-  }, []);
 
   return (
     <Stack alignItems='center' style={{paddingTop: '20px'}}>
@@ -28,3 +23,9 @@ function News() {
 }
 
 export default News;
+
+export const getStaticProps = async() => {
+  axios.get('api/get_all_articles').then(res => {
+    writeJsonFile('../Articles.json', res);
+  })
+}

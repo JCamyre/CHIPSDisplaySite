@@ -1,3 +1,5 @@
+import fs from "fs";
+
 const pathToJSON = "../../components/Articles.json";
 
 export default function handler(req, res) {
