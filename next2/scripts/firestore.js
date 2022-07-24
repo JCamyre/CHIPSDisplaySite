@@ -7,6 +7,8 @@ import {
 } from "firebase-admin/app";
 import { getFirestore, Timestamp, FieldValue } from "firebase-admin/firestore";
 import axios from "axios";
+import cheerio from "cheerio";
+const fs = require("fs");
 
 if (getApps().length === 0) {
   initializeApp({
@@ -96,4 +98,43 @@ async function getArticle(url) {
   return data;
 }
 
-module.exports = { changeValues, getArticle, retrieveDocs, createArticle };
+async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
+  // clear out firestore -> newsroom_url -> get all 9 articles -> for each article, get info and put into firestore -> done
+  return await axios
+    .get(url)
+    .then((response) => {
+      const html_data = response.data;
+      const $ = cheerio.load(html_data);
+
+      const articles = "article.et_pb_post.clearfix";
+
+      $(articles).each(function (index, element) {
+        let url = $(element).find("h2 > a").attr("href");
+        getArticle(url).then((article) => {
+          createArticle(`article_${index}`, article);
+        });
+      });
+
+      return "Done!";
+    })
+    .catch((err) => {
+      console.log(err);
+      return "Not done :(";
+    });
+}
+
+const pathToJSON = "./components/Articles.json";
+
+async function resetArticles() {
+  fs.writeFileSync(pathToJSON, JSON.stringify([]));
+}
+
+module.exports = {
+  changeValues,
+  getArticle,
+  retrieveDocs,
+  createArticle,
+  scrapeAllArticles,
+  resetArticles,
+  pathToJSON,
+};
