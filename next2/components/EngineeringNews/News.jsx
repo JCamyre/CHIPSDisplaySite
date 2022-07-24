@@ -4,13 +4,12 @@ import { Stack } from '@mui/material';
 import axios from 'axios';
 import Articles from '../Articles.json';
 
-function News() {
-
+function News({ articles }) {
 
   return (
     <Stack alignItems='center' style={{paddingTop: '20px'}}>
         <h1>UCLA Engineering News</h1>
-        {Articles && Articles.map((article, key) => (
+        {articles && articles.map((article, key) => (
           <NewsArticle
             id={key}
             article={article}
@@ -22,17 +21,15 @@ function News() {
 
 export default News;
 
-// export const getStaticProps = async() => {
-//   const articles = await axios.get('api/get_all_articles').then(res => {
-//     writeJsonFile('../Articles.json', res['data']);
+export const getStaticProps = async() => {
+  const articles = await axios.get('/api/get_all_articles').then(res => {
+    return res;
+  })
 
-//     return res['data'];
-//   })
-
-//   return {
-//     props: {
-//       articles,
-//     },
-//     revalidate: 400,
-//   }
-// }
+  return {
+    props: {
+      articles,
+    },
+    revalidate: 4000,
+  }
+}
