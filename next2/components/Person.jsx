@@ -1,14 +1,13 @@
 import React from 'react';
-import './Person.css';
 import { Box } from '@mui/material'
 
 // Custom QR code for each person, send them an email/a page to have all their info
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
-        <Box className='profile-box'>
+        <Box id='profile-box'>
             <Box>
-                <img style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
+                <img id='profile-pic' style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
             </Box>
             <Box style={{paddingTop: '20px', display: 'inline'}}>
                 <h3>{name}</h3>

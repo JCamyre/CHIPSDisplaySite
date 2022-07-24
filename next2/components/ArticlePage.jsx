@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router';
 import Articles from '../components/Articles.json';
 import { Container, Box } from "@mui/material";
-import BackButton from '../components/BackButton/BackButton'
+import BackButton from './BackButton'
 
 function ArticlePage() {
     

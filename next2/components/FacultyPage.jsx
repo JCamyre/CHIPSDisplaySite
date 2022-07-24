@@ -1,5 +1,5 @@
 import React from 'react';
-import Person from '../components/Person/Person';
+import Person from './Person';
 import FacultyMembers from '../components/People/Faculty.json';
 import { Stack } from '@mui/material'
 

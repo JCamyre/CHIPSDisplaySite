@@ -1,9 +1,12 @@
 import React from "react";
+import FacultyPage from "../components/FacultyPage";
+import StudentsPage from "../components/StudentsPage";
 import BackButton from "../components/BackButton";
-import { Box, Container } from "@mui/material";
-import NewsArticles from "../components/News";
+import { Container, Box } from "@mui/material";
 
-function News() {
+// Display all students, rather than cycling through a few at a time
+
+function Students() {
   return (
     <Container className="content" maxWidth="lg">
       <BackButton />
@@ -17,13 +20,15 @@ function News() {
           boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Container>
-          <NewsArticles />
-        </Container>
+        <Box>
+          <FacultyPage />
+        </Box>
+        <Box>
+          <StudentsPage />
+        </Box>
       </Box>
-      {/* <embed src='https://www.ee.ucla.edu' style={{width: '500px', height: '300px'}} /> */}
     </Container>
   );
 }
 
-export default News;
+export default Students;

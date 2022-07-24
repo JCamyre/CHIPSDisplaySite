@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import NewsArticle from '../NewsArticle/NewsArticle';
+import NewsArticle from '../components/NewsArticle';
 import { Stack } from '@mui/material';
 import axios from 'axios';
-import Articles from '../Articles.json';
+import Articles from './Articles.json';
 
 function News({ articles }) {
 

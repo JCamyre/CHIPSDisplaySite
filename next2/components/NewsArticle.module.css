@@ -1,0 +1,22 @@
+#ArticleButton:active
+{
+    text-decoration: none;
+    transform: translateY(4px);
+}
+
+#ArticleButton:hover
+{
+    text-decoration: none;   
+}
+
+.profile-box {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    /* background: #eee; */
+    box-shadow: 0 12px 8px -4px rgba(0, 0, 0, 0.1);
+}
