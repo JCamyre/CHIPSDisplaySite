@@ -23,6 +23,7 @@ export default News;
 
 export const getStaticProps = async() => {
   const articles = await axios.get('/api/get_all_articles').then(res => {
+    console.log('yo')
     return res;
   })
 
