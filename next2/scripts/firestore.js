@@ -19,7 +19,7 @@ if (getApps().length === 0) {
 
 const db = getFirestore();
 
-export async function changeValues(name = "an_article") {
+async function changeValues(name = "an_article") {
   const docRef = db.collection("articles").doc(name);
 
   await docRef.set({
@@ -29,7 +29,7 @@ export async function changeValues(name = "an_article") {
   });
 }
 
-export async function createArticle(name = "article", articleObj) {
+async function createArticle(name = "article", articleObj) {
   const docRef = db.collection("articles").doc(name);
 
   await docRef.set({
@@ -41,7 +41,7 @@ export async function createArticle(name = "article", articleObj) {
   });
 }
 
-export async function retrieveDocs(collection = "articles") {
+async function retrieveDocs(collection = "articles") {
   const snapshot = await db.collection(collection).get();
   let res = [];
 
@@ -52,7 +52,7 @@ export async function retrieveDocs(collection = "articles") {
   return res;
 }
 
-export async function getArticle(url) {
+async function getArticle(url) {
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -95,3 +95,5 @@ export async function getArticle(url) {
 
   return data;
 }
+
+module.exports = { changeValues, getArticle, retrieveDocs, createArticle };

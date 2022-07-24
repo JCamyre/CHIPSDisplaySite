@@ -1,9 +1,9 @@
-import { writeJsonFile } from "write-json-file";
+const fs = require("fs");
 
-const pathToJSON = "../../components/Articles.json";
+const pathToJSON = "./components/Articles.json";
 
 export default function handler(req, res) {
-  writeJsonFile(pathToJSON, JSON.stringify([]));
+  fs.writeFileSync(pathToJSON, JSON.stringify([]));
 
-  res.send("Done.");
+  res.send("test");
 }

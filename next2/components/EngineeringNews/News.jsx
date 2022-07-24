@@ -3,8 +3,6 @@ import NewsArticle from '../NewsArticle/NewsArticle';
 import { Stack } from '@mui/material';
 import axios from 'axios';
 import Articles from '../Articles.json';
-import { writeJsonFile } from 'write-json-file';
-
 
 function News() {
 
@@ -24,17 +22,17 @@ function News() {
 
 export default News;
 
-export const getStaticProps = async() => {
-  const articles = await axios.get('api/get_all_articles').then(res => {
-    writeJsonFile('../Articles.json', res['data']);
+// export const getStaticProps = async() => {
+//   const articles = await axios.get('api/get_all_articles').then(res => {
+//     writeJsonFile('../Articles.json', res['data']);
 
-    return res['data'];
-  })
+//     return res['data'];
+//   })
 
-  return {
-    props: {
-      articles,
-    },
-    revalidate: 400,
-  }
-}
+//   return {
+//     props: {
+//       articles,
+//     },
+//     revalidate: 400,
+//   }
+// }
