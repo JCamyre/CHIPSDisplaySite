@@ -1,15 +1,14 @@
 * {
-  font-family: 'Roboto', 'Open Sans', 'Poppins', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: Roboto, 'Open Sans', 'Poppins', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', 'Open Sans', 'Poppins', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Roboto, 'Open Sans', 'Poppins', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eee;

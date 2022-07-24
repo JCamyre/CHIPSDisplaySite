@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Button } from '@mui/material';
-import './NewsArticle.module.css'
+import styles from './NewsArticle.module.css'
 
 
 function NewsArticle({id, article}) {
 
   return (
-    <Box style={{borderRadius: '16px'}}>
-      <a id='ArticleButton' href={`article/${id}`}>
-        <Button style={{height: '100%', width: '100%', textDecoration: 'none'}} className='profile-box'>
+    <Box>
+      <a id={styles.ArticleButton} href={`article/${id}`}>
+        <Button style={{height: '100%', width: '100%', textDecoration: 'none', borderRadius: 12}} className={styles.profile_box}>
           <Box style={{padding: "40px"}}>
             <h2>{article.title}</h2>
             <Box 

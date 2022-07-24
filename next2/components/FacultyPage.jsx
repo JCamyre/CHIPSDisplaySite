@@ -1,6 +1,6 @@
 import React from 'react';
 import Person from './Person';
-import FacultyMembers from '../components/People/Faculty.json';
+import FacultyMembers from '../components/Faculty.json';
 import { Stack } from '@mui/material'
 
 function Faculty() {

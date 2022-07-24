@@ -1,4 +1,4 @@
-import Video from "../components/Video/Video";
+import Video from "../components/Video";
 import BackButton from "../components/BackButton";
 import React from "react";
 import { Container, Box } from "@mui/material";

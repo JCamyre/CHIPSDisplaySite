@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { pdfjs } from "react-pdf";
 import MainButton from './MainButton';
 import Articles from './Articles.json';
-import People from './People/People.json';
+import People from './People.json';
 import Posters from './Posters.json';
 import Videos from './Videos.json';
 import image from '../public/poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg';
@@ -55,7 +55,7 @@ function MainButtons() {
       <MainButton url='people' img={person['img']}>
         People
       </MainButton>
-      <MainButton url='posters' img={'/public/poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg'} style={{color: 'black'}}>
+      <MainButton url='posters' img={'/public/poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg'} fontColor={'black'}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>

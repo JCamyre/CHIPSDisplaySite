@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Carousel from "react-bootstrap/Carousel";
-import FacultyData from '../People/Faculty.json';
+import FacultyData from '../Faculty.json';
 import Person from '../Person/Person';
 import Button from '@mui/material/Button';
 import './Faculty.css';

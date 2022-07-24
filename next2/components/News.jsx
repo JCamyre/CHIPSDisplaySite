@@ -8,7 +8,7 @@ function News({ articles }) {
 
   return (
     <Stack alignItems='center' style={{paddingTop: '20px'}}>
-        <h1>UCLA Engineering News</h1>
+        <h1 style={{color: '#1f497d'}}>UCLA Engineering News</h1>
         {Articles && Articles.map((article, key) => (
           <NewsArticle
             id={key}
