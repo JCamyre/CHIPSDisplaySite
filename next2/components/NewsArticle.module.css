@@ -1,0 +1,28 @@
+#ArticleButton:active
+{
+    text-decoration: none;
+    transform: translateY(4px);
+}
+
+#ArticleButton:hover
+{
+    text-decoration: none;   
+}
+
+#ArticleButton
+{
+    border-radius: 24px;
+}
+
+.profile_box {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #1f497d;
+    border: none;
+    font-family: 'Roboto', 'Poppins', 'Open Sans', 'Georgia', Arial, Helvetica, sans-serif;
+    /* background: #eee; */
+    box-shadow: 6px 16px 18px -8px rgba(0, 0, 0, 0.3);
+}
