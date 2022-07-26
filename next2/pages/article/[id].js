@@ -31,9 +31,23 @@ function ArticlePage() {
               style={{ height: "300px" }}
               alt="Article Thumbnail"
             />
-            <p>{Articles[id].date}</p>
-            <h3 style={{ fontStyle: "italic" }}>"{Articles[id].summary}"</h3>
-            <p>{Articles[id].full_text}</p>
+            <p style={{ fontSize: "20px" }}>{Articles[id].date}</p>
+            <h3 style={{ fontSize: "24px", fontStyle: "italic" }}>
+              "{Articles[id].summary}"
+            </h3>
+            {Articles[id].full_text.split("\n").map((content, index) => (
+              <p
+                style={{
+                  fontSize: "24px",
+                  lineHeight: "40px",
+                  // whiteSpace: "pre-wrap",
+                  textIndent: "50px",
+                }}
+                key={index}
+              >
+                {content}
+              </p>
+            ))}
           </Box>
         )}
         {Articles.length <= id && <h1>Error! Article does not exist!</h1>}

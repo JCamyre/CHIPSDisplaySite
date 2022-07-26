@@ -16,7 +16,7 @@ function NewsArticle({id, article}) {
               src={article.img}
               style={{ borderRadius: '12px', marginTop: '20px', marginBottom: '20px' }}
             />
-            <h5>{article.date}</h5>
+            <h4>{article.date}</h4>
             <h4>{article.summary}</h4>
           </Box>
         </Button>
