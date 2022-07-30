@@ -1,12 +1,50 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import MainButtons from "../components/MainButtons";
+import MainButtons, {
+  getRandomArticle,
+  getRandomPerson,
+  getRandomPoster,
+} from "../components/MainButtons";
 
-export default function Home() {
+export default function Home({
+  personThumbnail,
+  articleThumbnail,
+  posterThumbnail,
+}) {
   return (
     <div className={styles.container}>
-      <MainButtons />
+      <MainButtons
+        personThumbnail={personThumbnail}
+        posterThumbnail={posterThumbnail}
+        articleThumbnail={articleThumbnail}
+      />
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  let personThumbnail;
+  await getRandomPerson()
+    .then((res) => {
+      personThumbnail = res["img"];
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  const articleThumbnail = await getRandomArticle().then((res) => {
+    return res["img"];
+  });
+  const posterThumbnail = await getRandomPoster().then((res) => {
+    return res["thumbnail"];
+  });
+
+  return {
+    props: {
+      personThumbnail,
+      articleThumbnail,
+      posterThumbnail,
+    },
+    revalidate: 900,
+  };
+};

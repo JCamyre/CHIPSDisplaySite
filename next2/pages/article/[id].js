@@ -24,7 +24,7 @@ function ArticlePage() {
         }}
       >
         {Articles.length > id && (
-          <Box style={{ paddingTop: "20px", width: "80%" }}>
+          <Box style={{ width: "80%" }}>
             <h1>{Articles[id].title}</h1>
             <img
               src={Articles[id].img}

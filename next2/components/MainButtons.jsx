@@ -20,22 +20,22 @@ const mainButtons = {
     // gridAutoFlow: 'column'
 };
 
-function getRandomArticle()
+export async function getRandomArticle()
 {
   return Articles[Math.floor(Math.random() * (Articles.length - 1))];
 }
 
-function getRandomPerson()
+export async function getRandomPerson()
 {
   return People[Math.floor(Math.random() * (People.length - 1))];
 }
 
-function getRandomPoster()
+export async function getRandomPoster()
 {
   return Posters[Math.floor(Math.random() * (Posters.length - 1))]
 }
 
-function MainButtons() {
+function MainButtons({ personThumbnail, articleThumbnail, posterThumbnail }) {
   const [article, setArticle] = useState('');
   const [person, setPerson] = useState('');
   const [poster, setPoster] = useState('');
@@ -49,13 +49,13 @@ function MainButtons() {
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' img={article ? article['img'] : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
+      <MainButton url='news' img={articleThumbnail ? articleThumbnail : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
         News
       </MainButton>
-      <MainButton url='people' img={person['img']}>
+      <MainButton url='people' img={personThumbnail}>
         People
       </MainButton>
-      <MainButton url='posters' img={'./poster_images/2021 CHIPS WorkShip Poster_KuanNeng Chen1024_1.jpg'} fontColor={'black'}>
+      <MainButton url='posters' img={posterThumbnail} fontColor={'black'}>
         Posters
       </MainButton>
       <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
@@ -66,3 +66,4 @@ function MainButtons() {
 }
 
 export default MainButtons
+
