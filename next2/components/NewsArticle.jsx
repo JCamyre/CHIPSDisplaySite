@@ -8,7 +8,7 @@ function NewsArticle({id, article}) {
   return (
     <Box>
       <a id={styles.ArticleButton} href={`article/${id}`}>
-        <Button style={{height: '100%', width: '100%', textDecoration: 'none', borderRadius: 12}} className={styles.profile_box}>
+        <Button style={{fontSize: '24px', height: '100%', width: '100%', textDecoration: 'none', borderRadius: 12}} className={styles.profile_box}>
           <Box style={{padding: "40px"}}>
             <h2>{article.title}</h2>
             <Box 

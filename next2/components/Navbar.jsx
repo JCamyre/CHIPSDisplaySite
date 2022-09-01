@@ -11,9 +11,11 @@ function Navbar() {
             </Link>
             <Spacer />
             <Spacer />
+            <Spacer />
             <Box>
                 <span style={{color: "white", fontSize: 48}}>TOUCH ME!</span>
             </Box>
+            <Spacer />
             <Spacer />
             <Spacer />
             <Spacer />

@@ -22,7 +22,7 @@
     outline: none;
     color: #1f497d;
     border: none;
-    font-family: 'Roboto', 'Poppins', 'Open Sans', 'Georgia', Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', 'Roboto', Arial, 'Open Sans', 'Georgia', Helvetica, sans-serif;
     /* background: #eee; */
     box-shadow: 6px 16px 18px -8px rgba(0, 0, 0, 0.3);
 }

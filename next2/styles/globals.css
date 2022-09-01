@@ -1,17 +1,43 @@
 * {
-  font-family: Roboto, 'Open Sans', 'Poppins', 'Oxygen',
+  font-family: 'Poppins', Roboto, 'Open Sans', Arial, 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  text-transform: 'none';
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, 'Open Sans', 'Poppins', 'Oxygen',
+  font-family: 'Poppins', Roboto, 'Open Sans', Arial, 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eee;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+/* From Public Directory */
+@font-face {
+  font-family: 'Kurale';
+  src: url('/fonts/Kurale.ttf');
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* From Public Directory */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins.ttf');
+  font-style: bold;
+  font-weight: normal;
+  font-display: swap;
 }
 
 a {
@@ -19,19 +45,11 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-Button
-{
+Button {
+    padding: 15px 25px;
     font-size: '48px';
     height: '50%';
     width: '50%';
-}
-Button {
-    padding: 15px 25px;
-    font-size: 24px;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -63,8 +81,9 @@ Button.clicked {
     transform: translateY(4px);
 }
 
-#profile-pic {
+.profile-pic {
   height: 220px;
+  border-radius: 12px;
 }
 
 #logo {
@@ -72,9 +91,9 @@ Button.clicked {
   border-right: 10px;
 }
 
-#profile-box {
+.profile-box {
   border-width: 0px;
-  border-radius: 5px;
+  border-radius: 16px;
   box-shadow: 3px 10px 18px -6px rgb(0 0 0 / 20%);
   padding: 10px;
   padding-left: 40px;
@@ -82,6 +101,15 @@ Button.clicked {
   width: 75%;   
   background-color: #fff;
   margin-bottom: 40px;
+  font-size: 22px;
+  padding-top: '20px';
+  display: 'inline';
+  border-radius: '20px';
+}
+
+.header {
+  font-size: 48px;
+  color: #1f497d;
 }
 
 .react-pdf__Page__canvas {

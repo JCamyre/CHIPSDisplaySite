@@ -7,8 +7,8 @@ function Students() {
 
     function GetSortOrder(prop) {    
         return function(a, b) {
-            a = a['name'].split(' ');
-            b = b['name'].split(' ');    
+            a = a[prop].split(' ');
+            b = b[prop].split(' ');    
             if(a.length > 2)
             {
                 a = a[2];
@@ -35,7 +35,7 @@ function Students() {
 
     return (
         <Stack justifyContent='center' alignItems='center' className='content'>
-            <h1>Students</h1>
+            <h1 className='header'>Students</h1>
             {StudentsData.map((student, idx)=>(
                 <Person
                     key={idx}

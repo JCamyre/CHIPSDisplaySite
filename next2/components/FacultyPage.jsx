@@ -8,7 +8,7 @@ function Faculty() {
     return (
     
         <Stack justifyContent='center' alignItems='center' className='content'>
-            <h1>Faculty</h1>
+            <h1 className='header'>Faculty</h1>
             {FacultyMembers.map((faculty, idx)=>(
                 <Person
                     key={idx}

@@ -5,11 +5,11 @@ import { Box } from '@mui/material'
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
-        <Box id='profile-box'>
+        <Box className='profile-box'>
             <Box>
-                <img id='profile-pic' style={{borderRadius: '10px'}} src={img} alt='Profile Picture' />
+                <img className='profile-pic' src={img} alt={`${name}'s Profile Picture`} />
             </Box>
-            <Box style={{paddingTop: '20px', display: 'inline'}}>
+            <Box>
                 <h3>{name}</h3>
                 {(title) && 
                     (<i>{title}</i>)
@@ -18,20 +18,20 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                     <i>{major}</i>
                 )}</h4>
                 <h4>Primary area: {primary_area}</h4>
-                {(secondary_area) && (
-                    <h4>Secondary Area: {secondary_area}</h4>
-                )}
+                <h4>{(secondary_area) && (
+                    <>Secondary Area: {secondary_area}</>
+                )}</h4>
                 <h4>Email: {email}</h4>
                 {(research_lab) && (
                     <h4>Lab: <a href={research_lab_url}>{research_lab}</a></h4>
                 )}
                 {(linkedin) && (
-                    <span style={{alignItems: 'center', justifyContent: 'center'}}>
+                    <span>
                         <h4>
-                        <a href={linkedin}>
-                            <img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png' alt='Linkedin Logo' />
-                            LinkedIn Profile
-                        </a>
+                            <a href={linkedin} target='_blank' rel='noopener noreferrer' style={{display: 'flex', alignItems: 'center'}}>
+                                <img id='logo' src='https://www.renlearn.co.uk/wp-content/uploads/2020/04/LinkedIn-Logo.png' alt='Linkedin Logo' />
+                                LinkedIn Profile
+                            </a>
                         </h4>
                     </span>
                 )}
