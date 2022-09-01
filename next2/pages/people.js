@@ -6,10 +6,10 @@ import { Container, Box } from "@mui/material";
 
 // Display all students, rather than cycling through a few at a time
 
-function Students() {
+function People() {
   return (
     <Container className="content" maxWidth="lg">
-      <BackButton />
+      <BackButton style={{ position: "sticky" }} />
       <Box
         style={{
           backgroundColor: "#fff",
@@ -31,4 +31,4 @@ function Students() {
   );
 }
 
-export default Students;
+export default People;

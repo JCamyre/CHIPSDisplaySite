@@ -6,7 +6,6 @@ import { Stack } from '@mui/material'
 function Faculty() {
 
     return (
-    
         <Stack justifyContent='center' alignItems='center' className='content'>
             <h1 className='header'>Faculty</h1>
             {FacultyMembers.map((faculty, idx)=>(
