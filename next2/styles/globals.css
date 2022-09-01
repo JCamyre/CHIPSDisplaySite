@@ -2,7 +2,7 @@
   font-family: 'Poppins', Roboto, 'Open Sans', Arial, 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
-  text-transform: 'none';
+  text-transform: none;
 }
 
 html,

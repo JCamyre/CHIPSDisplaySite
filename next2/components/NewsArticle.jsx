@@ -16,8 +16,8 @@ function NewsArticle({id, article}) {
               src={article.img}
               style={{ borderRadius: '12px', marginTop: '20px', marginBottom: '20px' }}
             />
-            <h4>{article.date}</h4>
-            <h4>{article.summary}</h4>
+            <h3>{article.date}</h3>
+            <i style={{fontWeight: 'bolder'}}>{`"${article.summary}..."`}</i>
           </Box>
         </Button>
       </a>
