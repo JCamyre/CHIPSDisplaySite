@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 const {
   retrieveDocs,
   scrapeAllArticles,
@@ -9,8 +7,6 @@ const {
 const fs = require("fs");
 
 export default function handler(req, res) {
-  console.log("Running get_all_articles!");
-
   return new Promise((resolve, reject) => {
     resetArticles().then(() => {
       scrapeAllArticles().then(() => {
@@ -18,8 +14,7 @@ export default function handler(req, res) {
           .then((articles) => {
             fs.writeFileSync(pathToJSON, JSON.stringify(articles));
             res.setHeader("Content-Type", "application/json");
-            res.status("200").end(JSON.stringify(articles));
-            resolve();
+            res.status("200").send(JSON.stringify(articles));
           })
           .catch((err) => {
             console.log("Error: ", err);
