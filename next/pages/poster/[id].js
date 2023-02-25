@@ -59,12 +59,12 @@ export default function ArticlePage() {
                   Page {curPage || (numPages ? 1 : "--")} of {numPages || "--"}
                 </p>
               </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center", height: "175px" }}>
                 <Button
                   type="button"
                   disabled={numPages <= 1}
                   onClick={prevPage}
-                  style={{ color: "#1f497d", height: "175px", width: "100%" }}
+                  style={{ color: "#1f497d", width: "100%", fontSize: "48px" }}
                 >
                   Prev
                 </Button>
@@ -72,7 +72,7 @@ export default function ArticlePage() {
                   type="button"
                   disabled={curPage >= numPages}
                   onClick={nextPage}
-                  style={{ color: "#1f497d", width: "100%" }}
+                  style={{ color: "#1f497d", width: "100%", fontSize: "48px" }}
                 >
                   Next
                 </Button>

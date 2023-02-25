@@ -27,6 +27,8 @@ export const getStaticProps = async() => {
     return res;
   })
 
+  // reference .json for getStaticProps?
+
   return {
     props: {
       articles,
