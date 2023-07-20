@@ -36,7 +36,7 @@ function Slideshow() {
           height="40%"
           centerMode={true}
           transitionTime={1000}
-          interval={1000000}
+          interval={15000}
           centerSlidePercentage={90}
           showIndicators={false}
           showStatus={false}
@@ -66,7 +66,7 @@ function Slideshow() {
             />
         ))}
         {StudentsData.map((student, idx)=>(
-          <Box style={{display: 'flex'}}>
+          <Box justifyContent='center' alignItems='center' className='content'>
             <Person
                 key={idx}
                 name={student.name}
