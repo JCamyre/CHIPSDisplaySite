@@ -45,7 +45,7 @@ function Slideshow() {
           autoPlay={true}
           stopOnHover={false}
         >
-        {Articles && Articles.map((article, key) => (
+        {/* {Articles && Articles.map((article, key) => (
           <NewsArticle
             id={key}
             article={article}
@@ -64,7 +64,7 @@ function Slideshow() {
                 research_lab={faculty.research_lab}
                 research_lab_url={faculty.research_lab_url}
             />
-        ))}
+        ))} */}
         {StudentsData.map((student, idx)=>(
           <Box justifyContent='center' alignItems='center' className='content'>
             <Person

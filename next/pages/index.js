@@ -9,8 +9,8 @@ import FacultyMembers from '../components/Faculty.json';
 import StudentsData from '../components/People.json';
 import Person from '../components/Person';
 
-// THis should replace carousel
-import styles from './Carousel.module.css'
+// Useful for later testing, each picture has a different interval:
+// https://stackoverflow.com/questions/61451388/is-there-a-way-to-put-a-different-time-interval-for-each-slide-in-react-responsi
 
 function Slideshow() {
     // Students, faculty, who else
@@ -32,11 +32,11 @@ function Slideshow() {
       >
         <h1 style={{ textAlign: "center" }}>Slideshow</h1>
         <Carousel
-          className={styles}
           width="100%"
           height="40%"
           centerMode={true}
-          transitionTime={25000}
+          transitionTime={1000}
+          interval={1000000}
           centerSlidePercentage={90}
           showIndicators={false}
           showStatus={false}
@@ -66,7 +66,7 @@ function Slideshow() {
             />
         ))}
         {StudentsData.map((student, idx)=>(
-          <Box justifyContent='center' alignItems='center' className='content'>
+          <Box style={{display: 'flex'}}>
             <Person
                 key={idx}
                 name={student.name}
