@@ -1,0 +1,9 @@
+
+/* Carousel modifications */
+.carousel .slide img {
+    width: 50%
+  }
+  
+.carousel img {
+  width: 50%
+}

@@ -5,9 +5,9 @@ import { Box } from '@mui/material'
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
-        <Box className='profile-box'>
+        <Box className='profile-box' width='834px'>
             <Box>
-                <img className='profile-pic' src={img} alt={`${name}'s Profile Picture`} />
+                <img style={{width: "20%"}} className='profile-pic' src={img} alt={`${name}'s Profile Picture`} />
             </Box>
             <Box>
                 <h3>{name}</h3>
@@ -25,7 +25,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                 {(research_lab) && (
                     <h4>Lab: <a href={research_lab_url}>{research_lab}</a></h4>
                 )}
-                {(linkedin) && (
+                {/* {(linkedin) && (
                     <span>
                         <h4>
                             <a href={linkedin} target='_blank' rel='noopener noreferrer' style={{display: 'flex', alignItems: 'center'}}>
@@ -34,7 +34,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                             </a>
                         </h4>
                     </span>
-                )}
+                )} */}
             </Box>
         </Box>
     )

@@ -36,7 +36,7 @@ function Slideshow() {
           width="100%"
           height="40%"
           centerMode={true}
-          transitionTime={25000}
+          transitionTime={20000}
           centerSlidePercentage={90}
           showIndicators={false}
           showStatus={false}

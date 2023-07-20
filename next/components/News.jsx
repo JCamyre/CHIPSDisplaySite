@@ -5,6 +5,7 @@ import axios from 'axios';
 import Articles from './Articles.json';
 
 function News({ articles }) {
+  // Eventually use the { articles } instead of the Articles from Articles.json
 
   return (
     <Stack alignItems='center' style={{paddingTop: '20px'}}>
