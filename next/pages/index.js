@@ -9,7 +9,7 @@ import FacultyMembers from '../components/Faculty.json';
 import StudentsData from '../components/People.json';
 import Person from '../components/Person';
 
-import "./Carousel.module.css";
+// import "./Carousel.module.css";
 
 // Useful for later testing, each picture has a different interval:
 // https://stackoverflow.com/questions/61451388/is-there-a-way-to-put-a-different-time-interval-for-each-slide-in-react-responsi
@@ -37,8 +37,8 @@ function Slideshow() {
           height="40%"
           centerMode={true}
           transitionTime={1000}
-          interval={1200000}
-          centerSlidePercentage={91.5}
+          interval={12000}
+          centerSlidePercentage={90}
           showIndicators={false}
           showStatus={false}
           infiniteLoop={true}
@@ -46,7 +46,7 @@ function Slideshow() {
           autoPlay={true}
           stopOnHover={false}
         >
-        {/* {Articles && Articles.map((article, key) => (
+        {Articles && Articles.map((article, key) => (
           <NewsArticle
             id={key}
             article={article}
@@ -65,7 +65,7 @@ function Slideshow() {
                 research_lab={faculty.research_lab}
                 research_lab_url={faculty.research_lab_url}
             />
-        ))} */}
+        ))}
         {StudentsData.map((student, idx)=>(
           <Box justifyContent='center' alignItems='center' className='content'>
             <Person
