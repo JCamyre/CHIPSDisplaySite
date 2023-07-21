@@ -19,7 +19,10 @@ const mainButtons = {
 
 export async function getRandomArticle()
 {
-  return Articles[Math.floor(Math.random() * (Articles.length - 1))];
+  if (Articles)
+    return Articles[Math.floor(Math.random() * (Articles.length - 1))];
+  else
+    return {}
 }
 
 export async function getRandomPerson()

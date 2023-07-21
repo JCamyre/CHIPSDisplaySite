@@ -33,7 +33,8 @@ export const getStaticProps = async () => {
       console.log(err);
     });
   const articleThumbnail = await getRandomArticle().then((res) => {
-    return res["img"];
+    if (res)
+      return res["img"];
   });
   const posterThumbnail = await getRandomPoster().then((res) => {
     return res["thumbnail"];

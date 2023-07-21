@@ -34,12 +34,18 @@ async function changeValues(name = "an_article") {
 async function createArticle(name = "article", articleObj) {
   const docRef = db.collection("articles").doc(name);
 
+  const defaultTitle = '';
+  const defaultSummary = '';
+  const defaultImg = 'https://samueli.ucla.edu/wp-content/uploads/samueli/ucla-samueli-logo.png'
+  const defaultDate = '';
+  const defaultFullText = '';
+
   await docRef.set({
-    title: articleObj["title"],
-    summary: articleObj["summary"],
-    img: articleObj["img"],
-    date: articleObj["date"],
-    full_text: articleObj["full_text"],
+    title: articleObj["title"] || defaultTitle,
+    summary: articleObj["summary"] || defaultSummary,
+    img: articleObj["img"] || defaultImg,
+    date: articleObj["date"] || defaultDate,
+    full_text: articleObj["full_text"] || defaultFullText,
   });
 }
 
@@ -91,8 +97,8 @@ async function getArticle(url) {
       return data;
     })
     .catch((err) => {
-      console.log("Error! ", err);
-      return { error: "bad error" };
+      console.log(`Error while fetching article: ${url}`, err);
+      return { error: `Error while fetching article: ${url}` };
     });
 
   return data;
@@ -118,8 +124,8 @@ async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
       return "Done!";
     })
     .catch((err) => {
-      console.log(err);
-      return "Not done :(";
+      console.log(`Error while scraping articles from ${url}`, err);
+      return `Error while scraping articles from ${url}`;
     });
 }
 
