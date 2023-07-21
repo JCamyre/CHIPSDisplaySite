@@ -5,9 +5,9 @@ import { Box } from '@mui/material'
 
 function Person({name, title, major, primary_area, secondary_area, email, img, linkedin, research_lab, research_lab_url}) {
     return (
-        <Box className='profile-box' width='834px'>
-            <Box>
-                <img style={{width: "20%"}} className='profile-pic' src={img} alt={`${name}'s Profile Picture`} />
+        <Box className='profile-box' style={{width: "100%", height: "800px", lineHeight: 2}}>
+            <Box style={{height: '50%'}}>
+                <img style={{height: "100%", width: "30%"}} className='profile-pic' src={img} alt={`${name}'s Profile Picture`} />
             </Box>
             <Box>
                 <h3>{name}</h3>
