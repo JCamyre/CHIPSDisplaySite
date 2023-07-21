@@ -78,7 +78,6 @@ Button.clicked {
 
 .slide {
   display: flex;
-  align-items: center;
 }
 
 #logo {
