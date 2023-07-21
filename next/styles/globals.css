@@ -76,6 +76,10 @@ Button.clicked {
   border-radius: 12px;
 }
 
+.slide {
+  display: flex;
+  align-items: center;
+}
 
 #logo {
   height: 35px;
