@@ -9,6 +9,8 @@ import FacultyMembers from '../components/Faculty.json';
 import StudentsData from '../components/People.json';
 import Person from '../components/Person';
 
+import "./Carousel.module.css";
+
 // Useful for later testing, each picture has a different interval:
 // https://stackoverflow.com/questions/61451388/is-there-a-way-to-put-a-different-time-interval-for-each-slide-in-react-responsi
 
@@ -35,8 +37,8 @@ function Slideshow() {
           height="40%"
           centerMode={true}
           transitionTime={1000}
-          interval={12000}
-          centerSlidePercentage={90}
+          interval={1200000}
+          centerSlidePercentage={91.5}
           showIndicators={false}
           showStatus={false}
           infiniteLoop={true}
