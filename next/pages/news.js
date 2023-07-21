@@ -3,7 +3,7 @@ import BackButton from "../components/BackButton";
 import { Box, Container } from "@mui/material";
 import NewsArticles from "../components/News";
 import axios from 'axios';
-import getAllArticles from "./api/get_all_articles";
+import getAllArticles from "../components/GetAllArticles";
 
 function News({articles}) {
 

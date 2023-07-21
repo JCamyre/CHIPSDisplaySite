@@ -3,7 +3,7 @@ const {
   scrapeAllArticles,
   pathToJSON,
   resetArticles,
-} = require("../../scripts/firestore");
+} = require("../scripts/firestore");
 const fs = require("fs");
 
 export default function getAllArticles() {
