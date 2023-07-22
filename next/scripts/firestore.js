@@ -114,18 +114,32 @@ async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
 
       const articles = "article.et_pb_post.clearfix";
 
-      $(articles).each(function (index, element) {
+      // $(articles).each(function (index, element) {
+      //   let url = $(element).find("h2 > a").attr("href");
+      //   getArticle(url).then((article) => {
+      //     createArticle(`article_${index}`, article);
+      //   });
+      // });
+
+      // const res = []
+
+      console.log('Before getArticle for loop!')
+
+      const res = $(articles).each(function (index, element) {
         let url = $(element).find("h2 > a").attr("href");
         getArticle(url).then((article) => {
-          createArticle(`article_${index}`, article);
+          // console.log(`Article ${index}: `, article)
+          return article
         });
       });
 
-      return "Done!";
+      console.log("Made it after getArticle for loop! Here's the result array: ", res)
+
+      return res;
     })
     .catch((err) => {
       console.log(`Error while scraping articles from ${url}`, err);
-      return `Error while scraping articles from ${url}`;
+      return {error: `Error while scraping articles from ${url}`};
     });
 }
 
