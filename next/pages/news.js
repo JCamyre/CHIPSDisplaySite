@@ -42,9 +42,12 @@ export async function getStaticProps() {
   //   console.error(Object.keys(err));
   //   // console.log("Here's the error folks: ", err)
   // })
+  console.log('We in News.js!')
+  // const articles: Promise<Array<Object>>
   const articles = await getAllArticles().then(res => {
     return res;
   })
+  console.log("After calling getAllArticles()")
 
   console.log(articles)
 
