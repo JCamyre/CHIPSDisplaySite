@@ -31,25 +31,18 @@ function News({articles}) {
 
 export default News;
 
+// getStaticProps() runs server side, so users will never see what api calls we make here. So no need to use our fake local api calls.
 export async function getStaticProps() {
   // You aren't supposed to call relative API's in getStaticProps(), since it runs server-side
   // So clients will never see this, so you can do all your secretive stuff here (db, external calls)
   // Only use relative API's outside of getStaticProps, where clients can see your stuff running
 
-  // const articles = await axios.get('/api/test').then(res => {
-  //   return res;
-  // }).catch(err => {
-  //   console.error(Object.keys(err));
-  //   // console.log("Here's the error folks: ", err)
-  // })
-  console.log('We in News.js!')
   // const articles: Promise<Array<Object>>
   const articles = await getAllArticles().then(res => {
     return res;
   })
-  console.log("After calling getAllArticles()")
 
-  console.log(articles)
+  console.log("In News.js, here's the first article: ", articles[0])
 
   // reference .json for getStaticProps?
 
