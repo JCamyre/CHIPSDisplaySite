@@ -60,7 +60,7 @@ async function retrieveDocs(collection = "articles") {
   return res;
 }
 
-async function getArticle(url) {
+async function getArticle(url: String) {
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -108,31 +108,43 @@ async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
   // clear out firestore -> newsroom_url -> get all 9 articles -> for each article, get info and put into firestore -> done
   return await axios
     .get(url)
-    .then((response) => {
+    .then(async (response) => {
       const html_data = response.data;
       const $ = cheerio.load(html_data);
 
       const articles = "article.et_pb_post.clearfix";
 
-      // $(articles).each(function (index, element) {
-      //   let url = $(element).find("h2 > a").attr("href");
-      //   getArticle(url).then((article) => {
-      //     createArticle(`article_${index}`, article);
-      //   });
-      // });
-
-      // const res = []
-
       console.log('Before getArticle for loop!')
 
-      const res = $(articles).each(function (index, element) {
-        let url = $(element).find("h2 > a").attr("href");
-        getArticle(url).then((article) => {
-          // console.log(`Article ${index}: `, article)
-          return article
-        });
-      });
+      const res = [] 
+      
+    //   $(articles).each(async function (index, element) {
+    //     let url = $(element).find("h2 > a").attr("href");
+    //     const article = await getArticle(url).then((article) => {
+    // //     createArticle(`article_${index}`, article);
+    //       console.log(`Article ${index}: `, article['title'])
+    //       return article
+    //     });
+    //   });
 
+      async function test() {
+        return 'hehe xd'
+      }
+
+      const articleUrls = $(articles).each((index, element) => {
+        return $(element).find("h2 > a").attr("href");
+      });
+      console.log(`List of article urls: ${articleUrls}`)
+
+      // const yo = await Promise.all([1, 2, 3, 4].forEach(async element => {
+      //   const importantInfo = await test();
+      //   res.push(importantInfo)
+      // }))
+    
+      // $(articles).each(async function (index, element) {
+      //   const importantInfo = await test();
+      //   await res.push(importantInfo)
+      // })
       console.log("Made it after getArticle for loop! Here's the result array: ", res)
 
       return res;

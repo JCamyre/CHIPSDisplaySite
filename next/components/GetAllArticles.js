@@ -3,7 +3,7 @@ const {
   scrapeAllArticles,
   pathToJSON,
   resetArticles,
-} = require("../scripts/firestore");
+} = require("../scripts/firestore.ts");
 const fs = require("fs");
 
 export default function getAllArticles() {
@@ -11,10 +11,11 @@ export default function getAllArticles() {
     resetArticles().then(() => {
       scrapeAllArticles().then((articles) => {
           // Write articles to JSON file
-          console.log('Made it into GetAllArticles.js', JSON.stringify(articles))
-          fs.writeFileSync(pathToJSON, JSON.stringify(articles))
-          console.log('Wrote files to Articles.json')
-          return JSON.stringify(articles)
+          // console.log('Made it into GetAllArticles.js', JSON.stringify(articles))
+          // fs.writeFileSync(pathToJSON, JSON.stringify(articles))
+          // console.log('Wrote files to Articles.json')
+          // return JSON.stringify(articles)
+          return {}
         })
         .catch((err) => {
           console.log("Error in getAllArticles(): ", err);
