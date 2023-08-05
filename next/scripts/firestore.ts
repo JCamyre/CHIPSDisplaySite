@@ -146,11 +146,9 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       // Is the await for getArticle() necessary
       const articlesOmg = await Promise.all(articleUrls.map(async (url) => {
         url = url || '';
-        const article = await getArticle(url).then((article => {
+        return getArticle(url).then((article => {
           return article
         }));
-        // console.log(article)
-        return article;
       }))
       // const yo = await Promise.all([1, 2, 3, 4].forEach(async element => {
       //   const importantInfo = await test();
