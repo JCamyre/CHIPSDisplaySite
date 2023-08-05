@@ -31,7 +31,15 @@ async function changeValues(name = "an_article") {
   });
 }
 
-async function createArticle(name: string = "article", articleObj: Object): Promise<void> {
+interface ArticleObj {
+  title: string | null;
+  summary: string | null;
+  img: string | null;
+  date: string | null;
+  full_text: string | null;
+}
+
+async function createArticleObject(name: string = "article", articleObj: ArticleObj): Promise<ArticleObj> {
   const docRef = db.collection("articles").doc(name);
 
   const defaultTitle = '';
@@ -40,13 +48,21 @@ async function createArticle(name: string = "article", articleObj: Object): Prom
   const defaultDate = '';
   const defaultFullText = '';
 
+  articleObj["title"] = articleObj["title"] || defaultTitle,
+  articleObj["summary"] = articleObj["summary"] || defaultSummary,
+  articleObj["img"] = articleObj["img"] || defaultImg,
+  articleObj["date"] = articleObj["date"] || defaultDate,
+  articleObj["full_text"] = articleObj["full_text"] || defaultFullText,
+
   await docRef.set({
-    title: articleObj["title"] || defaultTitle,
-    summary: articleObj["summary"] || defaultSummary,
-    img: articleObj["img"] || defaultImg,
-    date: articleObj["date"] || defaultDate,
-    full_text: articleObj["full_text"] || defaultFullText,
+    title: articleObj["title"],
+    summary: articleObj["summary"],
+    img: articleObj["img"],
+    date: articleObj["date"],
+    full_text: articleObj["full_text"],
   });
+
+  return articleObj
 }
 
 async function retrieveDocs(collection: string = "articles"): Promise<Object> {
@@ -64,10 +80,14 @@ async function getArticle(url: string): Promise<Object> {
   if (url == '') {
     return {title: null, summary: null, img: null, date: null, full_text: null};
   }
-  var data = {};
+  var data: ArticleObj;
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
-  data = axios
+
+  // const article: Promise<ArticleObj> = await axios WRONG. 
+  // Because by awaiting the Promise to resolve or reject, it will either be the ArticleObject or an error, not a Promise
+  // If no await, then it would be a Promise<ArticleObj | {"error": string}>
+  const article: ArticleObj | {"error": string} = await axios
     .get(url)
     .then((response) => {
       const html_data = response.data;
@@ -92,19 +112,19 @@ async function getArticle(url: string): Promise<Object> {
         full_text: $(mainText).text().trim(),
       };
 
-      const otherImgs = "figure";
-      $(otherImgs)
-        .find("img")
-        .each((index, element) => {});
+      // const otherImgs = "figure";
+      // $(otherImgs)
+      //   .find("img")
+      //   .each((index, element) => {});
 
-      return data;
+      return createArticleObject(`article_${title}`, data);
     })
     .catch((err) => {
       console.log(`Error while fetching article: ${url}`, err);
       return { error: `Error while fetching article: ${url}` };
     });
 
-  return data;
+  return article;
 }
 
 async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroom"): Promise<Object> {
@@ -153,7 +173,7 @@ module.exports = {
   changeValues,
   getArticle,
   retrieveDocs,
-  createArticle,
+  createArticleObject,
   scrapeAllArticles,
   resetArticles,
   pathToJSON,
