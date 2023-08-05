@@ -116,11 +116,7 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       const $ = cheerio.load(html_data);
 
       const articles = "article.et_pb_post.clearfix";
-
-      console.log('Before getArticle for loop!')
-
-      const res = [] 
-      
+    
       const articleUrls: Array<string | undefined> = [];
       $(articles).each((index, element) => {
         articleUrls.push($(element).find("h2 > a").attr("href"));
@@ -130,15 +126,13 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       // Promise.all() handles an array of Promises, then we can resolve the entire array using await
       // Each time we call the getArticle, it returns a Promise.
       // Is the await for getArticle() necessary
-      const articlesOmg = await Promise.all(articleUrls.map(async (url) => {
+      const allArticles = await Promise.all(articleUrls.map(async (url) => {
         url = url || '';
-        return getArticle(url).then((article => {
-          return article
-        }));
+        return getArticle(url);
       }))
-      console.log("Made it after getArticle for loop! Here's the articlesOmg array: ", articlesOmg)
+      console.log("allArticles array: ", allArticles)
 
-      return res;
+      return allArticles;
     })
     .catch((err) => {
       console.log(`Error while scraping articles from ${url}`, err);
