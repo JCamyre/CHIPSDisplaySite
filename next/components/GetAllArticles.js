@@ -11,11 +11,9 @@ export default function getAllArticles() {
   return resetArticles().then(() => {
     return scrapeAllArticles().then((articles) => {
         // Write articles to JSON file
-        // console.log('Made it into GetAllArticles.js', JSON.stringify(articles))
-        // fs.writeFileSync(pathToJSON, JSON.stringify(articles))
-        // console.log('Wrote files to Articles.json')
-        // return JSON.stringify(articles)
-        console.log('We in GetAllArticles.js', articles[0]);
+        fs.writeFileSync(pathToJSON, JSON.stringify(articles))
+        console.log('Wrote files to Articles.json!')
+        console.log('First article: ', articles[0]);
         return articles;
       })
       .catch((err) => {
