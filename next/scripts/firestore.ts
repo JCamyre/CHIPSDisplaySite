@@ -44,7 +44,7 @@ async function createArticleObject(name: string = "article", articleObj: Article
 
   const defaultTitle = '';
   const defaultSummary = '';
-  const defaultImg = 'https://samueli.ucla.edu/wp-content/uploads/samueli/ucla-samueli-logo.png'
+  const defaultImg = 'https://wp.dailybruin.com/images/2023/05/web.news_.brief_.samuelispeaker.JJ_.jpg'
   const defaultDate = '';
   const defaultFullText = '';
 
@@ -150,7 +150,7 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
         url = url || '';
         return getArticle(url);
       }))
-      console.log("First article: ", allArticles[0])
+      // console.log("First article: ", allArticles[0])
 
       return allArticles;
     })
