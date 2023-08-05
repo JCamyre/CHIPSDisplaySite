@@ -14,7 +14,7 @@ function NewsArticle({id, article}) {
             <Box 
               component='img'
               src={article.img}
-              style={{ borderRadius: '12px', marginTop: '20px', marginBottom: '20px' }}
+              style={{ borderRadius: '12px', marginTop: '20px', marginBottom: '20px', height: 450, width: 800 }}
             />
             <h3>{article.date}</h3>
             <i style={{fontWeight: 'bolder'}}>{`"${article.summary}..."`}</i>
