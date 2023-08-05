@@ -26,12 +26,12 @@ async function changeValues(name = "an_article") {
 
   await docRef.set({
     title: "Testing123",
-    date: "ur mom lol",
-    full_text: "get fricked bro",
+    date: "1/1/2023",
+    full_text: "This is a test for articles storing",
   });
 }
 
-async function createArticle(name = "article", articleObj) {
+async function createArticle(name: string = "article", articleObj: Object): Promise<void> {
   const docRef = db.collection("articles").doc(name);
 
   const defaultTitle = '';
@@ -49,7 +49,7 @@ async function createArticle(name = "article", articleObj) {
   });
 }
 
-async function retrieveDocs(collection = "articles") {
+async function retrieveDocs(collection: string = "articles"): Promise<Object> {
   const snapshot = await db.collection(collection).get();
   let res = [];
 
@@ -60,7 +60,7 @@ async function retrieveDocs(collection = "articles") {
   return res;
 }
 
-async function getArticle(url: String) {
+async function getArticle(url: string): Promise<Object> {
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -104,7 +104,7 @@ async function getArticle(url: String) {
   return data;
 }
 
-async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
+async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroom"): Promise<Object> {
   // clear out firestore -> newsroom_url -> get all 9 articles -> for each article, get info and put into firestore -> done
   return await axios
     .get(url)
@@ -155,9 +155,12 @@ async function scrapeAllArticles(url = "https://samueli.ucla.edu/newsroom") {
     });
 }
 
-const pathToJSON = "./components/Articles.json";
+const pathToJSON: string = "./components/Articles.json";
 
-async function resetArticles() {
+/*
+Erases all articles from JSON file
+*/
+async function resetArticles(): Promise<void> {
   fs.writeFileSync(pathToJSON, JSON.stringify([]));
 }
 
