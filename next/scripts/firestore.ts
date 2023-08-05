@@ -126,11 +126,11 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       // Promise.all() handles an array of Promises, then we can resolve the entire array using await
       // Each time we call the getArticle, it returns a Promise.
       // Is the await for getArticle() necessary
-      const allArticles = await Promise.all(articleUrls.map(async (url) => {
+      const allArticles: Array<Object> = await Promise.all(articleUrls.map(async (url) => {
         url = url || '';
         return getArticle(url);
       }))
-      console.log("allArticles array: ", allArticles)
+      console.log("First article: ", allArticles[0])
 
       return allArticles;
     })
