@@ -140,12 +140,18 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       })
       console.log(`List of article urls: ${articleUrls}`)
 
-      await articleUrls.forEach(async (url) => {
-        url = url ? url : '';
+      // An array of Promises objects, but await is only for a single Promise object
+      // Promise.all() handles an array of Promises, then we can resolve the entire array using await
+      // Each time we call the getArticle, it returns a Promise.
+      // Is the await for getArticle() necessary
+      const articlesOmg = await Promise.all(articleUrls.map(async (url) => {
+        url = url || '';
         const article = await getArticle(url).then((article => {
-          
-        }))
-      })
+          return article
+        }));
+        // console.log(article)
+        return article;
+      }))
       // const yo = await Promise.all([1, 2, 3, 4].forEach(async element => {
       //   const importantInfo = await test();
       //   res.push(importantInfo)
@@ -155,7 +161,7 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
       //   const importantInfo = await test();
       //   await res.push(importantInfo)
       // })
-      console.log("Made it after getArticle for loop! Here's the result array: ", res)
+      console.log("Made it after getArticle for loop! Here's the articlesOmg array: ", articlesOmg)
 
       return res;
     })
