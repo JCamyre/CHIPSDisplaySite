@@ -61,6 +61,9 @@ async function retrieveDocs(collection: string = "articles"): Promise<Object> {
 }
 
 async function getArticle(url: string): Promise<Object> {
+  if (url == '') {
+    return {title: null, summary: null, img: null, date: null, full_text: null};
+  }
   var data = {};
   // data stores the Promise, which is either fulfilled or rejected, and if fulfilled, it returns article data, which the object of article info we want.
   // Then our data object is equal to the article object, and WE RETURN WITH THE VALUE LESS GOo!
@@ -131,11 +134,18 @@ async function scrapeAllArticles(url: string = "https://samueli.ucla.edu/newsroo
         return 'hehe xd'
       }
 
-      const articleUrls = $(articles).each((index, element) => {
-        return $(element).find("h2 > a").attr("href");
-      });
+      const articleUrls: Array<string | undefined> = [];
+      $(articles).each((index, element) => {
+        articleUrls.push($(element).find("h2 > a").attr("href"));
+      })
       console.log(`List of article urls: ${articleUrls}`)
 
+      await articleUrls.forEach(async (url) => {
+        url = url ? url : '';
+        const article = await getArticle(url).then((article => {
+          
+        }))
+      })
       // const yo = await Promise.all([1, 2, 3, 4].forEach(async element => {
       //   const importantInfo = await test();
       //   res.push(importantInfo)
