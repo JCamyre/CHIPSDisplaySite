@@ -1,6 +1,6 @@
 import React from "react";
 import BackButton from "../components/BackButton";
-import { Container, Box } from "@mui/material";
+import { Container, Box, Image } from "@mui/material";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -38,7 +38,8 @@ function Posters() {
           {posters.map((poster, key) => (
             <a href={`/poster/${key}`}>
               <div key={key}>
-                <Document
+                <img src={`/poster_images/${poster["thumbnail"]}`}/>
+                {/* <Document
                   onLoadError={console.error}
                   file={`/posters/${poster["name"]}`}
                   error="Trying to find the poster, sorry!"
@@ -47,7 +48,7 @@ function Posters() {
                 </Document>
                 <p className="legend" style={{ fontSize: "24px" }}>
                   {poster["name"]}
-                </p>
+                </p> */}
               </div>
             </a>
           ))}
