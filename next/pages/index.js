@@ -6,12 +6,23 @@ import MainButtons, {
   getRandomPerson,
   getRandomPoster,
 } from "../components/MainButtons";
+import { useEffect } from 'react';
 
 export default function Home({
   personThumbnail,
   articleThumbnail,
   posterThumbnail,
 }) {
+  useEffect(() => {
+    document.addEventListener('touchstart', function(event){
+      event.preventDefault();
+  }, {passive: false});
+
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  }, []);
+
   return (
     <div className={styles.container}>
       <MainButtons

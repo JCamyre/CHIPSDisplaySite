@@ -1,6 +1,16 @@
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
 export default class Document extends NextDocument {
+
+  componentDidMount() {
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+  });
+  //     document.addEventListener('touchstart', function(event){
+  //     event.preventDefault();
+  // }, {passive: false});
+  }
+
   render() {
     return (
       <Html lang="en">
