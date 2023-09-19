@@ -23,8 +23,14 @@ export default function Home({
     });
   }, []);
 
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 1) {
+      e.preventDefault(); // Prevent the default right-click behavior
+    }
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onTouchStart={handleTouchStart}>
       <MainButtons
         personThumbnail={personThumbnail}
         posterThumbnail={posterThumbnail}
