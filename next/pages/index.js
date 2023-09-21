@@ -13,21 +13,6 @@ export default function Home({
   articleThumbnail,
   posterThumbnail,
 }) {
-  useEffect(() => {
-    document.addEventListener('touchstart', function(event){
-      event.preventDefault();
-  }, {passive: false});
-
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-  }, []);
-
-  // const handleTouchStart = (e) => {
-  //   if (e.touches.length === 1) {
-  //     e.preventDefault(); // Prevent the default right-click behavior
-  //   }
-  // };
 
   return (
     <div className={styles.container}>
