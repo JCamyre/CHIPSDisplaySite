@@ -54,10 +54,9 @@ function Faculty() {
         ))}
       </Carousel>
       </div>
-      <Link href='/faculty'>
+        <Link href='/faculty'>
             <Button style={{fontSize: "40px", backgroundColor: '#1f497d', width: '98%'}} variant='contained' fontSize='inherit'>See all faculty</Button>
-        </Link> 
-
+        </Link>     
     </div>
     )
 }

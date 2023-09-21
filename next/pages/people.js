@@ -8,26 +8,28 @@ import { Container, Box } from "@mui/material";
 
 function People() {
   return (
-    <Container className="content" maxWidth="lg">
+    <div>
       <BackButton style={{ position: "sticky" }} />
-      <Box
-        style={{
-          backgroundColor: "#fff",
-          margin: "auto",
-          borderRadius: "10px",
-          marginTop: "20px",
-          padding: "20px",
-          boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <Box>
-          <FacultyPage />
+      <Container className="content" maxWidth="lg">
+        <Box
+          style={{
+            backgroundColor: "#fff",
+            margin: "auto",
+            borderRadius: "10px",
+            marginTop: "20px",
+            padding: "20px",
+            boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Box>
+            <FacultyPage />
+          </Box>
+          <Box>
+            <StudentsPage />
+          </Box>
         </Box>
-        <Box>
-          <StudentsPage />
-        </Box>
-      </Box>
-    </Container>
+      </Container>
+    </div>
   );
 }
 
