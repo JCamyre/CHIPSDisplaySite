@@ -8,24 +8,26 @@ import getAllArticles from "../components/GetAllArticles";
 function News({articles}) {
 
   return (
-    <Container className="content" maxWidth="lg">
+    <div>
       <BackButton />
-      <Box
-        style={{
-          backgroundColor: "#fff",
-          margin: "auto",
-          borderRadius: "10px",
-          marginTop: "20px",
-          padding: "20px",
-          boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <Container>
-          <NewsArticles articles={articles} />
-        </Container>
-      </Box>
-      {/* <embed src='https://www.ee.ucla.edu' style={{width: '500px', height: '300px'}} /> */}
-    </Container>
+      <Container className="content" maxWidth="lg">
+        <Box
+          style={{
+            backgroundColor: "#fff",
+            margin: "auto",
+            borderRadius: "10px",
+            marginTop: "20px",
+            padding: "20px",
+            boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Container>
+            <NewsArticles articles={articles} />
+          </Container>
+        </Box>
+        {/* <embed src='https://www.ee.ucla.edu' style={{width: '500px', height: '300px'}} /> */}
+      </Container>
+    </div>
   );
 }
 

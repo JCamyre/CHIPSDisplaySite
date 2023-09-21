@@ -7,8 +7,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 function Videos() {
   return (
-    <Container className="content" maxWidth="lg">
+    <div>
       <BackButton />
+      <Container className="content" maxWidth="lg">
       <Box
         alignItems="center"
         justifyContents="center"
@@ -37,8 +38,9 @@ function Videos() {
           <Video url="https://www.youtube.com/watch?v=cxRDNjvUFXM" />
           <Video url="https://www.youtube.com/watch?v=g1e11lsrSvw" />
         </Carousel>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </div>
   );
 }
 

@@ -10,8 +10,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 function Posters() {
   return (
-    <Container className="content" maxWidth="lg">
+    <div>
       <BackButton />
+      <Container className="content" maxWidth="lg">
       <Box
         style={{
           justifyContent: "center",
@@ -46,6 +47,7 @@ function Posters() {
         </Carousel>
       </Box>
     </Container>
+    </div>
   );
 }
 

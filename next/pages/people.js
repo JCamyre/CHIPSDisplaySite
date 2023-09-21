@@ -9,7 +9,7 @@ import { Container, Box } from "@mui/material";
 function People() {
   return (
     <div>
-      <BackButton style={{ position: "sticky" }} />
+      <BackButton />
       <Container className="content" maxWidth="lg">
         <Box
           style={{
