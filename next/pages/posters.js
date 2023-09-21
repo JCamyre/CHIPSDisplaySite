@@ -28,7 +28,7 @@ function Posters() {
           width={"100%"}
           centerMode={true}
           transitionTime={700}
-          centerSlidePercentage={65}
+          centerSlidePercentage={55}
           showIndicators={false}
           showStatus={false}
           infiniteLoop={false}
@@ -39,6 +39,16 @@ function Posters() {
             <a href={`/poster/${key}`}>
               <div key={key}>
                 <img src={`/poster_images/${poster["thumbnail"]}`}/>
+                {/* <Document
+                  onLoadError={console.error}
+                  file={`/posters/${poster["name"]}`}
+                  error="Trying to find the poster, sorry!"
+                >
+                  <Page pageNumber={1} height={1400} width={700} />
+                </Document>
+                <p className="legend" style={{ fontSize: "24px" }}>
+                  {poster["name"]}
+                </p> */}
               </div>
             </a>
           ))}
