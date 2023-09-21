@@ -26,9 +26,10 @@ function Posters() {
         <h1 style={{ textAlign: "center" }}>Posters</h1>
         <Carousel
           width={"100%"}
+          height={"100%"}
           centerMode={true}
           transitionTime={700}
-          centerSlidePercentage={55}
+          centerSlidePercentage={85}
           showIndicators={false}
           showStatus={false}
           infiniteLoop={false}
@@ -38,17 +39,7 @@ function Posters() {
           {posters.map((poster, key) => (
             <a href={`/poster/${key}`}>
               <div key={key}>
-                <img src={`/poster_images/${poster["thumbnail"]}`}/>
-                {/* <Document
-                  onLoadError={console.error}
-                  file={`/posters/${poster["name"]}`}
-                  error="Trying to find the poster, sorry!"
-                >
-                  <Page pageNumber={1} height={1400} width={700} />
-                </Document>
-                <p className="legend" style={{ fontSize: "24px" }}>
-                  {poster["name"]}
-                </p> */}
+                <img src={`/poster_images/${poster["thumbnail"]}`} style={{height: "1080px", width: "auto"}} />
               </div>
             </a>
           ))}
