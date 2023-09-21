@@ -15,6 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #eee;
   overflow-x: hidden;
+  touch-action: none;
 }
 
 /* Google Font */
