@@ -3,11 +3,8 @@ import Navbar from "../components/Navbar";
 
 function MyApp({ Component, pageProps }) {
   return (
-<<<<<<< HEAD
-    <div style={{ height: "100vh", width: "100vw" }}>      
-=======
     <div style={{ height: "100vh", width: "100vw" }}>
->>>>>>> parent of 50fa2bf (Update poster.js to display .jpg, cutting down loading time of each poster in slideshow to 0.05s.)
+    {/* <meta content='True' name='HandheldFriendly' /><meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' /> */}
       <Navbar />
       <Component {...pageProps} />
     </div>
