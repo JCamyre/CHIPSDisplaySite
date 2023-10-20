@@ -18,6 +18,24 @@ body {
   touch-action: none;
 }
 
+::-webkit-scrollbar {
+  width: 4em;
+  height: 2em;
+  z-index: 10001;
+}
+::-webkit-scrollbar-button {
+  background: #ccc;
+  z-index: 10001;
+}
+::-webkit-scrollbar-track-piece {
+  background: #888;
+  z-index: 10001;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  z-index: 10001;
+}
+
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
