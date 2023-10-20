@@ -13,7 +13,7 @@ export default function getAllArticles() {
         // Write articles to JSON file
         fs.writeFileSync(pathToJSON, JSON.stringify(articles))
         console.log('Wrote files to Articles.json!')
-        console.log('First article: ', articles[0]);
+        // console.log('First article: ', articles[0]);
         return articles;
       })
       .catch((err) => {
