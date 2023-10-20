@@ -29,8 +29,9 @@ export default function ArticlePage() {
   }
 
   return (
-    <Container className="content" maxWidth="lg">
-      <BackButton path="/posters" />
+    <div>
+        <BackButton path="/posters" />
+        <Container className="content" maxWidth="lg">
       <Box
         style={{
           backgroundColor: "#fff",
@@ -87,5 +88,6 @@ export default function ArticlePage() {
         {Posters.length <= id && <h1>Error! Article does not exist!</h1>}
       </Box>
     </Container>
+    </div>
   );
 }
