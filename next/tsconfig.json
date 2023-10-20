@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/news.js"  ],
+, "pages/news.js", "pages/videos.js", "scripts/db.js"  ],
   "exclude": [
     "node_modules"
   ]

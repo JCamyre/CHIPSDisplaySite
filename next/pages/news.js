@@ -25,7 +25,6 @@ function News({articles}) {
             <NewsArticles articles={articles} />
           </Container>
         </Box>
-        {/* <embed src='https://www.ee.ucla.edu' style={{width: '500px', height: '300px'}} /> */}
       </Container>
     </div>
   );

@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Box } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import getPeople from "../scripts/getPeople"
 
 function Videos() {
   return (
@@ -39,9 +40,25 @@ function Videos() {
           <Video url="https://www.youtube.com/watch?v=g1e11lsrSvw" />
         </Carousel>
         </Box>
+        {/* <iframe src="https://www.nist.gov/news-events/news/2023/09/subramanian-iyer-joins-chips-america-research-and-development-office.htm" height="200" width="300">
+
+        </iframe> */}
       </Container>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const results = await getPeople();
+
+  console.log(results);
+
+  return {
+    props: {
+      name: "Joseph"
+    },
+    revalidate: 30
+  }
 }
 
 export default Videos;
