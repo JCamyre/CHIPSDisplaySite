@@ -38,10 +38,13 @@ function People({people}) {
 export async function getStaticProps()
 {
     const allPeople = await getPeople();
-    console.log("Testing getType: ", await getType(allPeople[2].userid));
-    // const faculty = allPeople.filter(function(person) {
-    //   return person[""];
-    // })
+    // console.log("Testing getType: ", await getType(allPeople[2].userid));
+    const faculty = await allPeople.filter(async function(person) {
+      const curPersonType = await getType(person.userid);
+      if (curPersonType == "faculty")
+        return person;
+    })
+    console.log("Faculty members: ", faculty);
 
     console.log("Some people: ", allPeople.slice(0, 4))
 
