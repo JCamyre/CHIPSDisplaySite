@@ -4,7 +4,6 @@ import React from "react";
 import { Container, Box } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import getPeople from "../scripts/getPeople"
 
 function Videos() {
   return (
@@ -48,17 +47,17 @@ function Videos() {
   );
 }
 
-export async function getStaticProps() {
-  const results = await getPeople();
+// export async function getStaticProps() {
+//   const results = await getPeople();
 
-  console.log(results);
+//   console.log("First couple people: ", results.slice(0, 4));
 
-  return {
-    props: {
-      name: "Joseph"
-    },
-    revalidate: 30
-  }
-}
+//   return {
+//     props: {
+//       name: "Joseph"
+//     },
+//     revalidate: 30
+//   }
+// }
 
 export default Videos;

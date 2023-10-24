@@ -43,7 +43,7 @@ export async function getStaticProps() {
     return res;
   })
 
-  console.log("In News.js, here's the articles: ", articles)
+  // console.log("In News.js, here's the articles: ", articles)
 
   // reference .json for getStaticProps?
 

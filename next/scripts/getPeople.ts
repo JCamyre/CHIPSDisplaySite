@@ -6,7 +6,7 @@ export default async function getPeople() {
         const result = await client.query("SELECT * FROM users;");
         const results = { results: result ? result.rows : null}
         client.release();
-        return results
+        return results["results"]
     } catch(err) {
         console.error(err);
         return {"error": "Internal server error"}

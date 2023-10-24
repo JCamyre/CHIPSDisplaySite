@@ -3,10 +3,11 @@ import FacultyPage from "../components/FacultyPage";
 import StudentsPage from "../components/StudentsPage";
 import BackButton from "../components/BackButton";
 import { Container, Box } from "@mui/material";
+import getPeople from "../scripts/getPeople";
 
 // Display all students, rather than cycling through a few at a time
 
-function People() {
+function People({people}) {
   return (
     <div>
       <BackButton />
@@ -22,7 +23,7 @@ function People() {
           }}
         >
           <Box>
-            <FacultyPage />
+            <FacultyPage people={people}/>
           </Box>
           <Box>
             <StudentsPage />
@@ -31,6 +32,20 @@ function People() {
       </Container>
     </div>
   );
+}
+
+export async function getStaticProps()
+{
+    const people = await getPeople();
+
+    console.log("Some people: ", people.slice(0, 4))
+
+    return {
+        props: {
+            people: [{"name": "joseph"}, {"name": "camyre"}]
+        },
+        revalidate: 40
+    }
 }
 
 export default People;
