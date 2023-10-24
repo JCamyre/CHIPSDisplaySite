@@ -10,7 +10,8 @@ function Faculty({people}) {
             <h1 className='header'>Faculty</h1>
             {people && people.map((person, idx)=>(
                 <>
-                    <p key={idx}>{person.name}</p>
+                    <p key={idx}>{person.body}</p>
+                    <div dangerouslySetInnerHTML={{ __html: person.body }} />
                 </>
             ))}
             {/* {FacultyMembers.map((faculty, idx)=>(

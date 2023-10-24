@@ -36,13 +36,13 @@ function People({people}) {
 
 export async function getStaticProps()
 {
-    const people = await getPeople();
+    const allPeople = await getPeople();
 
-    console.log("Some people: ", people.slice(0, 4))
+    console.log("Some people: ", allPeople.slice(0, 4))
 
     return {
         props: {
-            people: [{"name": "joseph"}, {"name": "camyre"}]
+            people: allPeople
         },
         revalidate: 40
     }
