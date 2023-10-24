@@ -4,6 +4,7 @@ import StudentsPage from "../components/StudentsPage";
 import BackButton from "../components/BackButton";
 import { Container, Box } from "@mui/material";
 import getPeople from "../scripts/getPeople";
+import getType from "../scripts/getType";
 
 // Display all students, rather than cycling through a few at a time
 
@@ -37,6 +38,10 @@ function People({people}) {
 export async function getStaticProps()
 {
     const allPeople = await getPeople();
+    console.log("Testing getType: ", await getType(allPeople[2].userid));
+    // const faculty = allPeople.filter(function(person) {
+    //   return person[""];
+    // })
 
     console.log("Some people: ", allPeople.slice(0, 4))
 
