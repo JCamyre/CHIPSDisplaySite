@@ -11,6 +11,7 @@ function Faculty({people}) {
             {people && people.map((person, idx)=>(
                 <>
                     <p key={idx}>{person.body}</p>
+                    <a href={person.img_ref}><img src={person.img_loc} /></a>
                     <div dangerouslySetInnerHTML={{ __html: person.body }} />
                 </>
             ))}
