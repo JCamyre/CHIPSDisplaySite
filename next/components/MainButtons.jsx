@@ -4,7 +4,6 @@ import Articles from './Articles.json';
 import People from './People.json';
 import Posters from './Posters.json';
 import Videos from './Videos.json';
-// import SubuPic from "../public/images/subu.png"
 
 const mainButtons = {
     alignItems: 'center',
@@ -53,7 +52,7 @@ function MainButtons({ personThumbnail, articleThumbnail, posterThumbnail }) {
       <MainButton url='news' img={articleThumbnail ? articleThumbnail : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
         News
       </MainButton>
-      <MainButton url='people' img={"/images/subu.png"}>
+      <MainButton url='people' img={personThumbnail}>
         People
       </MainButton>
       <MainButton url='posters' img={`/poster_images/${posterThumbnail}`} fontColor={'black'}>

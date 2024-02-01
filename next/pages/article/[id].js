@@ -9,9 +9,8 @@ function ArticlePage() {
   const { id } = router.query;
 
   return (
-    <div>
+    <Container className="content" maxWidth="lg">
       <BackButton path="/news" />
-      <Container className="content" maxWidth="lg">
       <Box
         style={{
           backgroundColor: "#fff",
@@ -54,7 +53,6 @@ function ArticlePage() {
         {Articles.length <= id && <h1>Error! Article does not exist!</h1>}
       </Box>
     </Container>
-    </div>
   );
 }
 
