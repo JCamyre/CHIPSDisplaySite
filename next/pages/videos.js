@@ -39,25 +39,10 @@ function Videos() {
           <Video url="https://www.youtube.com/watch?v=g1e11lsrSvw" />
         </Carousel>
         </Box>
-        {/* <iframe src="https://www.nist.gov/news-events/news/2023/09/subramanian-iyer-joins-chips-america-research-and-development-office.htm" height="200" width="300">
-
-        </iframe> */}
       </Container>
     </div>
   );
 }
 
-// export async function getStaticProps() {
-//   const results = await getPeople();
-
-//   console.log("First couple people: ", results.slice(0, 4));
-
-//   return {
-//     props: {
-//       name: "Joseph"
-//     },
-//     revalidate: 30
-//   }
-// }
 
 export default Videos;

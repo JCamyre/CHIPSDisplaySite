@@ -25,7 +25,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                 {(research_lab) && (
                     <h4>Lab: <a href={research_lab_url}>{research_lab}</a></h4>
                 )}
-                {(linkedin) && (
+                {/* {(linkedin) && (
                     <span>
                         <h4>
                             <a href={linkedin} target='_blank' rel='noopener noreferrer' style={{display: 'flex', alignItems: 'center'}}>
@@ -34,7 +34,7 @@ function Person({name, title, major, primary_area, secondary_area, email, img, l
                             </a>
                         </h4>
                     </span>
-                )}
+                )} */}
             </Box>
         </Box>
     )

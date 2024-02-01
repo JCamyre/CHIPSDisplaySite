@@ -4,11 +4,10 @@ import StudentsPage from "../components/StudentsPage";
 import BackButton from "../components/BackButton";
 import { Container, Box } from "@mui/material";
 import getPeople from "../scripts/getPeople";
-import getType from "../scripts/getType";
 
 // Display all students, rather than cycling through a few at a time
 
-function People({people}) {
+function People({alumni}) {
   return (
     <div>
       <BackButton />
@@ -24,11 +23,11 @@ function People({people}) {
           }}
         >
           <Box>
-            <FacultyPage people={people}/>
+            <FacultyPage people={alumni}/>
           </Box>
-          <Box>
+          {/* <Box>
             <StudentsPage />
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </div>
@@ -37,20 +36,29 @@ function People({people}) {
 
 export async function getStaticProps()
 {
+  console.log("yo")
     const allPeople = await getPeople();
-    // console.log("Testing getType: ", await getType(allPeople[2].userid));
-    const faculty = await allPeople.filter(async function(person) {
-      const curPersonType = await getType(person.userid);
-      if (curPersonType == "faculty")
-        return person;
-    })
-    console.log("Faculty members: ", faculty);
+    console.log("yo after getPeople()")
 
-    console.log("Some people: ", allPeople.slice(0, 4))
+    // const alumni = await Promise.all(
+    //   allPeople.map(async function(person) {
+    //     const curPersonType = await getType(person.userid);
+    //     if (curPersonType["type"] === "Alumni")
+    //     {
+    //       console.log("This person is an Alumni: ", person, curPersonType);
+    //       return person;
+    //     }
+    //     return null;
+    // }));
+    // const filteredAlumni = alumni.filter(person => person !== null)
+
+    // console.log("Alumni members: ", alumni);
+
+    const alumni = [{}];
 
     return {
         props: {
-            people: allPeople
+            alumni: alumni
         },
         revalidate: 40
     }
