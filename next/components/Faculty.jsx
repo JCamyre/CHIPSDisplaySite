@@ -35,7 +35,7 @@ function Faculty() {
                         primary_area={FacultyData[index].primary_area}
                         img={FacultyData[index].img}
                         email={FacultyData[index].email}
-                        linkedin={FacultyData[index].linkedin}
+                        // linkedin={FacultyData[index].linkedin}
                         research_lab={FacultyData[index].research_lab}
                         research_lab_url={FacultyData[index].research_lab_url}
                     />
@@ -45,7 +45,7 @@ function Faculty() {
                         primary_area={FacultyData[index+1].primary_area}
                         img={FacultyData[index+1].img}
                         email={FacultyData[index+1].email}
-                        linkedin={FacultyData[index+1].linkedin}
+                        // linkedin={FacultyData[index+1].linkedin}
                         research_lab={FacultyData[index+1].research_lab}
                         research_lab_url={FacultyData[index+1].research_lab_url}
                     />

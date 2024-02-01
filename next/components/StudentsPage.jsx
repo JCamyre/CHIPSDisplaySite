@@ -44,7 +44,7 @@ function Students() {
                     primary_area={student.primary_area}
                     img={student.img}
                     email={student.email}
-                    linkedin={student.linkedin}
+                    // linkedin={student.linkedin}
                 />
             ))}
         </Stack>

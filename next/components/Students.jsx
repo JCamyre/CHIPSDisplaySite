@@ -41,7 +41,7 @@ function Students() {
                                 primary_area={StudentsData[index].primary_area}
                                 img={StudentsData[index].img}
                                 email={StudentsData[index].email}
-                                linkedin={StudentsData[index].linkedin}
+                                // linkedin={StudentsData[index].linkedin}
                             />
                             <Person 
                                 name={StudentsData[index+1].name}
@@ -49,7 +49,7 @@ function Students() {
                                 primary_area={StudentsData[index+1].primary_area}
                                 img={StudentsData[index+1].img}
                                 email={StudentsData[index+1].email}
-                                linkedin={StudentsData[index+1].linkedin}
+                                // linkedin={StudentsData[index+1].linkedin}
                             />
                         </Carousel.Item>
                     ))
