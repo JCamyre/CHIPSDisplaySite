@@ -40,7 +40,7 @@ export const getStaticProps = async () => {
       console.log(err);
     });
   const articleThumbnail = await getRandomArticle().then((res) => {
-    if (res)
+    if (res && !("error" in res))
       return res["img"];
     return null;
   });

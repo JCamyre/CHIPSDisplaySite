@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import MainButton from './MainButton';
 import Articles from './Articles.json';
 import People from './People.json';
@@ -40,28 +40,70 @@ function MainButtons({ personThumbnail, articleThumbnail, posterThumbnail }) {
   const [article, setArticle] = useState('');
   const [person, setPerson] = useState('');
   const [poster, setPoster] = useState('');
+  const [inactive, setInactive] = useState(false);
+  const timerRef = useRef(null);
 
   useEffect(() => {
     // once article/person updates, state changes, MainButton associated with state, rerenders component
     setArticle(getRandomArticle());
     setPerson(getRandomPerson());
     setPoster(getRandomPoster());
-  }, []); // infinite updates cause once this gets updated, useEffect called again?
+
+    // Function to reset the inactivity timer
+    const resetTimer = () => {
+      setInactive(false);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      timerRef.current = setTimeout(() => {
+        setInactive(true);
+      }, 0.05 * 60 * 1000); // 3 minutes
+    };
+
+    // List of events to listen to for user interaction
+    const events = ['mousemove', 'keydown', 'touchstart'];
+
+    // Add event listeners to reset the timer
+    events.forEach(event => {
+      window.addEventListener(event, resetTimer);
+    });
+
+    // Set the initial timer
+    resetTimer();
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      events.forEach(event => {
+        window.removeEventListener(event, resetTimer);
+      });
+    };
+  }, []);
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' img={articleThumbnail ? articleThumbnail : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
-        News
-      </MainButton>
-      <MainButton url='people' img={"/images/subu.png"}>
-        People
-      </MainButton>
-      <MainButton url='posters' img={`/poster_images/${posterThumbnail}`} fontColor={'black'}>
-        Posters
-      </MainButton>
-      <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
-        Videos
-      </MainButton>
+      {!inactive ? (
+        <>
+          <MainButton url='news' img={articleThumbnail ? articleThumbnail : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
+            News
+          </MainButton>
+          <MainButton url='people' img={"/images/subu.png"}>
+            People
+          </MainButton>
+          <MainButton url='posters' img={`/poster_images/${posterThumbnail}`} fontColor={'black'}>
+            Posters
+          </MainButton>
+          <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
+            Videos
+          </MainButton>
+        </>
+      ) : (
+        <div>
+          <p>What is happening</p>
+        </div>
+      )}
     </div>
   )
 }
