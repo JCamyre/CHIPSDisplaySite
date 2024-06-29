@@ -1,11 +1,14 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import React, { useEffect, useState, useRef } from 'react'
-// Just add the code here instead, wrapping the Navbar + Component
+import { useRouter } from 'next/router';
+
+// Make it so it always goes back to HomeScreen!
 
 function MyApp({ Component, pageProps }) {
   const [inactive, setInactive] = useState(false);
   const timerRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     // Function to reset the inactivity timer
@@ -16,6 +19,7 @@ function MyApp({ Component, pageProps }) {
       }
       timerRef.current = setTimeout(() => {
         setInactive(true);
+        router.push("/")
       }, 0.05 * 60 * 1000); // 3 minutes
     };
 
