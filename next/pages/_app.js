@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import React, { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router';
+import Video from "../components/Video";
 
 // Make it so it always goes back to HomeScreen!
 
@@ -19,7 +20,8 @@ function MyApp({ Component, pageProps }) {
       }
       timerRef.current = setTimeout(() => {
         setInactive(true);
-        router.push("/")
+        if (router.pathname != "/")
+          router.push("/")
       }, 0.05 * 60 * 1000); // 3 minutes
     };
 
@@ -55,8 +57,16 @@ function MyApp({ Component, pageProps }) {
         </>
       ) : (
         <div>
-          <p>gg</p>
+          <p>yo</p>
         </div>
+        /* <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div className={"video-container"}>
+            <iframe src="https://www.youtube.com/embed/cxRDNjvUFXM?autoplay=1&mute=1" 
+                  frameborder="0" 
+                  allow="autoplay; encrypted-media" 
+                  allowFullScreen></iframe>
+          </div>
+        </div> */
       )}
     </div>
   );
