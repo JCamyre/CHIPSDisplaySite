@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
         setInactive(true);
         if (router.pathname != "/")
           router.push("/")
-      }, 0.05 * 60 * 1000); // 3 minutes
+      }, 2 * 60 * 1000);
     };
 
     // List of events to listen to for user interaction
@@ -50,24 +50,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
-      {!inactive ? (
-        <>
-          <Navbar />
-          <Component {...pageProps} />
-        </>
-      ) : (
-        <div>
-          <p>yo</p>
-        </div>
-        /* <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div className={"video-container"}>
-            <iframe src="https://www.youtube.com/embed/cxRDNjvUFXM?autoplay=1&mute=1" 
-                  frameborder="0" 
-                  allow="autoplay; encrypted-media" 
-                  allowFullScreen></iframe>
-          </div>
-        </div> */
-      )}
+      <>
+        <Navbar />
+        <Component {...pageProps} />
+      </>
     </div>
   );
 }
