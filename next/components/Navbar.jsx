@@ -9,11 +9,11 @@ function Navbar({style}) {
 
     return (
         <>
-        <Flex bg='#1f497d' paddingX='0%' width="100%" alignItems='center' style={navbarStyle}>
+        <Flex bg='#1f497d' paddingX='0%' width="100%" alignItems='center' justifyContent="space-between" style={navbarStyle}>
             <Link href='/'>
                 <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
             </Link>
-            <Spacer />
+            {/* <Spacer />
             <Spacer />
             <Spacer />
             <Box>
@@ -23,10 +23,13 @@ function Navbar({style}) {
             <Spacer />
             <Spacer />
             <Spacer />
-            <Spacer />
+            <Spacer /> */}
+            <Image id='CHIPS-logo' src={'/images/qr-code.png'} alt='CHIPS QR Code' style={{height: '100px'}}/>
         </Flex>
         <Flex paddingX='0%' width="100%" alignItems='center' style={navbarStyle2}>
-            {/* <Link href='/'>
+            <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
+            <Image id='CHIPS-logo' src={'/images/qr-code.png'} alt='CHIPS QR Code' style={{height: '100px'}}/>
+        {/* <Link href='/'>
                 <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
             </Link>
             <Spacer />
