@@ -3,7 +3,6 @@ import BackButton from "../components/BackButton";
 import { Box, Container } from "@mui/material";
 import NewsArticles from "../components/News";
 import axios from 'axios';
-import getAllArticles from "../components/GetAllArticles";
 
 function News({articles}) {
 
@@ -37,24 +36,23 @@ export default News;
 // You aren't supposed to call relative API's in getStaticProps(), since it runs server-side
 // So clients will never see this, so you can do all your secretive stuff here (db, external calls)
 // Only use relative API's outside of getStaticProps, where clients can see your stuff running
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
-  // const articles: Promise<Array<Object>>
-  const articles = await getAllArticles().then(res => {
-    return res;
-  })
+//   // const articles: Promise<Array<Object>>
+//   const articles = await getAllArticles().then(res => {
+//     return res;
+//   })
+//   console.log("In News.js, here's the articles: ", articles)
 
-  console.log("In News.js, here's the articles: ", articles)
+//   // reference .json for getStaticProps?
 
-  // reference .json for getStaticProps?
+//   // Have to make decision on if I want to keep Firebase, or just use .json as my database.
+//   // But lowk I update both .json + firebase, but I never use either, I just directly return Articles and use that
 
-  // Have to make decision on if I want to keep Firebase, or just use .json as my database.
-  // But lowk I update both .json + firebase, but I never use either, I just directly return Articles and use that
-
-  return {
-    props: {
-      articles: articles,
-    },
-    revalidate: 4000,
-  }
-}
+//   return {
+//     props: {
+//       articles: articles,
+//     },
+//     revalidate: 4000,
+//   }
+// }

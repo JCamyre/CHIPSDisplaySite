@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 
-function MainButton({url='/', children, img, pdf=false, fontColor='white', ...args}) {
+function MainButton({url='/', children, img, pdf=false, fontColor='white', slideShow=null, ...args}) {
   const buttonStyle = {
     color: fontColor,
     fontSize: '60px',
@@ -19,11 +19,18 @@ function MainButton({url='/', children, img, pdf=false, fontColor='white', ...ar
 
   return (
     <Link href={url}>
+    {slideShow === null ? (
       <div style={buttonStyle}>
           <div>
               {children}
           </div>
       </div>
+    ) : (
+      <div>
+        <p>yo</p>
+        <slideShow />
+      </div>
+    )}
     </Link>
   )
 }

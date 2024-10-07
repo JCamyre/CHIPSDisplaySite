@@ -4,7 +4,7 @@ import Articles from './Articles.json';
 import People from './People.json';
 import Posters from './Posters.json';
 import Videos from './Videos.json';
-// import SubuPic from "../public/images/subu.png"
+import NewsSlideshow from './NewsSlideshow';
 
 const mainButtons = {
     alignItems: 'center',
@@ -50,7 +50,7 @@ function MainButtons({ personThumbnail, articleThumbnail, posterThumbnail }) {
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' img={articleThumbnail ? articleThumbnail : 'https://www.chips.ucla.edu/images/CHIPS-white-logo.png'}>
+      <MainButton url='news' slideShow={NewsSlideshow}>
         News
       </MainButton>
       <MainButton url='people' img={"/images/subu.png"}>
