@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 
-function MainButton({url='/', children, img, pdf=false, fontColor='white', SlideShow=null, ...args}) {
+function MainButton({url='/', children, img, pdf=false, fontColor='white', SlideShow=null, carouselImages=null, ...args}) {
   const buttonStyle = {
     color: fontColor,
     fontSize: '60px',
@@ -31,7 +31,7 @@ function MainButton({url='/', children, img, pdf=false, fontColor='white', Slide
         </Link>
       ) : (
         <div>
-          <SlideShow />
+          <SlideShow carouselImages={carouselImages} />
         </div>
       )}
     </>

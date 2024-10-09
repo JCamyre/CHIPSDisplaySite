@@ -22,7 +22,7 @@ export async function getRandomPoster()
   return Posters[Math.floor(Math.random() * (Posters.length - 1))]
 }
 
-function MainButtons({ posterThumbnail }) {
+function MainButtons({ posterThumbnail, carouselImages }) {
   const [poster, setPoster] = useState('');
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function MainButtons({ posterThumbnail }) {
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' SlideShow={NewsSlideshow}>
+      <MainButton url='news' SlideShow={NewsSlideshow} CarouselImages={carouselImages}>
         News
       </MainButton>
       <MainButton url='people' img={"/images/subu.png"}>

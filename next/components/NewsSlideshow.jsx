@@ -7,15 +7,15 @@ import CarouselItem from './CarouselItem';
 import { useEffect, useState } from 'react';
 
 
-export default function NewsSlideshow() {
-    const [slides, setSlides] = useState([]);
+export default function NewsSlideshow({carouselImages}) {
+    // const [slides, setSlides] = useState([]);
 
-    useEffect(() => {
-      fetch('/api/slides')
-        .then((res) => res.json())
-        .then((data) => setSlides(data))
-        .catch((error) => console.error('Error fetching slides:', error));
-    }, []);
+    // useEffect(() => {
+    //   fetch('/api/slides')
+    //     .then((res) => res.json())
+    //     .then((data) => setSlides(data))
+    //     .catch((error) => console.error('Error fetching slides:', error));
+    // }, []);
     
     return (
         <div style={{textAlign: 'center', maxHeight: '44vh'}}>
@@ -33,9 +33,9 @@ export default function NewsSlideshow() {
                 showThumbs={false}
                 stopOnHover={true}
                 >
-                {slides.map((slide) => (
-                    <CarouselItem imageSrc={slide.link}>
-                        <Image src={slide.link} />
+                {carouselImages.map((carouselImage) => (
+                    <CarouselItem imageSrc={carouselImage.link}>
+                        <Image src={carouselImage.link} />
                     </CarouselItem>
                 ))}
             </Carousel>

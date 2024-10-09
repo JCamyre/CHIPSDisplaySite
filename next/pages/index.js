@@ -7,9 +7,8 @@ import MainButtons, {
 import { useEffect } from 'react';
 
 export default function Home({
-  personThumbnail,
-  articleThumbnail,
   posterThumbnail,
+  carouselImages
 }) {
   useEffect(() => {
     document.addEventListener('contextmenu', function (e) {
@@ -20,9 +19,8 @@ export default function Home({
   return (
     <div className={styles.container}>
       <MainButtons
-        personThumbnail={personThumbnail}
         posterThumbnail={posterThumbnail}
-        articleThumbnail={articleThumbnail}
+        carouselImages={carouselImages}
       />
     </div>
   );
