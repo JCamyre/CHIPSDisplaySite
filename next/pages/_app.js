@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-    <div style={{ height: "100vh", width: "100vw", display: "grid", gridTemplateRows: "1fr 1fr" }}>
+    <div style={{ height: "100vh", width: "100vw" }}>
       <>
         <Navbar />
         <Component {...pageProps} />
