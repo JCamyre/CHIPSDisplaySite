@@ -31,7 +31,7 @@ function MainButtons({ posterThumbnail, carouselImages }) {
 
   return (
     <div style={mainButtons}>
-      <MainButton url='news' SlideShow={NewsSlideshow} CarouselImages={carouselImages}>
+      <MainButton url='news' SlideShow={NewsSlideshow} carouselImages={carouselImages}>
         News
       </MainButton>
       <MainButton url='people' img={"/images/subu.png"}>

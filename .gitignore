@@ -5,3 +5,4 @@
 next/firebase_creds.json
 /next/config.js
 /next/.env
+/next/.env.local

@@ -1,9 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import MainButtons, {
   getRandomPoster,
 } from "../components/MainButtons";
+import { getIndexSlides } from "../scripts/db";
 import { useEffect } from 'react';
 
 export default function Home({
@@ -27,16 +26,23 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const posterThumbnail = await getRandomPoster().then((res) => {
-    if (res)
-      return res["thumbnail"];
-    return null;
-  });
+  // Fetch both poster thumbnail and carouselImages in parallel using Promise.all
+  console.log("We waiting")
+  const [posterThumbnail, carouselImages] = await Promise.all([
+    getRandomPoster().then((res) => {
+      if (res) return res["thumbnail"];
+      return null;
+    }),
+    getIndexSlides(),
+  ]);
+
+  console.log("Made it", carouselImages)
 
   return {
     props: {
       posterThumbnail,
+      carouselImages,
     },
-    revalidate: 900,
+    revalidate: 5,  // Revalidate every 15 minutes (900 seconds)
   };
 };

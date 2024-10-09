@@ -1,21 +1,13 @@
 import React from 'react'
-import Link from 'next/link'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Image } from '@chakra-ui/react';
 import CarouselItem from './CarouselItem';
-import { useEffect, useState } from 'react';
 
 
 export default function NewsSlideshow({carouselImages}) {
-    // const [slides, setSlides] = useState([]);
 
-    // useEffect(() => {
-    //   fetch('/api/slides')
-    //     .then((res) => res.json())
-    //     .then((data) => setSlides(data))
-    //     .catch((error) => console.error('Error fetching slides:', error));
-    // }, []);
+    console.log(carouselImages);
     
     return (
         <div style={{textAlign: 'center', maxHeight: '44vh'}}>
@@ -33,8 +25,8 @@ export default function NewsSlideshow({carouselImages}) {
                 showThumbs={false}
                 stopOnHover={true}
                 >
-                {carouselImages.map((carouselImage) => (
-                    <CarouselItem imageSrc={carouselImage.link}>
+                {carouselImages && carouselImages.map((carouselImage) => (
+                    <CarouselItem key={carouselImage.index} imageSrc={carouselImage.link}>
                         <Image src={carouselImage.link} />
                     </CarouselItem>
                 ))}

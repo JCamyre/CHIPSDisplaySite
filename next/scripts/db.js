@@ -1,13 +1,18 @@
 // lib/db.js
 import { Pool } from 'pg';
-import { rdsConfig } from '../config';
 
 // Configure the connection pool
 let pool;
 
 // Check if the pool is already created (useful in development mode)
 if (typeof window === 'undefined' && !pool) {
-  pool = new Pool(rdsConfig);
+  pool = new Pool({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT || 5432,  // Fallback to default port if not set
+  });
 } else {
   throw new Error('pg should only be used on the server');
 }

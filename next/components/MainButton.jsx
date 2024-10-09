@@ -17,8 +17,6 @@ function MainButton({url='/', children, img, pdf=false, fontColor='white', Slide
     boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.25)",
   }
 
-
-
   return (
     <>
       {SlideShow === null ? (
