@@ -9,37 +9,14 @@ function Navbar({style}) {
 
     return (
         <>
-        <Flex bg='#1f497d' paddingX='0%' width="100%" alignItems='center' style={navbarStyle}>
+        <Flex bg='#1f497d' paddingX='0%' width="100%" alignItems='center' paddingY="0%" style={navbarStyle}>
             <Link href='/'>
                 <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
             </Link>
             <Spacer />
-            <Spacer />
-            <Spacer />
-            <Box>
-                <span style={{color: "white", fontSize: 48}}>TOUCH ME!</span>
-            </Box>
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
+            <img src={'/images/qr-code.png'} style={{height: '100px'}} />
         </Flex>
         <Flex paddingX='0%' width="100%" alignItems='center' style={navbarStyle2}>
-            {/* <Link href='/'>
-                <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
-            </Link>
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Box>
-                <span style={{color: "white", fontSize: 48}}>TOUCH ME!</span>
-            </Box>
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer />
-            <Spacer /> */}
         </Flex>
         </>
     )
