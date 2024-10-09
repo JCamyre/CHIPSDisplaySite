@@ -43,6 +43,6 @@ export const getStaticProps = async () => {
       posterThumbnail,
       carouselImages,
     },
-    revalidate: 5,  // Revalidate every 15 minutes (900 seconds)
+    revalidate: 3600,  // Revalidate every hour (3600 seconds)
   };
 };
