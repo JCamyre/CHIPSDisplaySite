@@ -22,7 +22,7 @@ function Videos() {
           boxShadow: "0 14px 8px -4px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <h1 style={{ textAlign: "center" }}>Videos</h1>
+        <h1 className="header" style={{ textAlign: "center" }}>Videos</h1>
         <Carousel
           width={"100%"}
           height={"50%"}

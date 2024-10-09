@@ -24,7 +24,7 @@ function Posters() {
           boxShadow: "0 10px 8px -4px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <h1 style={{ textAlign: "center" }}>Posters</h1>
+        <h1 className="header" style={{textAlign: "center"}}>Posters</h1>
         <Carousel
           width={"100%"}
           height={"100%"}

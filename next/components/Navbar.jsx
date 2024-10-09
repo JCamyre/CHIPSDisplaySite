@@ -14,7 +14,6 @@ function Navbar({style}) {
                 <Image id='CHIPS-logo' src={'/images/CHIPS-logo.png'} alt='CHIPS logo' style={{height: '100px'}}/>
             </Link>
             <Spacer />
-            <img src={'/images/qr-code.png'} style={{height: '100px'}} />
         </Flex>
         <Flex paddingX='0%' width="100%" alignItems='center' style={navbarStyle2}>
         </Flex>
