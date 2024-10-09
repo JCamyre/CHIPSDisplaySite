@@ -8,7 +8,7 @@ export default function CarouselItem({imageSrc, children}) {
     }
 
   return (
-    <div style={{display: "flex", alignItems: "center", height: "44vh"}}>
+    <div style={{display: "flex", alignItems: "center", justifyContent: "center", height: "44vh"}}>
       <Link href={`/image?src=${encodeURIComponent(imageSrc)}`}>
         <a style={carouselItemStyle}>
                 {children}
