@@ -2,11 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import StudentsData from './People.json';
-import Person from './Person';
-import Video from './Video';
-
-// sort by name
+import { Image } from '@chakra-ui/react';
+import CarouselItem from './CarouselItem';
 
 function NewsSlideshow() {
     
@@ -25,8 +22,12 @@ function NewsSlideshow() {
                 showThumbs={false}
                 stopOnHover={true}
                 >
-                <Video url="https://www.youtube.com/watch?v=cxRDNjvUFXM" />
-                <Video url="https://www.youtube.com/watch?v=g1e11lsrSvw" />
+                <CarouselItem>
+                    <Image src="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/2024%20CHIMES%20Annual%20Review.jpg" />
+                </CarouselItem>
+                <CarouselItem>
+                    <Image src="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/1723658111210-9b03a8e5-e71f-4c32-82ce-78191d5cda69017%20Theme%20III%20Vineeth%20Harish%20poster%20%282%29_1.jpg" />
+                </CarouselItem>
             </Carousel>
         </div>
     </div>
