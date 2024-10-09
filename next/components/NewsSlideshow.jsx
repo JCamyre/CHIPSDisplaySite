@@ -22,10 +22,10 @@ function NewsSlideshow() {
                 showThumbs={false}
                 stopOnHover={true}
                 >
-                <CarouselItem>
+                <CarouselItem imageSrc="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/2024%20CHIMES%20Annual%20Review.jpg">
                     <Image src="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/2024%20CHIMES%20Annual%20Review.jpg" />
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem imageSrc="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/1723658111210-9b03a8e5-e71f-4c32-82ce-78191d5cda69017%20Theme%20III%20Vineeth%20Harish%20poster%20%282%29_1.jpg">
                     <Image src="https://s3.us-west-1.amazonaws.com/chips.user.media/images/index/1723658111210-9b03a8e5-e71f-4c32-82ce-78191d5cda69017%20Theme%20III%20Vineeth%20Harish%20poster%20%282%29_1.jpg" />
                 </CarouselItem>
             </Carousel>
