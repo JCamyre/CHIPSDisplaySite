@@ -3,3 +3,5 @@
 ./api/node_modules
 ./displaysite/node_modules
 next/firebase_creds.json
+/next/config.js
+/next/.env
