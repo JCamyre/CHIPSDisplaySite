@@ -17,23 +17,24 @@ function MainButton({url='/', children, img, pdf=false, fontColor='white', Slide
     boxShadow: "4px 16px 16px -4px rgba(0, 0, 0, 0.25)",
   }
 
-  console.log(SlideShow)
+
 
   return (
-    <Link href={url}>
-    {SlideShow === null ? (
-      <div style={buttonStyle}>
-          <div>
-              {children}
+    <>
+      {SlideShow === null ? (
+        <Link href={url}>
+          <div style={buttonStyle}>
+              <div>
+                  {children}
+              </div>
           </div>
-      </div>
-    ) : (
-      <div>
-        <p>yo</p>
-        <SlideShow />
-      </div>
-    )}
-    </Link>
+        </Link>
+      ) : (
+        <div>
+          <SlideShow />
+        </div>
+      )}
+    </>
   )
 }
 
