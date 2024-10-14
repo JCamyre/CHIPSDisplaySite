@@ -34,15 +34,15 @@ function MainButtons({ posterThumbnail, carouselImages }) {
       <MainButton url='news' SlideShow={NewsSlideshow} carouselImages={carouselImages}>
         
       </MainButton>
-      <MainButton url='people' img={"/images/subu.png"}>
+      <MainButton url='people' img={"/images/group_pic.jpeg"}>
         People
       </MainButton>
       <MainButton url='posters' img={`/poster_images/${posterThumbnail}`} fontColor={'black'}>
-        
+        Posters 
       </MainButton>
-      <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
+      {/* <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
         Videos
-      </MainButton>
+      </MainButton> */}
       <img src={'/images/qr-code.png'} style={{height: '150px', position: "absolute", bottom: 0, right: 0}} />
     </div>
   )
