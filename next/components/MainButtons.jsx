@@ -40,9 +40,9 @@ function MainButtons({ posterThumbnail, carouselImages }) {
       <MainButton url='posters' img={`/poster_images/${posterThumbnail}`} fontColor={'black'}>
         Posters 
       </MainButton>
-      {/* <MainButton url='videos' img={`http://img.youtube.com/vi/${Videos[0]['url'].split('v=')[1]}/hqdefault.jpg`}>
+      <MainButton url='videos' fontColor={'black'}>
         Videos
-      </MainButton> */}
+      </MainButton>
       <img src={'/images/qr-code.png'} style={{height: '150px', position: "absolute", bottom: 0, right: 0}} />
     </div>
   )

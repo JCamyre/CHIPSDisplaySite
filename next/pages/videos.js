@@ -35,8 +35,7 @@ function Videos() {
           showThumbs={false}
           stopOnHover={true}
         >
-          <Video url="https://www.youtube.com/watch?v=cxRDNjvUFXM" />
-          <Video url="https://www.youtube.com/watch?v=g1e11lsrSvw" />
+          <Video url="https://drive.google.com/file/d/1Vhm5KOPZIqLi7BidsRPXcyOKvP_cQrMt/view?usp=sharing" />
         </Carousel>
         </Box>
       </Container>
